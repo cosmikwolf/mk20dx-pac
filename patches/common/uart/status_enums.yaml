@@ -1,0 +1,194 @@
+# UART Status Register (S1, S2) enumerated values
+# UART0, UART1, UART2 — present in both variants
+# Source: K20 Sub-Family Reference Manual, UART chapter
+UART0:
+  S1:
+    PF:
+      _replace_enum:
+        NoError: [0, "No parity error"]
+        Error: [1, "Parity error detected"]
+    FE:
+      _replace_enum:
+        NoError: [0, "No framing error"]
+        Error: [1, "Framing error detected"]
+    NF:
+      _replace_enum:
+        NoNoise: [0, "No noise detected"]
+        Noise: [1, "Noise detected"]
+    OR:
+      _replace_enum:
+        NoOverrun: [0, "No overrun"]
+        Overrun: [1, "Overrun detected"]
+    IDLE:
+      _replace_enum:
+        Active: [0, "Receiver active or not idle"]
+        Idle: [1, "Receiver idle"]
+    RDRF:
+      _replace_enum:
+        Empty: [0, "Receive data register empty"]
+        Full: [1, "Receive data register full"]
+    TC:
+      _replace_enum:
+        Active: [0, "Transmitter active"]
+        Complete: [1, "Transmitter idle"]
+    TDRE:
+      _replace_enum:
+        Full: [0, "Transmit data register full"]
+        Empty: [1, "Transmit data register empty"]
+  S2:
+    RAF:
+      _replace_enum:
+        Idle: [0, "UART receiver idle"]
+        Active: [1, "UART receiver active"]
+    LBKDE:
+      _replace_enum:
+        Disabled: [0, "Break detection disabled"]
+        Enabled: [1, "Break detection enabled"]
+    BRK13:
+      _replace_enum:
+        Short: [0, "Break is 10-11-12 bit times"]
+        Long: [1, "Break is 13-14 bit times"]
+    RWUID:
+      _replace_enum:
+        Disabled: [0, "S1.IDLE not set on idle during standby"]
+        Enabled: [1, "S1.IDLE set on idle during standby"]
+    RXINV:
+      _replace_enum:
+        Normal: [0, "Receive data not inverted"]
+        Inverted: [1, "Receive data inverted"]
+    RXEDGIF:
+      _replace_enum:
+        NoEdge: [0, "No active edge on RXD"]
+        Edge: [1, "Active edge on RXD"]
+    MSBF:
+      _replace_enum:
+        LsbFirst: [0, "LSB first"]
+        MsbFirst: [1, "MSB first"]
+
+UART1:
+  S1:
+    PF:
+      _replace_enum:
+        NoError: [0, "No parity error"]
+        Error: [1, "Parity error detected"]
+    FE:
+      _replace_enum:
+        NoError: [0, "No framing error"]
+        Error: [1, "Framing error detected"]
+    NF:
+      _replace_enum:
+        NoNoise: [0, "No noise detected"]
+        Noise: [1, "Noise detected"]
+    OR:
+      _replace_enum:
+        NoOverrun: [0, "No overrun"]
+        Overrun: [1, "Overrun detected"]
+    IDLE:
+      _replace_enum:
+        Active: [0, "Receiver active or not idle"]
+        Idle: [1, "Receiver idle"]
+    RDRF:
+      _replace_enum:
+        Empty: [0, "Receive data register empty"]
+        Full: [1, "Receive data register full"]
+    TC:
+      _replace_enum:
+        Active: [0, "Transmitter active"]
+        Complete: [1, "Transmitter idle"]
+    TDRE:
+      _replace_enum:
+        Full: [0, "Transmit data register full"]
+        Empty: [1, "Transmit data register empty"]
+  S2:
+    RAF:
+      _replace_enum:
+        Idle: [0, "UART receiver idle"]
+        Active: [1, "UART receiver active"]
+    LBKDE:
+      _replace_enum:
+        Disabled: [0, "Break detection disabled"]
+        Enabled: [1, "Break detection enabled"]
+    BRK13:
+      _replace_enum:
+        Short: [0, "Break is 10-11-12 bit times"]
+        Long: [1, "Break is 13-14 bit times"]
+    RWUID:
+      _replace_enum:
+        Disabled: [0, "S1.IDLE not set on idle during standby"]
+        Enabled: [1, "S1.IDLE set on idle during standby"]
+    RXINV:
+      _replace_enum:
+        Normal: [0, "Receive data not inverted"]
+        Inverted: [1, "Receive data inverted"]
+    RXEDGIF:
+      _replace_enum:
+        NoEdge: [0, "No active edge on RXD"]
+        Edge: [1, "Active edge on RXD"]
+    MSBF:
+      _replace_enum:
+        LsbFirst: [0, "LSB first"]
+        MsbFirst: [1, "MSB first"]
+
+UART2:
+  S1:
+    PF:
+      _replace_enum:
+        NoError: [0, "No parity error"]
+        Error: [1, "Parity error detected"]
+    FE:
+      _replace_enum:
+        NoError: [0, "No framing error"]
+        Error: [1, "Framing error detected"]
+    NF:
+      _replace_enum:
+        NoNoise: [0, "No noise detected"]
+        Noise: [1, "Noise detected"]
+    OR:
+      _replace_enum:
+        NoOverrun: [0, "No overrun"]
+        Overrun: [1, "Overrun detected"]
+    IDLE:
+      _replace_enum:
+        Active: [0, "Receiver active or not idle"]
+        Idle: [1, "Receiver idle"]
+    RDRF:
+      _replace_enum:
+        Empty: [0, "Receive data register empty"]
+        Full: [1, "Receive data register full"]
+    TC:
+      _replace_enum:
+        Active: [0, "Transmitter active"]
+        Complete: [1, "Transmitter idle"]
+    TDRE:
+      _replace_enum:
+        Full: [0, "Transmit data register full"]
+        Empty: [1, "Transmit data register empty"]
+  S2:
+    RAF:
+      _replace_enum:
+        Idle: [0, "UART receiver idle"]
+        Active: [1, "UART receiver active"]
+    LBKDE:
+      _replace_enum:
+        Disabled: [0, "Break detection disabled"]
+        Enabled: [1, "Break detection enabled"]
+    BRK13:
+      _replace_enum:
+        Short: [0, "Break is 10-11-12 bit times"]
+        Long: [1, "Break is 13-14 bit times"]
+    RWUID:
+      _replace_enum:
+        Disabled: [0, "S1.IDLE not set on idle during standby"]
+        Enabled: [1, "S1.IDLE set on idle during standby"]
+    RXINV:
+      _replace_enum:
+        Normal: [0, "Receive data not inverted"]
+        Inverted: [1, "Receive data inverted"]
+    RXEDGIF:
+      _replace_enum:
+        NoEdge: [0, "No active edge on RXD"]
+        Edge: [1, "Active edge on RXD"]
+    MSBF:
+      _replace_enum:
+        LsbFirst: [0, "LSB first"]
+        MsbFirst: [1, "MSB first"]

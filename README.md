@@ -62,7 +62,7 @@ The MK20D7 SVD required no correctness patches.
 |------------|------------|
 | DMAMUX source channel enums (43/50 named DMA request sources) | `patches/*/dmamux/source_enums.yaml` |
 | DMA TCD clustering (per-channel struct access) | `patches/*/dma/tcd_cluster.yaml` |
-| Semantic enum names for PORT MUX, FTM, ADC, MCG, SIM, DMA ATTR | `patches/common/` (6 files) + `patches/mk20d7/` (2 files) |
+| Semantic enum names for PORT, FTM, ADC, MCG, SIM, DMA ATTR, SPI, UART, SIM SCGC | `patches/common/` (12 files) + `patches/mk20d7/` (5 files) |
 
 For full details, see [docs/RESEARCH_FINDINGS.md](docs/RESEARCH_FINDINGS.md) and [docs/STATUS.md](docs/STATUS.md).
 

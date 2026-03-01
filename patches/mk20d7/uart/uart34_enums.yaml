@@ -1,0 +1,442 @@
+# UART3, UART4 enumerated values (MK20D7 only)
+# Same enum values as UART0-2 in common patches
+# Source: K20 Sub-Family Reference Manual, UART chapter
+UART3:
+  C1:
+    PT:
+      _replace_enum:
+        Even: [0, "Even parity"]
+        Odd: [1, "Odd parity"]
+    PE:
+      _replace_enum:
+        Disabled: [0, "Parity disabled"]
+        Enabled: [1, "Parity enabled"]
+    ILT:
+      _replace_enum:
+        AfterStart: [0, "Idle after start bit"]
+        AfterStop: [1, "Idle after stop bit"]
+    WAKE:
+      _replace_enum:
+        IdleLine: [0, "Idle-line wakeup"]
+        AddressMark: [1, "Address-mark wakeup"]
+    M:
+      _replace_enum:
+        Data8: [0, "8-bit data"]
+        Data9: [1, "9-bit data"]
+    RSRC:
+      _replace_enum:
+        Internal: [0, "Internal loopback"]
+        External: [1, "Single-wire mode from RXD pin"]
+    UARTSWAI:
+      _replace_enum:
+        Running: [0, "UART clocks continue in wait mode"]
+        Stopped: [1, "UART clocks freeze in wait mode"]
+    LOOPS:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Loopback: [1, "Loop mode"]
+  C2:
+    SBK:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Break: [1, "Queue break character"]
+    RWU:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Standby: [1, "Receiver standby"]
+    RE:
+      _replace_enum:
+        Disabled: [0, "Receiver disabled"]
+        Enabled: [1, "Receiver enabled"]
+    TE:
+      _replace_enum:
+        Disabled: [0, "Transmitter disabled"]
+        Enabled: [1, "Transmitter enabled"]
+    ILIE:
+      _replace_enum:
+        Disabled: [0, "IDLE interrupt disabled"]
+        Enabled: [1, "IDLE interrupt enabled"]
+    RIE:
+      _replace_enum:
+        Disabled: [0, "RDRF interrupt disabled"]
+        Enabled: [1, "RDRF interrupt enabled"]
+    TCIE:
+      _replace_enum:
+        Disabled: [0, "TC interrupt disabled"]
+        Enabled: [1, "TC interrupt enabled"]
+    TIE:
+      _replace_enum:
+        Disabled: [0, "TDRE interrupt disabled"]
+        Enabled: [1, "TDRE interrupt enabled"]
+  C3:
+    PEIE:
+      _replace_enum:
+        Disabled: [0, "PF interrupt disabled"]
+        Enabled: [1, "PF interrupt enabled"]
+    FEIE:
+      _replace_enum:
+        Disabled: [0, "FE interrupt disabled"]
+        Enabled: [1, "FE interrupt enabled"]
+    NEIE:
+      _replace_enum:
+        Disabled: [0, "NF interrupt disabled"]
+        Enabled: [1, "NF interrupt enabled"]
+    ORIE:
+      _replace_enum:
+        Disabled: [0, "OR interrupt disabled"]
+        Enabled: [1, "OR interrupt enabled"]
+    TXINV:
+      _replace_enum:
+        Normal: [0, "Transmit data not inverted"]
+        Inverted: [1, "Transmit data inverted"]
+    TXDIR:
+      _replace_enum:
+        Input: [0, "TXD pin is input in single-wire mode"]
+        Output: [1, "TXD pin is output in single-wire mode"]
+  C4:
+    M10:
+      _replace_enum:
+        Disabled: [0, "10-bit mode disabled"]
+        Enabled: [1, "10-bit mode enabled"]
+    MAEN2:
+      _replace_enum:
+        Disabled: [0, "Match address 2 disabled"]
+        Enabled: [1, "Match address 2 enabled"]
+    MAEN1:
+      _replace_enum:
+        Disabled: [0, "Match address 1 disabled"]
+        Enabled: [1, "Match address 1 enabled"]
+  C5:
+    RDMAS:
+      _replace_enum:
+        Interrupt: [0, "RDRF generates interrupt"]
+        Dma: [1, "RDRF generates DMA request"]
+    TDMAS:
+      _replace_enum:
+        Interrupt: [0, "TDRE generates interrupt"]
+        Dma: [1, "TDRE generates DMA request"]
+  S1:
+    PF:
+      _replace_enum:
+        NoError: [0, "No parity error"]
+        Error: [1, "Parity error detected"]
+    FE:
+      _replace_enum:
+        NoError: [0, "No framing error"]
+        Error: [1, "Framing error detected"]
+    NF:
+      _replace_enum:
+        NoNoise: [0, "No noise detected"]
+        Noise: [1, "Noise detected"]
+    OR:
+      _replace_enum:
+        NoOverrun: [0, "No overrun"]
+        Overrun: [1, "Overrun detected"]
+    IDLE:
+      _replace_enum:
+        Active: [0, "Receiver active or not idle"]
+        Idle: [1, "Receiver idle"]
+    RDRF:
+      _replace_enum:
+        Empty: [0, "Receive data register empty"]
+        Full: [1, "Receive data register full"]
+    TC:
+      _replace_enum:
+        Active: [0, "Transmitter active"]
+        Complete: [1, "Transmitter idle"]
+    TDRE:
+      _replace_enum:
+        Full: [0, "Transmit data register full"]
+        Empty: [1, "Transmit data register empty"]
+  S2:
+    RAF:
+      _replace_enum:
+        Idle: [0, "UART receiver idle"]
+        Active: [1, "UART receiver active"]
+    LBKDE:
+      _replace_enum:
+        Disabled: [0, "Break detection disabled"]
+        Enabled: [1, "Break detection enabled"]
+    BRK13:
+      _replace_enum:
+        Short: [0, "Break is 10-11-12 bit times"]
+        Long: [1, "Break is 13-14 bit times"]
+    RWUID:
+      _replace_enum:
+        Disabled: [0, "S1.IDLE not set on idle during standby"]
+        Enabled: [1, "S1.IDLE set on idle during standby"]
+    RXINV:
+      _replace_enum:
+        Normal: [0, "Receive data not inverted"]
+        Inverted: [1, "Receive data inverted"]
+    RXEDGIF:
+      _replace_enum:
+        NoEdge: [0, "No active edge on RXD"]
+        Edge: [1, "Active edge on RXD"]
+    MSBF:
+      _replace_enum:
+        LsbFirst: [0, "LSB first"]
+        MsbFirst: [1, "MSB first"]
+  PFIFO:
+    RXFE:
+      _replace_enum:
+        Disabled: [0, "Receive FIFO disabled"]
+        Enabled: [1, "Receive FIFO enabled"]
+    TXFE:
+      _replace_enum:
+        Disabled: [0, "Transmit FIFO disabled"]
+        Enabled: [1, "Transmit FIFO enabled"]
+  CFIFO:
+    RXUFE:
+      _replace_enum:
+        Disabled: [0, "RXUF interrupt disabled"]
+        Enabled: [1, "RXUF interrupt enabled"]
+    TXOFE:
+      _replace_enum:
+        Disabled: [0, "TXOF interrupt disabled"]
+        Enabled: [1, "TXOF interrupt enabled"]
+    RXFLUSH:
+      _replace_enum:
+        NoEffect: [0, "No flush"]
+        Flush: [1, "Flush receive FIFO"]
+    TXFLUSH:
+      _replace_enum:
+        NoEffect: [0, "No flush"]
+        Flush: [1, "Flush transmit FIFO"]
+  SFIFO:
+    RXUF:
+      _replace_enum:
+        NoUnderflow: [0, "No receive underflow"]
+        Underflow: [1, "Receive FIFO underflow"]
+    TXOF:
+      _replace_enum:
+        NoOverflow: [0, "No transmit overflow"]
+        Overflow: [1, "Transmit FIFO overflow"]
+    RXEMPT:
+      _replace_enum:
+        NotEmpty: [0, "Receive buffer not empty"]
+        Empty: [1, "Receive buffer empty"]
+    TXEMPT:
+      _replace_enum:
+        NotEmpty: [0, "Transmit buffer not empty"]
+        Empty: [1, "Transmit buffer empty"]
+
+UART4:
+  C1:
+    PT:
+      _replace_enum:
+        Even: [0, "Even parity"]
+        Odd: [1, "Odd parity"]
+    PE:
+      _replace_enum:
+        Disabled: [0, "Parity disabled"]
+        Enabled: [1, "Parity enabled"]
+    ILT:
+      _replace_enum:
+        AfterStart: [0, "Idle after start bit"]
+        AfterStop: [1, "Idle after stop bit"]
+    WAKE:
+      _replace_enum:
+        IdleLine: [0, "Idle-line wakeup"]
+        AddressMark: [1, "Address-mark wakeup"]
+    M:
+      _replace_enum:
+        Data8: [0, "8-bit data"]
+        Data9: [1, "9-bit data"]
+    RSRC:
+      _replace_enum:
+        Internal: [0, "Internal loopback"]
+        External: [1, "Single-wire mode from RXD pin"]
+    UARTSWAI:
+      _replace_enum:
+        Running: [0, "UART clocks continue in wait mode"]
+        Stopped: [1, "UART clocks freeze in wait mode"]
+    LOOPS:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Loopback: [1, "Loop mode"]
+  C2:
+    SBK:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Break: [1, "Queue break character"]
+    RWU:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Standby: [1, "Receiver standby"]
+    RE:
+      _replace_enum:
+        Disabled: [0, "Receiver disabled"]
+        Enabled: [1, "Receiver enabled"]
+    TE:
+      _replace_enum:
+        Disabled: [0, "Transmitter disabled"]
+        Enabled: [1, "Transmitter enabled"]
+    ILIE:
+      _replace_enum:
+        Disabled: [0, "IDLE interrupt disabled"]
+        Enabled: [1, "IDLE interrupt enabled"]
+    RIE:
+      _replace_enum:
+        Disabled: [0, "RDRF interrupt disabled"]
+        Enabled: [1, "RDRF interrupt enabled"]
+    TCIE:
+      _replace_enum:
+        Disabled: [0, "TC interrupt disabled"]
+        Enabled: [1, "TC interrupt enabled"]
+    TIE:
+      _replace_enum:
+        Disabled: [0, "TDRE interrupt disabled"]
+        Enabled: [1, "TDRE interrupt enabled"]
+  C3:
+    PEIE:
+      _replace_enum:
+        Disabled: [0, "PF interrupt disabled"]
+        Enabled: [1, "PF interrupt enabled"]
+    FEIE:
+      _replace_enum:
+        Disabled: [0, "FE interrupt disabled"]
+        Enabled: [1, "FE interrupt enabled"]
+    NEIE:
+      _replace_enum:
+        Disabled: [0, "NF interrupt disabled"]
+        Enabled: [1, "NF interrupt enabled"]
+    ORIE:
+      _replace_enum:
+        Disabled: [0, "OR interrupt disabled"]
+        Enabled: [1, "OR interrupt enabled"]
+    TXINV:
+      _replace_enum:
+        Normal: [0, "Transmit data not inverted"]
+        Inverted: [1, "Transmit data inverted"]
+    TXDIR:
+      _replace_enum:
+        Input: [0, "TXD pin is input in single-wire mode"]
+        Output: [1, "TXD pin is output in single-wire mode"]
+  C4:
+    M10:
+      _replace_enum:
+        Disabled: [0, "10-bit mode disabled"]
+        Enabled: [1, "10-bit mode enabled"]
+    MAEN2:
+      _replace_enum:
+        Disabled: [0, "Match address 2 disabled"]
+        Enabled: [1, "Match address 2 enabled"]
+    MAEN1:
+      _replace_enum:
+        Disabled: [0, "Match address 1 disabled"]
+        Enabled: [1, "Match address 1 enabled"]
+  C5:
+    RDMAS:
+      _replace_enum:
+        Interrupt: [0, "RDRF generates interrupt"]
+        Dma: [1, "RDRF generates DMA request"]
+    TDMAS:
+      _replace_enum:
+        Interrupt: [0, "TDRE generates interrupt"]
+        Dma: [1, "TDRE generates DMA request"]
+  S1:
+    PF:
+      _replace_enum:
+        NoError: [0, "No parity error"]
+        Error: [1, "Parity error detected"]
+    FE:
+      _replace_enum:
+        NoError: [0, "No framing error"]
+        Error: [1, "Framing error detected"]
+    NF:
+      _replace_enum:
+        NoNoise: [0, "No noise detected"]
+        Noise: [1, "Noise detected"]
+    OR:
+      _replace_enum:
+        NoOverrun: [0, "No overrun"]
+        Overrun: [1, "Overrun detected"]
+    IDLE:
+      _replace_enum:
+        Active: [0, "Receiver active or not idle"]
+        Idle: [1, "Receiver idle"]
+    RDRF:
+      _replace_enum:
+        Empty: [0, "Receive data register empty"]
+        Full: [1, "Receive data register full"]
+    TC:
+      _replace_enum:
+        Active: [0, "Transmitter active"]
+        Complete: [1, "Transmitter idle"]
+    TDRE:
+      _replace_enum:
+        Full: [0, "Transmit data register full"]
+        Empty: [1, "Transmit data register empty"]
+  S2:
+    RAF:
+      _replace_enum:
+        Idle: [0, "UART receiver idle"]
+        Active: [1, "UART receiver active"]
+    LBKDE:
+      _replace_enum:
+        Disabled: [0, "Break detection disabled"]
+        Enabled: [1, "Break detection enabled"]
+    BRK13:
+      _replace_enum:
+        Short: [0, "Break is 10-11-12 bit times"]
+        Long: [1, "Break is 13-14 bit times"]
+    RWUID:
+      _replace_enum:
+        Disabled: [0, "S1.IDLE not set on idle during standby"]
+        Enabled: [1, "S1.IDLE set on idle during standby"]
+    RXINV:
+      _replace_enum:
+        Normal: [0, "Receive data not inverted"]
+        Inverted: [1, "Receive data inverted"]
+    RXEDGIF:
+      _replace_enum:
+        NoEdge: [0, "No active edge on RXD"]
+        Edge: [1, "Active edge on RXD"]
+    MSBF:
+      _replace_enum:
+        LsbFirst: [0, "LSB first"]
+        MsbFirst: [1, "MSB first"]
+  PFIFO:
+    RXFE:
+      _replace_enum:
+        Disabled: [0, "Receive FIFO disabled"]
+        Enabled: [1, "Receive FIFO enabled"]
+    TXFE:
+      _replace_enum:
+        Disabled: [0, "Transmit FIFO disabled"]
+        Enabled: [1, "Transmit FIFO enabled"]
+  CFIFO:
+    RXUFE:
+      _replace_enum:
+        Disabled: [0, "RXUF interrupt disabled"]
+        Enabled: [1, "RXUF interrupt enabled"]
+    TXOFE:
+      _replace_enum:
+        Disabled: [0, "TXOF interrupt disabled"]
+        Enabled: [1, "TXOF interrupt enabled"]
+    RXFLUSH:
+      _replace_enum:
+        NoEffect: [0, "No flush"]
+        Flush: [1, "Flush receive FIFO"]
+    TXFLUSH:
+      _replace_enum:
+        NoEffect: [0, "No flush"]
+        Flush: [1, "Flush transmit FIFO"]
+  SFIFO:
+    RXUF:
+      _replace_enum:
+        NoUnderflow: [0, "No receive underflow"]
+        Underflow: [1, "Receive FIFO underflow"]
+    TXOF:
+      _replace_enum:
+        NoOverflow: [0, "No transmit overflow"]
+        Overflow: [1, "Transmit FIFO overflow"]
+    RXEMPT:
+      _replace_enum:
+        NotEmpty: [0, "Receive buffer not empty"]
+        Empty: [1, "Receive buffer empty"]
+    TXEMPT:
+      _replace_enum:
+        NotEmpty: [0, "Transmit buffer not empty"]
+        Empty: [1, "Transmit buffer empty"]

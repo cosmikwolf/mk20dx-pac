@@ -1,0 +1,124 @@
+# SIM SCGC Clock Gate enumerated values (common fields)
+# Fields present in both MK20D5 and MK20D7
+# Source: K20 Sub-Family Reference Manual, SIM chapter
+SIM:
+  SCGC4:
+    EWM:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    CMT:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    I2C0:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    UART0:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    UART1:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    UART2:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    USBOTG:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    CMP:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    VREF:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+  SCGC5:
+    LPTIMER:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    TSI:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    PORTA:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    PORTB:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    PORTC:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    PORTD:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    PORTE:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+  SCGC6:
+    FTFL:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    DMAMUX:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    SPI0:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    I2S:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    CRC:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    USBDCD:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    PDB:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    PIT:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    FTM0:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    FTM1:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    ADC0:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    RTC:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+  SCGC7:
+    DMA:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]

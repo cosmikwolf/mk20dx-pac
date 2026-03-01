@@ -1,0 +1,46 @@
+# SIM SCGC Clock Gate enumerated values (MK20D7-only fields)
+# Fields present only in MK20D7, not in MK20D5
+# Source: K20 Sub-Family Reference Manual, SIM chapter
+SIM:
+  SCGC1:
+    UART4:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+  SCGC2:
+    DAC0:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+  SCGC3:
+    FTM2:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    ADC1:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+  SCGC4:
+    I2C1:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    UART3:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+  SCGC6:
+    FLEXCAN0:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+    SPI1:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]
+  SCGC7:
+    FLEXBUS:
+      _replace_enum:
+        Disabled: [0, "Clock disabled"]
+        Enabled: [1, "Clock enabled"]

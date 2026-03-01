@@ -1,0 +1,347 @@
+# UART Control Register (C1-C5) enumerated values
+# UART0, UART1, UART2 — present in both variants
+# Source: K20 Sub-Family Reference Manual, UART chapter
+UART0:
+  C1:
+    PT:
+      _replace_enum:
+        Even: [0, "Even parity"]
+        Odd: [1, "Odd parity"]
+    PE:
+      _replace_enum:
+        Disabled: [0, "Parity disabled"]
+        Enabled: [1, "Parity enabled"]
+    ILT:
+      _replace_enum:
+        AfterStart: [0, "Idle after start bit"]
+        AfterStop: [1, "Idle after stop bit"]
+    WAKE:
+      _replace_enum:
+        IdleLine: [0, "Idle-line wakeup"]
+        AddressMark: [1, "Address-mark wakeup"]
+    M:
+      _replace_enum:
+        Data8: [0, "8-bit data"]
+        Data9: [1, "9-bit data"]
+    RSRC:
+      _replace_enum:
+        Internal: [0, "Internal loopback"]
+        External: [1, "Single-wire mode from RXD pin"]
+    UARTSWAI:
+      _replace_enum:
+        Running: [0, "UART clocks continue in wait mode"]
+        Stopped: [1, "UART clocks freeze in wait mode"]
+    LOOPS:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Loopback: [1, "Loop mode"]
+  C2:
+    SBK:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Break: [1, "Queue break character"]
+    RWU:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Standby: [1, "Receiver standby"]
+    RE:
+      _replace_enum:
+        Disabled: [0, "Receiver disabled"]
+        Enabled: [1, "Receiver enabled"]
+    TE:
+      _replace_enum:
+        Disabled: [0, "Transmitter disabled"]
+        Enabled: [1, "Transmitter enabled"]
+    ILIE:
+      _replace_enum:
+        Disabled: [0, "IDLE interrupt disabled"]
+        Enabled: [1, "IDLE interrupt enabled"]
+    RIE:
+      _replace_enum:
+        Disabled: [0, "RDRF interrupt disabled"]
+        Enabled: [1, "RDRF interrupt enabled"]
+    TCIE:
+      _replace_enum:
+        Disabled: [0, "TC interrupt disabled"]
+        Enabled: [1, "TC interrupt enabled"]
+    TIE:
+      _replace_enum:
+        Disabled: [0, "TDRE interrupt disabled"]
+        Enabled: [1, "TDRE interrupt enabled"]
+  C3:
+    PEIE:
+      _replace_enum:
+        Disabled: [0, "PF interrupt disabled"]
+        Enabled: [1, "PF interrupt enabled"]
+    FEIE:
+      _replace_enum:
+        Disabled: [0, "FE interrupt disabled"]
+        Enabled: [1, "FE interrupt enabled"]
+    NEIE:
+      _replace_enum:
+        Disabled: [0, "NF interrupt disabled"]
+        Enabled: [1, "NF interrupt enabled"]
+    ORIE:
+      _replace_enum:
+        Disabled: [0, "OR interrupt disabled"]
+        Enabled: [1, "OR interrupt enabled"]
+    TXINV:
+      _replace_enum:
+        Normal: [0, "Transmit data not inverted"]
+        Inverted: [1, "Transmit data inverted"]
+    TXDIR:
+      _replace_enum:
+        Input: [0, "TXD pin is input in single-wire mode"]
+        Output: [1, "TXD pin is output in single-wire mode"]
+  C4:
+    M10:
+      _replace_enum:
+        Disabled: [0, "10-bit mode disabled"]
+        Enabled: [1, "10-bit mode enabled"]
+    MAEN2:
+      _replace_enum:
+        Disabled: [0, "Match address 2 disabled"]
+        Enabled: [1, "Match address 2 enabled"]
+    MAEN1:
+      _replace_enum:
+        Disabled: [0, "Match address 1 disabled"]
+        Enabled: [1, "Match address 1 enabled"]
+  C5:
+    RDMAS:
+      _replace_enum:
+        Interrupt: [0, "RDRF generates interrupt"]
+        Dma: [1, "RDRF generates DMA request"]
+    TDMAS:
+      _replace_enum:
+        Interrupt: [0, "TDRE generates interrupt"]
+        Dma: [1, "TDRE generates DMA request"]
+
+UART1:
+  C1:
+    PT:
+      _replace_enum:
+        Even: [0, "Even parity"]
+        Odd: [1, "Odd parity"]
+    PE:
+      _replace_enum:
+        Disabled: [0, "Parity disabled"]
+        Enabled: [1, "Parity enabled"]
+    ILT:
+      _replace_enum:
+        AfterStart: [0, "Idle after start bit"]
+        AfterStop: [1, "Idle after stop bit"]
+    WAKE:
+      _replace_enum:
+        IdleLine: [0, "Idle-line wakeup"]
+        AddressMark: [1, "Address-mark wakeup"]
+    M:
+      _replace_enum:
+        Data8: [0, "8-bit data"]
+        Data9: [1, "9-bit data"]
+    RSRC:
+      _replace_enum:
+        Internal: [0, "Internal loopback"]
+        External: [1, "Single-wire mode from RXD pin"]
+    UARTSWAI:
+      _replace_enum:
+        Running: [0, "UART clocks continue in wait mode"]
+        Stopped: [1, "UART clocks freeze in wait mode"]
+    LOOPS:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Loopback: [1, "Loop mode"]
+  C2:
+    SBK:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Break: [1, "Queue break character"]
+    RWU:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Standby: [1, "Receiver standby"]
+    RE:
+      _replace_enum:
+        Disabled: [0, "Receiver disabled"]
+        Enabled: [1, "Receiver enabled"]
+    TE:
+      _replace_enum:
+        Disabled: [0, "Transmitter disabled"]
+        Enabled: [1, "Transmitter enabled"]
+    ILIE:
+      _replace_enum:
+        Disabled: [0, "IDLE interrupt disabled"]
+        Enabled: [1, "IDLE interrupt enabled"]
+    RIE:
+      _replace_enum:
+        Disabled: [0, "RDRF interrupt disabled"]
+        Enabled: [1, "RDRF interrupt enabled"]
+    TCIE:
+      _replace_enum:
+        Disabled: [0, "TC interrupt disabled"]
+        Enabled: [1, "TC interrupt enabled"]
+    TIE:
+      _replace_enum:
+        Disabled: [0, "TDRE interrupt disabled"]
+        Enabled: [1, "TDRE interrupt enabled"]
+  C3:
+    PEIE:
+      _replace_enum:
+        Disabled: [0, "PF interrupt disabled"]
+        Enabled: [1, "PF interrupt enabled"]
+    FEIE:
+      _replace_enum:
+        Disabled: [0, "FE interrupt disabled"]
+        Enabled: [1, "FE interrupt enabled"]
+    NEIE:
+      _replace_enum:
+        Disabled: [0, "NF interrupt disabled"]
+        Enabled: [1, "NF interrupt enabled"]
+    ORIE:
+      _replace_enum:
+        Disabled: [0, "OR interrupt disabled"]
+        Enabled: [1, "OR interrupt enabled"]
+    TXINV:
+      _replace_enum:
+        Normal: [0, "Transmit data not inverted"]
+        Inverted: [1, "Transmit data inverted"]
+    TXDIR:
+      _replace_enum:
+        Input: [0, "TXD pin is input in single-wire mode"]
+        Output: [1, "TXD pin is output in single-wire mode"]
+  C4:
+    M10:
+      _replace_enum:
+        Disabled: [0, "10-bit mode disabled"]
+        Enabled: [1, "10-bit mode enabled"]
+    MAEN2:
+      _replace_enum:
+        Disabled: [0, "Match address 2 disabled"]
+        Enabled: [1, "Match address 2 enabled"]
+    MAEN1:
+      _replace_enum:
+        Disabled: [0, "Match address 1 disabled"]
+        Enabled: [1, "Match address 1 enabled"]
+  C5:
+    RDMAS:
+      _replace_enum:
+        Interrupt: [0, "RDRF generates interrupt"]
+        Dma: [1, "RDRF generates DMA request"]
+    TDMAS:
+      _replace_enum:
+        Interrupt: [0, "TDRE generates interrupt"]
+        Dma: [1, "TDRE generates DMA request"]
+
+UART2:
+  C1:
+    PT:
+      _replace_enum:
+        Even: [0, "Even parity"]
+        Odd: [1, "Odd parity"]
+    PE:
+      _replace_enum:
+        Disabled: [0, "Parity disabled"]
+        Enabled: [1, "Parity enabled"]
+    ILT:
+      _replace_enum:
+        AfterStart: [0, "Idle after start bit"]
+        AfterStop: [1, "Idle after stop bit"]
+    WAKE:
+      _replace_enum:
+        IdleLine: [0, "Idle-line wakeup"]
+        AddressMark: [1, "Address-mark wakeup"]
+    M:
+      _replace_enum:
+        Data8: [0, "8-bit data"]
+        Data9: [1, "9-bit data"]
+    RSRC:
+      _replace_enum:
+        Internal: [0, "Internal loopback"]
+        External: [1, "Single-wire mode from RXD pin"]
+    UARTSWAI:
+      _replace_enum:
+        Running: [0, "UART clocks continue in wait mode"]
+        Stopped: [1, "UART clocks freeze in wait mode"]
+    LOOPS:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Loopback: [1, "Loop mode"]
+  C2:
+    SBK:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Break: [1, "Queue break character"]
+    RWU:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Standby: [1, "Receiver standby"]
+    RE:
+      _replace_enum:
+        Disabled: [0, "Receiver disabled"]
+        Enabled: [1, "Receiver enabled"]
+    TE:
+      _replace_enum:
+        Disabled: [0, "Transmitter disabled"]
+        Enabled: [1, "Transmitter enabled"]
+    ILIE:
+      _replace_enum:
+        Disabled: [0, "IDLE interrupt disabled"]
+        Enabled: [1, "IDLE interrupt enabled"]
+    RIE:
+      _replace_enum:
+        Disabled: [0, "RDRF interrupt disabled"]
+        Enabled: [1, "RDRF interrupt enabled"]
+    TCIE:
+      _replace_enum:
+        Disabled: [0, "TC interrupt disabled"]
+        Enabled: [1, "TC interrupt enabled"]
+    TIE:
+      _replace_enum:
+        Disabled: [0, "TDRE interrupt disabled"]
+        Enabled: [1, "TDRE interrupt enabled"]
+  C3:
+    PEIE:
+      _replace_enum:
+        Disabled: [0, "PF interrupt disabled"]
+        Enabled: [1, "PF interrupt enabled"]
+    FEIE:
+      _replace_enum:
+        Disabled: [0, "FE interrupt disabled"]
+        Enabled: [1, "FE interrupt enabled"]
+    NEIE:
+      _replace_enum:
+        Disabled: [0, "NF interrupt disabled"]
+        Enabled: [1, "NF interrupt enabled"]
+    ORIE:
+      _replace_enum:
+        Disabled: [0, "OR interrupt disabled"]
+        Enabled: [1, "OR interrupt enabled"]
+    TXINV:
+      _replace_enum:
+        Normal: [0, "Transmit data not inverted"]
+        Inverted: [1, "Transmit data inverted"]
+    TXDIR:
+      _replace_enum:
+        Input: [0, "TXD pin is input in single-wire mode"]
+        Output: [1, "TXD pin is output in single-wire mode"]
+  C4:
+    M10:
+      _replace_enum:
+        Disabled: [0, "10-bit mode disabled"]
+        Enabled: [1, "10-bit mode enabled"]
+    MAEN2:
+      _replace_enum:
+        Disabled: [0, "Match address 2 disabled"]
+        Enabled: [1, "Match address 2 enabled"]
+    MAEN1:
+      _replace_enum:
+        Disabled: [0, "Match address 1 disabled"]
+        Enabled: [1, "Match address 1 enabled"]
+  C5:
+    RDMAS:
+      _replace_enum:
+        Interrupt: [0, "RDRF generates interrupt"]
+        Dma: [1, "RDRF generates DMA request"]
+    TDMAS:
+      _replace_enum:
+        Interrupt: [0, "TDRE generates interrupt"]
+        Dma: [1, "TDRE generates DMA request"]

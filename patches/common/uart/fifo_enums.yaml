@@ -1,0 +1,137 @@
+# UART FIFO Register (PFIFO, CFIFO, SFIFO) enumerated values
+# UART0, UART1, UART2 — present in both variants
+# Source: K20 Sub-Family Reference Manual, UART chapter
+UART0:
+  PFIFO:
+    RXFE:
+      _replace_enum:
+        Disabled: [0, "Receive FIFO disabled"]
+        Enabled: [1, "Receive FIFO enabled"]
+    TXFE:
+      _replace_enum:
+        Disabled: [0, "Transmit FIFO disabled"]
+        Enabled: [1, "Transmit FIFO enabled"]
+  CFIFO:
+    RXUFE:
+      _replace_enum:
+        Disabled: [0, "RXUF interrupt disabled"]
+        Enabled: [1, "RXUF interrupt enabled"]
+    TXOFE:
+      _replace_enum:
+        Disabled: [0, "TXOF interrupt disabled"]
+        Enabled: [1, "TXOF interrupt enabled"]
+    RXFLUSH:
+      _replace_enum:
+        NoEffect: [0, "No flush"]
+        Flush: [1, "Flush receive FIFO"]
+    TXFLUSH:
+      _replace_enum:
+        NoEffect: [0, "No flush"]
+        Flush: [1, "Flush transmit FIFO"]
+  SFIFO:
+    RXUF:
+      _replace_enum:
+        NoUnderflow: [0, "No receive underflow"]
+        Underflow: [1, "Receive FIFO underflow"]
+    TXOF:
+      _replace_enum:
+        NoOverflow: [0, "No transmit overflow"]
+        Overflow: [1, "Transmit FIFO overflow"]
+    RXEMPT:
+      _replace_enum:
+        NotEmpty: [0, "Receive buffer not empty"]
+        Empty: [1, "Receive buffer empty"]
+    TXEMPT:
+      _replace_enum:
+        NotEmpty: [0, "Transmit buffer not empty"]
+        Empty: [1, "Transmit buffer empty"]
+
+UART1:
+  PFIFO:
+    RXFE:
+      _replace_enum:
+        Disabled: [0, "Receive FIFO disabled"]
+        Enabled: [1, "Receive FIFO enabled"]
+    TXFE:
+      _replace_enum:
+        Disabled: [0, "Transmit FIFO disabled"]
+        Enabled: [1, "Transmit FIFO enabled"]
+  CFIFO:
+    RXUFE:
+      _replace_enum:
+        Disabled: [0, "RXUF interrupt disabled"]
+        Enabled: [1, "RXUF interrupt enabled"]
+    TXOFE:
+      _replace_enum:
+        Disabled: [0, "TXOF interrupt disabled"]
+        Enabled: [1, "TXOF interrupt enabled"]
+    RXFLUSH:
+      _replace_enum:
+        NoEffect: [0, "No flush"]
+        Flush: [1, "Flush receive FIFO"]
+    TXFLUSH:
+      _replace_enum:
+        NoEffect: [0, "No flush"]
+        Flush: [1, "Flush transmit FIFO"]
+  SFIFO:
+    RXUF:
+      _replace_enum:
+        NoUnderflow: [0, "No receive underflow"]
+        Underflow: [1, "Receive FIFO underflow"]
+    TXOF:
+      _replace_enum:
+        NoOverflow: [0, "No transmit overflow"]
+        Overflow: [1, "Transmit FIFO overflow"]
+    RXEMPT:
+      _replace_enum:
+        NotEmpty: [0, "Receive buffer not empty"]
+        Empty: [1, "Receive buffer empty"]
+    TXEMPT:
+      _replace_enum:
+        NotEmpty: [0, "Transmit buffer not empty"]
+        Empty: [1, "Transmit buffer empty"]
+
+UART2:
+  PFIFO:
+    RXFE:
+      _replace_enum:
+        Disabled: [0, "Receive FIFO disabled"]
+        Enabled: [1, "Receive FIFO enabled"]
+    TXFE:
+      _replace_enum:
+        Disabled: [0, "Transmit FIFO disabled"]
+        Enabled: [1, "Transmit FIFO enabled"]
+  CFIFO:
+    RXUFE:
+      _replace_enum:
+        Disabled: [0, "RXUF interrupt disabled"]
+        Enabled: [1, "RXUF interrupt enabled"]
+    TXOFE:
+      _replace_enum:
+        Disabled: [0, "TXOF interrupt disabled"]
+        Enabled: [1, "TXOF interrupt enabled"]
+    RXFLUSH:
+      _replace_enum:
+        NoEffect: [0, "No flush"]
+        Flush: [1, "Flush receive FIFO"]
+    TXFLUSH:
+      _replace_enum:
+        NoEffect: [0, "No flush"]
+        Flush: [1, "Flush transmit FIFO"]
+  SFIFO:
+    RXUF:
+      _replace_enum:
+        NoUnderflow: [0, "No receive underflow"]
+        Underflow: [1, "Receive FIFO underflow"]
+    TXOF:
+      _replace_enum:
+        NoOverflow: [0, "No transmit overflow"]
+        Overflow: [1, "Transmit FIFO overflow"]
+    RXEMPT:
+      _replace_enum:
+        NotEmpty: [0, "Receive buffer not empty"]
+        Empty: [1, "Receive buffer empty"]
+    TXEMPT:
+      _replace_enum:
+        NotEmpty: [0, "Transmit buffer not empty"]
+        Empty: [1, "Transmit buffer empty"]
