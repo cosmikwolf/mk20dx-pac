@@ -1,0 +1,45 @@
+# SPI CTAR (Clock and Transfer Attributes Register) enumerated values
+# SPI0 — present in both variants
+# Source: K20 Sub-Family Reference Manual, DSPI chapter
+SPI0:
+  "CTAR%s":
+    LSBFE:
+      _replace_enum:
+        MsbFirst: [0, "Data transferred MSB first"]
+        LsbFirst: [1, "Data transferred LSB first"]
+    CPHA:
+      _replace_enum:
+        CaptureLeading: [0, "Data captured on leading edge, changed on following edge"]
+        CaptureFollowing: [1, "Data changed on leading edge, captured on following edge"]
+    CPOL:
+      _replace_enum:
+        IdleLow: [0, "Inactive state of SCK is low"]
+        IdleHigh: [1, "Inactive state of SCK is high"]
+    DBR:
+      _replace_enum:
+        Normal: [0, "Normal baud rate"]
+        Double: [1, "Double baud rate"]
+    PBR:
+      _replace_enum:
+        Div2: [0, "Baud rate prescaler 2"]
+        Div3: [1, "Baud rate prescaler 3"]
+        Div5: [2, "Baud rate prescaler 5"]
+        Div7: [3, "Baud rate prescaler 7"]
+    PDT:
+      _replace_enum:
+        Scale1: [0, "Delay prescaler 1"]
+        Scale3: [1, "Delay prescaler 3"]
+        Scale5: [2, "Delay prescaler 5"]
+        Scale7: [3, "Delay prescaler 7"]
+    PASC:
+      _replace_enum:
+        Scale1: [0, "After SCK delay prescaler 1"]
+        Scale3: [1, "After SCK delay prescaler 3"]
+        Scale5: [2, "After SCK delay prescaler 5"]
+        Scale7: [3, "After SCK delay prescaler 7"]
+    PCSSCK:
+      _replace_enum:
+        Scale1: [0, "PCS to SCK delay prescaler 1"]
+        Scale3: [1, "PCS to SCK delay prescaler 3"]
+        Scale5: [2, "PCS to SCK delay prescaler 5"]
+        Scale7: [3, "PCS to SCK delay prescaler 7"]

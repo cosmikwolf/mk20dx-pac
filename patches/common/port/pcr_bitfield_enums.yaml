@@ -1,0 +1,157 @@
+# PORT PCR bitfield enumerated values
+# Replaces raw _0/_1 names with semantic names for pin configuration fields
+# Source: K20 Sub-Family Reference Manual, PORT chapter
+PORTA:
+  "PCR%s":
+    PS:
+      _replace_enum:
+        PullDown: [0, "Internal pulldown resistor enabled"]
+        PullUp: [1, "Internal pullup resistor enabled"]
+    PE:
+      _replace_enum:
+        Disabled: [0, "Internal pull resistor disabled"]
+        Enabled: [1, "Internal pull resistor enabled"]
+    SRE:
+      _replace_enum:
+        Fast: [0, "Fast slew rate"]
+        Slow: [1, "Slow slew rate"]
+    PFE:
+      _replace_enum:
+        Disabled: [0, "Passive input filter disabled"]
+        Enabled: [1, "Passive input filter enabled"]
+    ODE:
+      _replace_enum:
+        Disabled: [0, "Open drain output disabled"]
+        Enabled: [1, "Open drain output enabled"]
+    DSE:
+      _replace_enum:
+        Low: [0, "Low drive strength"]
+        High: [1, "High drive strength"]
+    LK:
+      _replace_enum:
+        Unlocked: [0, "Pin control register is not locked"]
+        Locked: [1, "Pin control register is locked"]
+
+PORTB:
+  "PCR%s":
+    PS:
+      _replace_enum:
+        PullDown: [0, "Internal pulldown resistor enabled"]
+        PullUp: [1, "Internal pullup resistor enabled"]
+    PE:
+      _replace_enum:
+        Disabled: [0, "Internal pull resistor disabled"]
+        Enabled: [1, "Internal pull resistor enabled"]
+    SRE:
+      _replace_enum:
+        Fast: [0, "Fast slew rate"]
+        Slow: [1, "Slow slew rate"]
+    PFE:
+      _replace_enum:
+        Disabled: [0, "Passive input filter disabled"]
+        Enabled: [1, "Passive input filter enabled"]
+    ODE:
+      _replace_enum:
+        Disabled: [0, "Open drain output disabled"]
+        Enabled: [1, "Open drain output enabled"]
+    DSE:
+      _replace_enum:
+        Low: [0, "Low drive strength"]
+        High: [1, "High drive strength"]
+    LK:
+      _replace_enum:
+        Unlocked: [0, "Pin control register is not locked"]
+        Locked: [1, "Pin control register is locked"]
+
+PORTC:
+  "PCR%s":
+    PS:
+      _replace_enum:
+        PullDown: [0, "Internal pulldown resistor enabled"]
+        PullUp: [1, "Internal pullup resistor enabled"]
+    PE:
+      _replace_enum:
+        Disabled: [0, "Internal pull resistor disabled"]
+        Enabled: [1, "Internal pull resistor enabled"]
+    SRE:
+      _replace_enum:
+        Fast: [0, "Fast slew rate"]
+        Slow: [1, "Slow slew rate"]
+    PFE:
+      _replace_enum:
+        Disabled: [0, "Passive input filter disabled"]
+        Enabled: [1, "Passive input filter enabled"]
+    ODE:
+      _replace_enum:
+        Disabled: [0, "Open drain output disabled"]
+        Enabled: [1, "Open drain output enabled"]
+    DSE:
+      _replace_enum:
+        Low: [0, "Low drive strength"]
+        High: [1, "High drive strength"]
+    LK:
+      _replace_enum:
+        Unlocked: [0, "Pin control register is not locked"]
+        Locked: [1, "Pin control register is locked"]
+
+PORTD:
+  "PCR%s":
+    PS:
+      _replace_enum:
+        PullDown: [0, "Internal pulldown resistor enabled"]
+        PullUp: [1, "Internal pullup resistor enabled"]
+    PE:
+      _replace_enum:
+        Disabled: [0, "Internal pull resistor disabled"]
+        Enabled: [1, "Internal pull resistor enabled"]
+    SRE:
+      _replace_enum:
+        Fast: [0, "Fast slew rate"]
+        Slow: [1, "Slow slew rate"]
+    PFE:
+      _replace_enum:
+        Disabled: [0, "Passive input filter disabled"]
+        Enabled: [1, "Passive input filter enabled"]
+    ODE:
+      _replace_enum:
+        Disabled: [0, "Open drain output disabled"]
+        Enabled: [1, "Open drain output enabled"]
+    DSE:
+      _replace_enum:
+        Low: [0, "Low drive strength"]
+        High: [1, "High drive strength"]
+    LK:
+      _replace_enum:
+        Unlocked: [0, "Pin control register is not locked"]
+        Locked: [1, "Pin control register is locked"]
+
+PORTE:
+  "PCR%s":
+    PS:
+      _replace_enum:
+        PullDown: [0, "Internal pulldown resistor enabled"]
+        PullUp: [1, "Internal pullup resistor enabled"]
+    PE:
+      _replace_enum:
+        Disabled: [0, "Internal pull resistor disabled"]
+        Enabled: [1, "Internal pull resistor enabled"]
+    SRE:
+      _replace_enum:
+        Fast: [0, "Fast slew rate"]
+        Slow: [1, "Slow slew rate"]
+    PFE:
+      _replace_enum:
+        Disabled: [0, "Passive input filter disabled"]
+        Enabled: [1, "Passive input filter enabled"]
+    ODE:
+      _replace_enum:
+        Disabled: [0, "Open drain output disabled"]
+        Enabled: [1, "Open drain output enabled"]
+    DSE:
+      _replace_enum:
+        Low: [0, "Low drive strength"]
+        High: [1, "High drive strength"]
+    LK:
+      _replace_enum:
+        Unlocked: [0, "Pin control register is not locked"]
+        Locked: [1, "Pin control register is locked"]

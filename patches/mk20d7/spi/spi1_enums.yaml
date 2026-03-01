@@ -1,0 +1,172 @@
+# SPI1 enumerated values (MK20D7 only — SPI1 not present in MK20D5)
+# Same enum values as SPI0 in common patches
+SPI1:
+  MCR:
+    HALT:
+      _replace_enum:
+        Running: [0, "Start transfers"]
+        Halted: [1, "Stop transfers"]
+    CLR_RXF:
+      _replace_enum:
+        NoEffect: [0, "Do not clear RX FIFO"]
+        Clear: [1, "Clear RX FIFO counter"]
+    CLR_TXF:
+      _replace_enum:
+        NoEffect: [0, "Do not clear TX FIFO"]
+        Clear: [1, "Clear TX FIFO counter"]
+    DIS_RXF:
+      _replace_enum:
+        Enabled: [0, "RX FIFO enabled"]
+        Disabled: [1, "RX FIFO disabled"]
+    DIS_TXF:
+      _replace_enum:
+        Enabled: [0, "TX FIFO enabled"]
+        Disabled: [1, "TX FIFO disabled"]
+    MDIS:
+      _replace_enum:
+        Enabled: [0, "Enable DSPI clocks"]
+        Disabled: [1, "Allow external logic to disable DSPI clocks"]
+    DOZE:
+      _replace_enum:
+        NoEffect: [0, "Doze mode has no effect on DSPI"]
+        Disabled: [1, "Doze mode disables DSPI"]
+    ROOE:
+      _replace_enum:
+        Ignore: [0, "Incoming data is ignored on overflow"]
+        ShiftIn: [1, "Incoming data is shifted in on overflow"]
+    PCSSE:
+      _replace_enum:
+        ChipSelect: [0, "PCS5 used as chip select"]
+        Strobe: [1, "PCS5 used as active-low PCS strobe"]
+    MTFE:
+      _replace_enum:
+        Disabled: [0, "Modified SPI transfer format disabled"]
+        Enabled: [1, "Modified SPI transfer format enabled"]
+    FRZ:
+      _replace_enum:
+        NoFreeze: [0, "Do not halt in debug mode"]
+        Freeze: [1, "Halt transfers in debug mode"]
+    CONT_SCKE:
+      _replace_enum:
+        Disabled: [0, "Continuous SCK disabled"]
+        Enabled: [1, "Continuous SCK enabled"]
+    MSTR:
+      _replace_enum:
+        Slave: [0, "DSPI in slave mode"]
+        Master: [1, "DSPI in master mode"]
+  "CTAR%s":
+    LSBFE:
+      _replace_enum:
+        MsbFirst: [0, "Data transferred MSB first"]
+        LsbFirst: [1, "Data transferred LSB first"]
+    CPHA:
+      _replace_enum:
+        CaptureLeading: [0, "Data captured on leading edge, changed on following edge"]
+        CaptureFollowing: [1, "Data changed on leading edge, captured on following edge"]
+    CPOL:
+      _replace_enum:
+        IdleLow: [0, "Inactive state of SCK is low"]
+        IdleHigh: [1, "Inactive state of SCK is high"]
+    DBR:
+      _replace_enum:
+        Normal: [0, "Normal baud rate"]
+        Double: [1, "Double baud rate"]
+    PBR:
+      _replace_enum:
+        Div2: [0, "Baud rate prescaler 2"]
+        Div3: [1, "Baud rate prescaler 3"]
+        Div5: [2, "Baud rate prescaler 5"]
+        Div7: [3, "Baud rate prescaler 7"]
+    PDT:
+      _replace_enum:
+        Scale1: [0, "Delay prescaler 1"]
+        Scale3: [1, "Delay prescaler 3"]
+        Scale5: [2, "Delay prescaler 5"]
+        Scale7: [3, "Delay prescaler 7"]
+    PASC:
+      _replace_enum:
+        Scale1: [0, "After SCK delay prescaler 1"]
+        Scale3: [1, "After SCK delay prescaler 3"]
+        Scale5: [2, "After SCK delay prescaler 5"]
+        Scale7: [3, "After SCK delay prescaler 7"]
+    PCSSCK:
+      _replace_enum:
+        Scale1: [0, "PCS to SCK delay prescaler 1"]
+        Scale3: [1, "PCS to SCK delay prescaler 3"]
+        Scale5: [2, "PCS to SCK delay prescaler 5"]
+        Scale7: [3, "PCS to SCK delay prescaler 7"]
+  SR:
+    RFDF:
+      _replace_enum:
+        Empty: [0, "RX FIFO is empty"]
+        NotEmpty: [1, "RX FIFO is not empty"]
+    RFOF:
+      _replace_enum:
+        NoOverflow: [0, "No RX FIFO overflow"]
+        Overflow: [1, "RX FIFO overflow has occurred"]
+    TFFF:
+      _replace_enum:
+        Full: [0, "TX FIFO is full"]
+        NotFull: [1, "TX FIFO is not full"]
+    TFUF:
+      _replace_enum:
+        NoUnderflow: [0, "No TX underflow"]
+        Underflow: [1, "TX FIFO underflow has occurred"]
+    EOQF:
+      _replace_enum:
+        NotSet: [0, "EOQ bit not set in executing entry"]
+        Set: [1, "EOQ bit set in executing entry"]
+    TXRXS:
+      _replace_enum:
+        Stopped: [0, "Transmit and receive operations disabled"]
+        Started: [1, "Transmit and receive operations enabled"]
+    TCF:
+      _replace_enum:
+        NotComplete: [0, "Transfer not complete"]
+        Complete: [1, "Transfer complete"]
+  PUSHR:
+    CTCNT:
+      _replace_enum:
+        Keep: [0, "Do not clear transfer counter"]
+        Clear: [1, "Clear transfer counter"]
+    EOQ:
+      _replace_enum:
+        NotLast: [0, "Not last data in queue"]
+        Last: [1, "Last data in queue"]
+    CONT:
+      _replace_enum:
+        Deassert: [0, "Return PCS to inactive between transfers"]
+        Assert: [1, "Keep PCS asserted between transfers"]
+  RSER:
+    RFDF_DIRS:
+      _replace_enum:
+        Irq: [0, "RFDF flag generates interrupt request"]
+        Dma: [1, "RFDF flag generates DMA request"]
+    RFDF_RE:
+      _replace_enum:
+        Disabled: [0, "RFDF interrupt or DMA request disabled"]
+        Enabled: [1, "RFDF interrupt or DMA request enabled"]
+    RFOF_RE:
+      _replace_enum:
+        Disabled: [0, "RFOF interrupt request disabled"]
+        Enabled: [1, "RFOF interrupt request enabled"]
+    TFFF_DIRS:
+      _replace_enum:
+        Irq: [0, "TFFF flag generates interrupt request"]
+        Dma: [1, "TFFF flag generates DMA request"]
+    TFFF_RE:
+      _replace_enum:
+        Disabled: [0, "TFFF interrupt or DMA request disabled"]
+        Enabled: [1, "TFFF interrupt or DMA request enabled"]
+    TFUF_RE:
+      _replace_enum:
+        Disabled: [0, "TFUF interrupt request disabled"]
+        Enabled: [1, "TFUF interrupt request enabled"]
+    EOQF_RE:
+      _replace_enum:
+        Disabled: [0, "EOQF interrupt request disabled"]
+        Enabled: [1, "EOQF interrupt request enabled"]
+    TCF_RE:
+      _replace_enum:
+        Disabled: [0, "TCF interrupt request disabled"]
+        Enabled: [1, "TCF interrupt request enabled"]

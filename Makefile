@@ -6,13 +6,14 @@ DEVICES = mk20d5 mk20d7
 all: patch svd2rust fmt check
 
 # Apply svdtools YAML patches to SVD files
+# Note: static pattern rules required for macOS GNU Make 3.81 compatibility
 patch: $(DEVICES:%=patch-%)
-patch-%:
+$(DEVICES:%=patch-%): patch-%:
 	svdtools patch devices/$*.yaml
 
 # Generate Rust crate code from patched SVDs
 svd2rust: $(DEVICES:%=svd2rust-%)
-svd2rust-%:
+$(DEVICES:%=svd2rust-%): svd2rust-%:
 	@if [ -f svd/$*.svd.patched ]; then \
 		cd $* && svd2rust -i ../svd/$*.svd.patched; \
 	else \
@@ -23,19 +24,19 @@ svd2rust-%:
 
 # Format generated code
 fmt: $(DEVICES:%=fmt-%)
-fmt-%:
+$(DEVICES:%=fmt-%): fmt-%:
 	cd $* && cargo fmt
 
 # Check generated crates compile
 check: $(DEVICES:%=check-%)
-check-%:
+$(DEVICES:%=check-%): check-%:
 	cd $* && cargo check
 
 # Clean generated files
 clean:
 	rm -f svd/*.patched
-	rm -rf mk20d5/src/*.rs mk20d5/build.rs mk20d5/device.x
-	rm -rf mk20d7/src/*.rs mk20d7/build.rs mk20d7/device.x
+	rm -rf mk20d5/src/ mk20d5/build.rs mk20d5/device.x
+	rm -rf mk20d7/src/ mk20d7/build.rs mk20d7/device.x
 
 # Run comparison script
 compare-%:

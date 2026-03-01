@@ -1,0 +1,57 @@
+# SPI MCR (Module Configuration Register) enumerated values
+# SPI0 — present in both variants
+# Source: K20 Sub-Family Reference Manual, DSPI chapter
+SPI0:
+  MCR:
+    HALT:
+      _replace_enum:
+        Running: [0, "Start transfers"]
+        Halted: [1, "Stop transfers"]
+    CLR_RXF:
+      _replace_enum:
+        NoEffect: [0, "Do not clear RX FIFO"]
+        Clear: [1, "Clear RX FIFO counter"]
+    CLR_TXF:
+      _replace_enum:
+        NoEffect: [0, "Do not clear TX FIFO"]
+        Clear: [1, "Clear TX FIFO counter"]
+    DIS_RXF:
+      _replace_enum:
+        Enabled: [0, "RX FIFO enabled"]
+        Disabled: [1, "RX FIFO disabled"]
+    DIS_TXF:
+      _replace_enum:
+        Enabled: [0, "TX FIFO enabled"]
+        Disabled: [1, "TX FIFO disabled"]
+    MDIS:
+      _replace_enum:
+        Enabled: [0, "Enable DSPI clocks"]
+        Disabled: [1, "Allow external logic to disable DSPI clocks"]
+    DOZE:
+      _replace_enum:
+        NoEffect: [0, "Doze mode has no effect on DSPI"]
+        Disabled: [1, "Doze mode disables DSPI"]
+    ROOE:
+      _replace_enum:
+        Ignore: [0, "Incoming data is ignored on overflow"]
+        ShiftIn: [1, "Incoming data is shifted in on overflow"]
+    PCSSE:
+      _replace_enum:
+        ChipSelect: [0, "PCS5 used as chip select"]
+        Strobe: [1, "PCS5 used as active-low PCS strobe"]
+    MTFE:
+      _replace_enum:
+        Disabled: [0, "Modified SPI transfer format disabled"]
+        Enabled: [1, "Modified SPI transfer format enabled"]
+    FRZ:
+      _replace_enum:
+        NoFreeze: [0, "Do not halt in debug mode"]
+        Freeze: [1, "Halt transfers in debug mode"]
+    CONT_SCKE:
+      _replace_enum:
+        Disabled: [0, "Continuous SCK disabled"]
+        Enabled: [1, "Continuous SCK enabled"]
+    MSTR:
+      _replace_enum:
+        Slave: [0, "DSPI in slave mode"]
+        Master: [1, "DSPI in master mode"]

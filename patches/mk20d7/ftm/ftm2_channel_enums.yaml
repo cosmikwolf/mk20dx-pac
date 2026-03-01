@@ -1,0 +1,281 @@
+# FTM2 channel register enumerated values (MK20D7 only — FTM2 not present in MK20D5)
+# Same enum values as FTM0/FTM1 in common patch
+FTM2:
+  SWOCTRL:
+    CH0OC:
+      _replace_enum:
+        Disabled: [0, "Software output control disabled"]
+        Enabled: [1, "Software output control enabled"]
+    CH1OC:
+      _replace_enum:
+        Disabled: [0, "Software output control disabled"]
+        Enabled: [1, "Software output control enabled"]
+    CH2OC:
+      _replace_enum:
+        Disabled: [0, "Software output control disabled"]
+        Enabled: [1, "Software output control enabled"]
+    CH3OC:
+      _replace_enum:
+        Disabled: [0, "Software output control disabled"]
+        Enabled: [1, "Software output control enabled"]
+    CH4OC:
+      _replace_enum:
+        Disabled: [0, "Software output control disabled"]
+        Enabled: [1, "Software output control enabled"]
+    CH5OC:
+      _replace_enum:
+        Disabled: [0, "Software output control disabled"]
+        Enabled: [1, "Software output control enabled"]
+    CH6OC:
+      _replace_enum:
+        Disabled: [0, "Software output control disabled"]
+        Enabled: [1, "Software output control enabled"]
+    CH7OC:
+      _replace_enum:
+        Disabled: [0, "Software output control disabled"]
+        Enabled: [1, "Software output control enabled"]
+    CH0OCV:
+      _replace_enum:
+        ForceLow: [0, "Force channel output low"]
+        ForceHigh: [1, "Force channel output high"]
+    CH1OCV:
+      _replace_enum:
+        ForceLow: [0, "Force channel output low"]
+        ForceHigh: [1, "Force channel output high"]
+    CH2OCV:
+      _replace_enum:
+        ForceLow: [0, "Force channel output low"]
+        ForceHigh: [1, "Force channel output high"]
+    CH3OCV:
+      _replace_enum:
+        ForceLow: [0, "Force channel output low"]
+        ForceHigh: [1, "Force channel output high"]
+    CH4OCV:
+      _replace_enum:
+        ForceLow: [0, "Force channel output low"]
+        ForceHigh: [1, "Force channel output high"]
+    CH5OCV:
+      _replace_enum:
+        ForceLow: [0, "Force channel output low"]
+        ForceHigh: [1, "Force channel output high"]
+    CH6OCV:
+      _replace_enum:
+        ForceLow: [0, "Force channel output low"]
+        ForceHigh: [1, "Force channel output high"]
+    CH7OCV:
+      _replace_enum:
+        ForceLow: [0, "Force channel output low"]
+        ForceHigh: [1, "Force channel output high"]
+  OUTINIT:
+    CH0OI:
+      _replace_enum:
+        Low: [0, "Initial value is low"]
+        High: [1, "Initial value is high"]
+    CH1OI:
+      _replace_enum:
+        Low: [0, "Initial value is low"]
+        High: [1, "Initial value is high"]
+    CH2OI:
+      _replace_enum:
+        Low: [0, "Initial value is low"]
+        High: [1, "Initial value is high"]
+    CH3OI:
+      _replace_enum:
+        Low: [0, "Initial value is low"]
+        High: [1, "Initial value is high"]
+    CH4OI:
+      _replace_enum:
+        Low: [0, "Initial value is low"]
+        High: [1, "Initial value is high"]
+    CH5OI:
+      _replace_enum:
+        Low: [0, "Initial value is low"]
+        High: [1, "Initial value is high"]
+    CH6OI:
+      _replace_enum:
+        Low: [0, "Initial value is low"]
+        High: [1, "Initial value is high"]
+    CH7OI:
+      _replace_enum:
+        Low: [0, "Initial value is low"]
+        High: [1, "Initial value is high"]
+  POL:
+    POL0:
+      _replace_enum:
+        ActiveHigh: [0, "Channel output is active high"]
+        ActiveLow: [1, "Channel output is active low"]
+    POL1:
+      _replace_enum:
+        ActiveHigh: [0, "Channel output is active high"]
+        ActiveLow: [1, "Channel output is active low"]
+    POL2:
+      _replace_enum:
+        ActiveHigh: [0, "Channel output is active high"]
+        ActiveLow: [1, "Channel output is active low"]
+    POL3:
+      _replace_enum:
+        ActiveHigh: [0, "Channel output is active high"]
+        ActiveLow: [1, "Channel output is active low"]
+    POL4:
+      _replace_enum:
+        ActiveHigh: [0, "Channel output is active high"]
+        ActiveLow: [1, "Channel output is active low"]
+    POL5:
+      _replace_enum:
+        ActiveHigh: [0, "Channel output is active high"]
+        ActiveLow: [1, "Channel output is active low"]
+    POL6:
+      _replace_enum:
+        ActiveHigh: [0, "Channel output is active high"]
+        ActiveLow: [1, "Channel output is active low"]
+    POL7:
+      _replace_enum:
+        ActiveHigh: [0, "Channel output is active high"]
+        ActiveLow: [1, "Channel output is active low"]
+  COMBINE:
+    COMBINE0:
+      _replace_enum:
+        Disabled: [0, "Channels are independent"]
+        Enabled: [1, "Channels are combined"]
+    COMP0:
+      _replace_enum:
+        Disabled: [0, "Complementary output disabled"]
+        Enabled: [1, "Complementary output enabled"]
+    DECAPEN0:
+      _replace_enum:
+        Disabled: [0, "Dual edge capture disabled"]
+        Enabled: [1, "Dual edge capture enabled"]
+    DTEN0:
+      _replace_enum:
+        Disabled: [0, "Dead-time insertion disabled"]
+        Enabled: [1, "Dead-time insertion enabled"]
+    SYNCEN0:
+      _replace_enum:
+        Disabled: [0, "PWM synchronization disabled"]
+        Enabled: [1, "PWM synchronization enabled"]
+    FAULTEN0:
+      _replace_enum:
+        Disabled: [0, "Fault control disabled"]
+        Enabled: [1, "Fault control enabled"]
+    COMBINE1:
+      _replace_enum:
+        Disabled: [0, "Channels are independent"]
+        Enabled: [1, "Channels are combined"]
+    COMP1:
+      _replace_enum:
+        Disabled: [0, "Complementary output disabled"]
+        Enabled: [1, "Complementary output enabled"]
+    DECAPEN1:
+      _replace_enum:
+        Disabled: [0, "Dual edge capture disabled"]
+        Enabled: [1, "Dual edge capture enabled"]
+    DTEN1:
+      _replace_enum:
+        Disabled: [0, "Dead-time insertion disabled"]
+        Enabled: [1, "Dead-time insertion enabled"]
+    SYNCEN1:
+      _replace_enum:
+        Disabled: [0, "PWM synchronization disabled"]
+        Enabled: [1, "PWM synchronization enabled"]
+    FAULTEN1:
+      _replace_enum:
+        Disabled: [0, "Fault control disabled"]
+        Enabled: [1, "Fault control enabled"]
+    COMBINE2:
+      _replace_enum:
+        Disabled: [0, "Channels are independent"]
+        Enabled: [1, "Channels are combined"]
+    COMP2:
+      _replace_enum:
+        Disabled: [0, "Complementary output disabled"]
+        Enabled: [1, "Complementary output enabled"]
+    DECAPEN2:
+      _replace_enum:
+        Disabled: [0, "Dual edge capture disabled"]
+        Enabled: [1, "Dual edge capture enabled"]
+    DTEN2:
+      _replace_enum:
+        Disabled: [0, "Dead-time insertion disabled"]
+        Enabled: [1, "Dead-time insertion enabled"]
+    SYNCEN2:
+      _replace_enum:
+        Disabled: [0, "PWM synchronization disabled"]
+        Enabled: [1, "PWM synchronization enabled"]
+    FAULTEN2:
+      _replace_enum:
+        Disabled: [0, "Fault control disabled"]
+        Enabled: [1, "Fault control enabled"]
+    COMBINE3:
+      _replace_enum:
+        Disabled: [0, "Channels are independent"]
+        Enabled: [1, "Channels are combined"]
+    COMP3:
+      _replace_enum:
+        Disabled: [0, "Complementary output disabled"]
+        Enabled: [1, "Complementary output enabled"]
+    DECAPEN3:
+      _replace_enum:
+        Disabled: [0, "Dual edge capture disabled"]
+        Enabled: [1, "Dual edge capture enabled"]
+    DTEN3:
+      _replace_enum:
+        Disabled: [0, "Dead-time insertion disabled"]
+        Enabled: [1, "Dead-time insertion enabled"]
+    SYNCEN3:
+      _replace_enum:
+        Disabled: [0, "PWM synchronization disabled"]
+        Enabled: [1, "PWM synchronization enabled"]
+    FAULTEN3:
+      _replace_enum:
+        Disabled: [0, "Fault control disabled"]
+        Enabled: [1, "Fault control enabled"]
+  INVCTRL:
+    INV0EN:
+      _replace_enum:
+        Disabled: [0, "Pair output not inverted"]
+        Enabled: [1, "Pair output inverted"]
+    INV1EN:
+      _replace_enum:
+        Disabled: [0, "Pair output not inverted"]
+        Enabled: [1, "Pair output inverted"]
+    INV2EN:
+      _replace_enum:
+        Disabled: [0, "Pair output not inverted"]
+        Enabled: [1, "Pair output inverted"]
+    INV3EN:
+      _replace_enum:
+        Disabled: [0, "Pair output not inverted"]
+        Enabled: [1, "Pair output inverted"]
+  OUTMASK:
+    CH0OM:
+      _replace_enum:
+        Unmasked: [0, "Channel output not masked"]
+        Masked: [1, "Channel output masked"]
+    CH1OM:
+      _replace_enum:
+        Unmasked: [0, "Channel output not masked"]
+        Masked: [1, "Channel output masked"]
+    CH2OM:
+      _replace_enum:
+        Unmasked: [0, "Channel output not masked"]
+        Masked: [1, "Channel output masked"]
+    CH3OM:
+      _replace_enum:
+        Unmasked: [0, "Channel output not masked"]
+        Masked: [1, "Channel output masked"]
+    CH4OM:
+      _replace_enum:
+        Unmasked: [0, "Channel output not masked"]
+        Masked: [1, "Channel output masked"]
+    CH5OM:
+      _replace_enum:
+        Unmasked: [0, "Channel output not masked"]
+        Masked: [1, "Channel output masked"]
+    CH6OM:
+      _replace_enum:
+        Unmasked: [0, "Channel output not masked"]
+        Masked: [1, "Channel output masked"]
+    CH7OM:
+      _replace_enum:
+        Unmasked: [0, "Channel output not masked"]
+        Masked: [1, "Channel output masked"]

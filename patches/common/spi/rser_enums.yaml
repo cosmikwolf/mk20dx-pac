@@ -1,0 +1,37 @@
+# SPI RSER (DMA/Interrupt Request Select and Enable Register) enumerated values
+# SPI0 — present in both variants
+# Source: K20 Sub-Family Reference Manual, DSPI chapter
+SPI0:
+  RSER:
+    RFDF_DIRS:
+      _replace_enum:
+        Irq: [0, "RFDF flag generates interrupt request"]
+        Dma: [1, "RFDF flag generates DMA request"]
+    RFDF_RE:
+      _replace_enum:
+        Disabled: [0, "RFDF interrupt or DMA request disabled"]
+        Enabled: [1, "RFDF interrupt or DMA request enabled"]
+    RFOF_RE:
+      _replace_enum:
+        Disabled: [0, "RFOF interrupt request disabled"]
+        Enabled: [1, "RFOF interrupt request enabled"]
+    TFFF_DIRS:
+      _replace_enum:
+        Irq: [0, "TFFF flag generates interrupt request"]
+        Dma: [1, "TFFF flag generates DMA request"]
+    TFFF_RE:
+      _replace_enum:
+        Disabled: [0, "TFFF interrupt or DMA request disabled"]
+        Enabled: [1, "TFFF interrupt or DMA request enabled"]
+    TFUF_RE:
+      _replace_enum:
+        Disabled: [0, "TFUF interrupt request disabled"]
+        Enabled: [1, "TFUF interrupt request enabled"]
+    EOQF_RE:
+      _replace_enum:
+        Disabled: [0, "EOQF interrupt request disabled"]
+        Enabled: [1, "EOQF interrupt request enabled"]
+    TCF_RE:
+      _replace_enum:
+        Disabled: [0, "TCF interrupt request disabled"]
+        Enabled: [1, "TCF interrupt request enabled"]

@@ -1,0 +1,33 @@
+# SPI SR (Status Register) enumerated values
+# SPI0 — present in both variants
+# Source: K20 Sub-Family Reference Manual, DSPI chapter
+SPI0:
+  SR:
+    RFDF:
+      _replace_enum:
+        Empty: [0, "RX FIFO is empty"]
+        NotEmpty: [1, "RX FIFO is not empty"]
+    RFOF:
+      _replace_enum:
+        NoOverflow: [0, "No RX FIFO overflow"]
+        Overflow: [1, "RX FIFO overflow has occurred"]
+    TFFF:
+      _replace_enum:
+        Full: [0, "TX FIFO is full"]
+        NotFull: [1, "TX FIFO is not full"]
+    TFUF:
+      _replace_enum:
+        NoUnderflow: [0, "No TX underflow"]
+        Underflow: [1, "TX FIFO underflow has occurred"]
+    EOQF:
+      _replace_enum:
+        NotSet: [0, "EOQ bit not set in executing entry"]
+        Set: [1, "EOQ bit set in executing entry"]
+    TXRXS:
+      _replace_enum:
+        Stopped: [0, "Transmit and receive operations disabled"]
+        Started: [1, "Transmit and receive operations enabled"]
+    TCF:
+      _replace_enum:
+        NotComplete: [0, "Transfer not complete"]
+        Complete: [1, "Transfer complete"]
