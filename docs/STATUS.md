@@ -472,10 +472,10 @@ Raw bit-pattern enum names (e.g., `_010`, `_101`) were replaced with meaningful 
 | `patches/common/sim/sopt2_enums.yaml` | SIM | SOPT2 PLLFLLSEL, CLKOUTSEL |
 | `patches/common/sim/scgc_clock_gate_enums.yaml` | SIM | SCGC4/5/6/7 clock gate fields → Enabled/Disabled |
 | `patches/common/dma/tcd_attr_enums.yaml` | DMA TCD | ATTR SSIZE, DSIZE |
-| `patches/common/spi/mcr_enums.yaml` | SPI0 | MCR module control enums |
+| `patches/common/spi/mcr_enums.yaml` | SPI0 | MCR module control enums (HALT, CLR_RXF/TXF, DIS_RXF/TXF, MDIS, DOZE, ROOE, PCSSE, MTFE, FRZ, CONT_SCKE, MSTR, DCONF, PCSIS, SMPL_PT) |
 | `patches/common/spi/ctar_enums.yaml` | SPI0 | CTAR baud rate / frame enums |
 | `patches/common/spi/sr_enums.yaml` | SPI0 | SR status flag enums |
-| `patches/common/spi/pushr_enums.yaml` | SPI0 | PUSHR command enums |
+| `patches/common/spi/pushr_enums.yaml` | SPI0 | PUSHR command enums (PCS, CTCNT, EOQ, CTAS, CONT) |
 | `patches/common/spi/rser_enums.yaml` | SPI0 | RSER DMA/interrupt request enums |
 | `patches/common/uart/control_enums.yaml` | UART0/1/2 | C1-C5 (PE, PT, M, TE, RE, TIE, RIE, TCIE, TDMAS, RDMAS) |
 | `patches/common/uart/status_enums.yaml` | UART0/1/2 | S1, S2 (PF, FE, NF, OR, RDRF, TC, TDRE, RAF, etc.) |
@@ -544,10 +544,10 @@ Used `_replace_enum` for fields that already had NXP-provided enums with raw bit
 | `patches/mk20d7/ftm/ftm2_sc_enums.yaml` | FTM2 SC enums (MK20D7 only) | Applied, verified |
 | `patches/mk20d7/ftm/ftm2_channel_enums.yaml` | FTM2 channel enums (MK20D7 only) | Applied, verified |
 | `patches/mk20d7/adc/adc1_cfg_enums.yaml` | ADC1 CFG enums (MK20D7 only) | Applied, verified |
-| `patches/common/spi/mcr_enums.yaml` | SPI0 MCR semantic enums | Applied, verified |
+| `patches/common/spi/mcr_enums.yaml` | SPI0 MCR semantic enums (incl. DCONF, PCSIS, SMPL_PT) | Applied, verified |
 | `patches/common/spi/ctar_enums.yaml` | SPI0 CTAR semantic enums | Applied, verified |
 | `patches/common/spi/sr_enums.yaml` | SPI0 SR semantic enums | Applied, verified |
-| `patches/common/spi/pushr_enums.yaml` | SPI0 PUSHR semantic enums | Applied, verified |
+| `patches/common/spi/pushr_enums.yaml` | SPI0 PUSHR semantic enums (incl. PCS, CTAS) | Applied, verified |
 | `patches/common/spi/rser_enums.yaml` | SPI0 RSER semantic enums | Applied, verified |
 | `patches/mk20d7/spi/spi1_enums.yaml` | SPI1 enums (MK20D7 only) | Applied, verified |
 | `patches/common/uart/control_enums.yaml` | UART0/1/2 C1-C5 semantic enums | Applied, verified |

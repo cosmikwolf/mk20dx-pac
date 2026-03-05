@@ -54,6 +54,18 @@ SPI1:
       _replace_enum:
         Slave: [0, "DSPI in slave mode"]
         Master: [1, "DSPI in master mode"]
+    DCONF:
+      _replace_enum:
+        Spi: [0, "SPI"]
+    PCSIS:
+      _replace_enum:
+        Low: [0, "The inactive state of PCSx is low"]
+        High: [1, "The inactive state of PCSx is high"]
+    SMPL_PT:
+      _replace_enum:
+        Clocks0: [0, "0 system clocks between SCK edge and SIN sample"]
+        Clocks1: [1, "1 system clock between SCK edge and SIN sample"]
+        Clocks2: [2, "2 system clocks between SCK edge and SIN sample"]
   "CTAR%s":
     LSBFE:
       _replace_enum:
@@ -125,6 +137,10 @@ SPI1:
         NotComplete: [0, "Transfer not complete"]
         Complete: [1, "Transfer complete"]
   PUSHR:
+    PCS:
+      _replace_enum:
+        Negate: [0, "Negate the PCS[x] signal"]
+        Assert: [1, "Assert the PCS[x] signal"]
     CTCNT:
       _replace_enum:
         Keep: [0, "Do not clear transfer counter"]
@@ -133,6 +149,10 @@ SPI1:
       _replace_enum:
         NotLast: [0, "Not last data in queue"]
         Last: [1, "Last data in queue"]
+    CTAS:
+      _replace_enum:
+        Ctar0: [0, "CTAR0"]
+        Ctar1: [1, "CTAR1"]
     CONT:
       _replace_enum:
         Deassert: [0, "Return PCS to inactive between transfers"]

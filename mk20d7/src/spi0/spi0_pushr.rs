@@ -10,10 +10,10 @@ pub type TxdataW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Pcs {
-    #[doc = "0: Negate the PCS\\[x\\] signal."]
-    _0 = 0,
-    #[doc = "1: Assert the PCS\\[x\\] signal."]
-    _1 = 1,
+    #[doc = "0: Negate the PCS\\[x\\] signal"]
+    Negate = 0,
+    #[doc = "1: Assert the PCS\\[x\\] signal"]
+    Assert = 1,
 }
 impl From<Pcs> for u8 {
     #[inline(always)]
@@ -32,20 +32,20 @@ impl PcsR {
     #[inline(always)]
     pub const fn variant(&self) -> Option<Pcs> {
         match self.bits {
-            0 => Some(Pcs::_0),
-            1 => Some(Pcs::_1),
+            0 => Some(Pcs::Negate),
+            1 => Some(Pcs::Assert),
             _ => None,
         }
     }
-    #[doc = "Negate the PCS\\[x\\] signal."]
+    #[doc = "Negate the PCS\\[x\\] signal"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Pcs::_0
+    pub fn is_negate(&self) -> bool {
+        *self == Pcs::Negate
     }
-    #[doc = "Assert the PCS\\[x\\] signal."]
+    #[doc = "Assert the PCS\\[x\\] signal"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Pcs::_1
+    pub fn is_assert(&self) -> bool {
+        *self == Pcs::Assert
     }
 }
 #[doc = "Field `PCS` writer - no description available"]
@@ -55,15 +55,15 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Negate the PCS\\[x\\] signal."]
+    #[doc = "Negate the PCS\\[x\\] signal"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Pcs::_0)
+    pub fn negate(self) -> &'a mut crate::W<REG> {
+        self.variant(Pcs::Negate)
     }
-    #[doc = "Assert the PCS\\[x\\] signal."]
+    #[doc = "Assert the PCS\\[x\\] signal"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Pcs::_1)
+    pub fn assert(self) -> &'a mut crate::W<REG> {
+        self.variant(Pcs::Assert)
     }
 }
 #[doc = "Clear Transfer Counter.\n\nValue on reset: 0"]
@@ -177,9 +177,9 @@ where
 #[repr(u8)]
 pub enum Ctas {
     #[doc = "0: CTAR0"]
-    _000 = 0,
+    Ctar0 = 0,
     #[doc = "1: CTAR1"]
-    _001 = 1,
+    Ctar1 = 1,
 }
 impl From<Ctas> for u8 {
     #[inline(always)]
@@ -198,20 +198,20 @@ impl CtasR {
     #[inline(always)]
     pub const fn variant(&self) -> Option<Ctas> {
         match self.bits {
-            0 => Some(Ctas::_000),
-            1 => Some(Ctas::_001),
+            0 => Some(Ctas::Ctar0),
+            1 => Some(Ctas::Ctar1),
             _ => None,
         }
     }
     #[doc = "CTAR0"]
     #[inline(always)]
-    pub fn is_000(&self) -> bool {
-        *self == Ctas::_000
+    pub fn is_ctar0(&self) -> bool {
+        *self == Ctas::Ctar0
     }
     #[doc = "CTAR1"]
     #[inline(always)]
-    pub fn is_001(&self) -> bool {
-        *self == Ctas::_001
+    pub fn is_ctar1(&self) -> bool {
+        *self == Ctas::Ctar1
     }
 }
 #[doc = "Field `CTAS` writer - Clock and Transfer Attributes Select."]
@@ -223,13 +223,13 @@ where
 {
     #[doc = "CTAR0"]
     #[inline(always)]
-    pub fn _000(self) -> &'a mut crate::W<REG> {
-        self.variant(Ctas::_000)
+    pub fn ctar0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ctas::Ctar0)
     }
     #[doc = "CTAR1"]
     #[inline(always)]
-    pub fn _001(self) -> &'a mut crate::W<REG> {
-        self.variant(Ctas::_001)
+    pub fn ctar1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ctas::Ctar1)
     }
 }
 #[doc = "Continuous Peripheral Chip Select Enable\n\nValue on reset: 0"]

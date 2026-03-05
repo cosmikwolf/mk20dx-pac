@@ -3,6 +3,10 @@
 # Source: K20 Sub-Family Reference Manual, DSPI chapter
 SPI0:
   PUSHR:
+    PCS:
+      _replace_enum:
+        Negate: [0, "Negate the PCS[x] signal"]
+        Assert: [1, "Assert the PCS[x] signal"]
     CTCNT:
       _replace_enum:
         Keep: [0, "Do not clear transfer counter"]
@@ -11,6 +15,10 @@ SPI0:
       _replace_enum:
         NotLast: [0, "Not last data in queue"]
         Last: [1, "Last data in queue"]
+    CTAS:
+      _replace_enum:
+        Ctar0: [0, "CTAR0"]
+        Ctar1: [1, "CTAR1"]
     CONT:
       _replace_enum:
         Deassert: [0, "Return PCS to inactive between transfers"]

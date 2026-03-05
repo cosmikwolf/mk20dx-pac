@@ -60,11 +60,11 @@ where
 #[repr(u8)]
 pub enum SmplPt {
     #[doc = "0: 0 system clocks between SCK edge and SIN sample"]
-    _00 = 0,
+    Clocks0 = 0,
     #[doc = "1: 1 system clock between SCK edge and SIN sample"]
-    _01 = 1,
+    Clocks1 = 1,
     #[doc = "2: 2 system clocks between SCK edge and SIN sample"]
-    _10 = 2,
+    Clocks2 = 2,
 }
 impl From<SmplPt> for u8 {
     #[inline(always)]
@@ -83,26 +83,26 @@ impl SmplPtR {
     #[inline(always)]
     pub const fn variant(&self) -> Option<SmplPt> {
         match self.bits {
-            0 => Some(SmplPt::_00),
-            1 => Some(SmplPt::_01),
-            2 => Some(SmplPt::_10),
+            0 => Some(SmplPt::Clocks0),
+            1 => Some(SmplPt::Clocks1),
+            2 => Some(SmplPt::Clocks2),
             _ => None,
         }
     }
     #[doc = "0 system clocks between SCK edge and SIN sample"]
     #[inline(always)]
-    pub fn is_00(&self) -> bool {
-        *self == SmplPt::_00
+    pub fn is_clocks0(&self) -> bool {
+        *self == SmplPt::Clocks0
     }
     #[doc = "1 system clock between SCK edge and SIN sample"]
     #[inline(always)]
-    pub fn is_01(&self) -> bool {
-        *self == SmplPt::_01
+    pub fn is_clocks1(&self) -> bool {
+        *self == SmplPt::Clocks1
     }
     #[doc = "2 system clocks between SCK edge and SIN sample"]
     #[inline(always)]
-    pub fn is_10(&self) -> bool {
-        *self == SmplPt::_10
+    pub fn is_clocks2(&self) -> bool {
+        *self == SmplPt::Clocks2
     }
 }
 #[doc = "Field `SMPL_PT` writer - Sample Point"]
@@ -114,18 +114,18 @@ where
 {
     #[doc = "0 system clocks between SCK edge and SIN sample"]
     #[inline(always)]
-    pub fn _00(self) -> &'a mut crate::W<REG> {
-        self.variant(SmplPt::_00)
+    pub fn clocks0(self) -> &'a mut crate::W<REG> {
+        self.variant(SmplPt::Clocks0)
     }
     #[doc = "1 system clock between SCK edge and SIN sample"]
     #[inline(always)]
-    pub fn _01(self) -> &'a mut crate::W<REG> {
-        self.variant(SmplPt::_01)
+    pub fn clocks1(self) -> &'a mut crate::W<REG> {
+        self.variant(SmplPt::Clocks1)
     }
     #[doc = "2 system clocks between SCK edge and SIN sample"]
     #[inline(always)]
-    pub fn _10(self) -> &'a mut crate::W<REG> {
-        self.variant(SmplPt::_10)
+    pub fn clocks2(self) -> &'a mut crate::W<REG> {
+        self.variant(SmplPt::Clocks2)
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
@@ -406,10 +406,10 @@ where
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Pcsis {
-    #[doc = "0: The inactive state of PCSx is low."]
-    _0 = 0,
-    #[doc = "1: The inactive state of PCSx is high."]
-    _1 = 1,
+    #[doc = "0: The inactive state of PCSx is low"]
+    Low = 0,
+    #[doc = "1: The inactive state of PCSx is high"]
+    High = 1,
 }
 impl From<Pcsis> for u8 {
     #[inline(always)]
@@ -428,20 +428,20 @@ impl PcsisR {
     #[inline(always)]
     pub const fn variant(&self) -> Option<Pcsis> {
         match self.bits {
-            0 => Some(Pcsis::_0),
-            1 => Some(Pcsis::_1),
+            0 => Some(Pcsis::Low),
+            1 => Some(Pcsis::High),
             _ => None,
         }
     }
-    #[doc = "The inactive state of PCSx is low."]
+    #[doc = "The inactive state of PCSx is low"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Pcsis::_0
+    pub fn is_low(&self) -> bool {
+        *self == Pcsis::Low
     }
-    #[doc = "The inactive state of PCSx is high."]
+    #[doc = "The inactive state of PCSx is high"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Pcsis::_1
+    pub fn is_high(&self) -> bool {
+        *self == Pcsis::High
     }
 }
 #[doc = "Field `PCSIS` writer - Peripheral Chip Select x Inactive State"]
@@ -451,15 +451,15 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "The inactive state of PCSx is low."]
+    #[doc = "The inactive state of PCSx is low"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Pcsis::_0)
+    pub fn low(self) -> &'a mut crate::W<REG> {
+        self.variant(Pcsis::Low)
     }
-    #[doc = "The inactive state of PCSx is high."]
+    #[doc = "The inactive state of PCSx is high"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Pcsis::_1)
+    pub fn high(self) -> &'a mut crate::W<REG> {
+        self.variant(Pcsis::High)
     }
 }
 #[doc = "Receive FIFO Overflow Overwrite Enable\n\nValue on reset: 0"]
@@ -679,7 +679,7 @@ where
 #[repr(u8)]
 pub enum Dconf {
     #[doc = "0: SPI"]
-    _00 = 0,
+    Spi = 0,
 }
 impl From<Dconf> for u8 {
     #[inline(always)]
@@ -698,14 +698,14 @@ impl DconfR {
     #[inline(always)]
     pub const fn variant(&self) -> Option<Dconf> {
         match self.bits {
-            0 => Some(Dconf::_00),
+            0 => Some(Dconf::Spi),
             _ => None,
         }
     }
     #[doc = "SPI"]
     #[inline(always)]
-    pub fn is_00(&self) -> bool {
-        *self == Dconf::_00
+    pub fn is_spi(&self) -> bool {
+        *self == Dconf::Spi
     }
 }
 #[doc = "Field `DCONF` writer - DSPI Configuration"]
@@ -717,8 +717,8 @@ where
 {
     #[doc = "SPI"]
     #[inline(always)]
-    pub fn _00(self) -> &'a mut crate::W<REG> {
-        self.variant(Dconf::_00)
+    pub fn spi(self) -> &'a mut crate::W<REG> {
+        self.variant(Dconf::Spi)
     }
 }
 #[doc = "Continuous SCK Enable\n\nValue on reset: 0"]
