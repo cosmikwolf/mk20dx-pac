@@ -63,9 +63,9 @@ where
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ecp {
     #[doc = "0: Channel n cannot be suspended by a higher priority channel's service request"]
-    _0 = 0,
+    Disabled = 0,
     #[doc = "1: Channel n can be temporarily suspended by the service request of a higher priority channel"]
-    _1 = 1,
+    Enabled = 1,
 }
 impl From<Ecp> for bool {
     #[inline(always)]
@@ -80,19 +80,19 @@ impl EcpR {
     #[inline(always)]
     pub const fn variant(&self) -> Ecp {
         match self.bits {
-            false => Ecp::_0,
-            true => Ecp::_1,
+            false => Ecp::Disabled,
+            true => Ecp::Enabled,
         }
     }
     #[doc = "Channel n cannot be suspended by a higher priority channel's service request"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Ecp::_0
+    pub fn is_disabled(&self) -> bool {
+        *self == Ecp::Disabled
     }
     #[doc = "Channel n can be temporarily suspended by the service request of a higher priority channel"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Ecp::_1
+    pub fn is_enabled(&self) -> bool {
+        *self == Ecp::Enabled
     }
 }
 #[doc = "Field `ECP` writer - Enable Channel Preemption"]
@@ -103,13 +103,13 @@ where
 {
     #[doc = "Channel n cannot be suspended by a higher priority channel's service request"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Ecp::_0)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ecp::Disabled)
     }
     #[doc = "Channel n can be temporarily suspended by the service request of a higher priority channel"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ecp::_1)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ecp::Enabled)
     }
 }
 impl R {

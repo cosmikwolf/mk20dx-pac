@@ -11,6 +11,15 @@ _include:
   - ../patches/common/mcg/clks_enums.yaml
   - ../patches/common/sim/sopt2_enums.yaml
   - ../patches/common/dma/tcd_attr_enums.yaml
+  - ../patches/common/dma/tcd_csr_enums.yaml
+  - ../patches/common/dma/tcd_biter_citer_enums.yaml
+  - ../patches/common/dma/cr_enums.yaml
+  - ../patches/common/dma/es_enums.yaml
+  - ../patches/common/dma/dchpri_enums.yaml
+  - ../patches/common/dmamux/chcfg_enums.yaml
+  - ../patches/common/wdog/stctrlh_enums.yaml
+  - ../patches/common/sim/clkdiv1_enums.yaml
+  - ../patches/mk20d7/sim/clkdiv1_outdiv3_enums.yaml
   - ../patches/common/spi/mcr_enums.yaml
   - ../patches/common/spi/ctar_enums.yaml
   - ../patches/common/spi/sr_enums.yaml

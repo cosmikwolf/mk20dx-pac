@@ -6,9 +6,9 @@ pub type W = crate::W<CsrSpec>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Start {
     #[doc = "0: The channel is not explicitly started"]
-    _0 = 0,
+    Inactive = 0,
     #[doc = "1: The channel is explicitly started via a software initiated service request"]
-    _1 = 1,
+    Active = 1,
 }
 impl From<Start> for bool {
     #[inline(always)]
@@ -23,19 +23,19 @@ impl StartR {
     #[inline(always)]
     pub const fn variant(&self) -> Start {
         match self.bits {
-            false => Start::_0,
-            true => Start::_1,
+            false => Start::Inactive,
+            true => Start::Active,
         }
     }
     #[doc = "The channel is not explicitly started"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Start::_0
+    pub fn is_inactive(&self) -> bool {
+        *self == Start::Inactive
     }
     #[doc = "The channel is explicitly started via a software initiated service request"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Start::_1
+    pub fn is_active(&self) -> bool {
+        *self == Start::Active
     }
 }
 #[doc = "Field `START` writer - Channel Start"]
@@ -46,22 +46,22 @@ where
 {
     #[doc = "The channel is not explicitly started"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Start::_0)
+    pub fn inactive(self) -> &'a mut crate::W<REG> {
+        self.variant(Start::Inactive)
     }
     #[doc = "The channel is explicitly started via a software initiated service request"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Start::_1)
+    pub fn active(self) -> &'a mut crate::W<REG> {
+        self.variant(Start::Active)
     }
 }
 #[doc = "Enable an interrupt when major iteration count completes\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Intmajor {
     #[doc = "0: The end-of-major loop interrupt is disabled"]
-    _0 = 0,
+    Disabled = 0,
     #[doc = "1: The end-of-major loop interrupt is enabled"]
-    _1 = 1,
+    Enabled = 1,
 }
 impl From<Intmajor> for bool {
     #[inline(always)]
@@ -76,19 +76,19 @@ impl IntmajorR {
     #[inline(always)]
     pub const fn variant(&self) -> Intmajor {
         match self.bits {
-            false => Intmajor::_0,
-            true => Intmajor::_1,
+            false => Intmajor::Disabled,
+            true => Intmajor::Enabled,
         }
     }
     #[doc = "The end-of-major loop interrupt is disabled"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Intmajor::_0
+    pub fn is_disabled(&self) -> bool {
+        *self == Intmajor::Disabled
     }
     #[doc = "The end-of-major loop interrupt is enabled"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Intmajor::_1
+    pub fn is_enabled(&self) -> bool {
+        *self == Intmajor::Enabled
     }
 }
 #[doc = "Field `INTMAJOR` writer - Enable an interrupt when major iteration count completes"]
@@ -99,22 +99,22 @@ where
 {
     #[doc = "The end-of-major loop interrupt is disabled"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Intmajor::_0)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Intmajor::Disabled)
     }
     #[doc = "The end-of-major loop interrupt is enabled"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Intmajor::_1)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Intmajor::Enabled)
     }
 }
 #[doc = "Enable an interrupt when major counter is half complete.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Inthalf {
     #[doc = "0: The half-point interrupt is disabled"]
-    _0 = 0,
+    Disabled = 0,
     #[doc = "1: The half-point interrupt is enabled"]
-    _1 = 1,
+    Enabled = 1,
 }
 impl From<Inthalf> for bool {
     #[inline(always)]
@@ -129,19 +129,19 @@ impl InthalfR {
     #[inline(always)]
     pub const fn variant(&self) -> Inthalf {
         match self.bits {
-            false => Inthalf::_0,
-            true => Inthalf::_1,
+            false => Inthalf::Disabled,
+            true => Inthalf::Enabled,
         }
     }
     #[doc = "The half-point interrupt is disabled"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Inthalf::_0
+    pub fn is_disabled(&self) -> bool {
+        *self == Inthalf::Disabled
     }
     #[doc = "The half-point interrupt is enabled"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Inthalf::_1
+    pub fn is_enabled(&self) -> bool {
+        *self == Inthalf::Enabled
     }
 }
 #[doc = "Field `INTHALF` writer - Enable an interrupt when major counter is half complete."]
@@ -152,22 +152,22 @@ where
 {
     #[doc = "The half-point interrupt is disabled"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Inthalf::_0)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Inthalf::Disabled)
     }
     #[doc = "The half-point interrupt is enabled"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Inthalf::_1)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Inthalf::Enabled)
     }
 }
 #[doc = "Disable Request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dreq {
-    #[doc = "0: The channel's ERQ bit is not affected"]
-    _0 = 0,
-    #[doc = "1: The channel's ERQ bit is cleared when the major loop is complete"]
-    _1 = 1,
+    #[doc = "0: The channel's ERQ field is not affected"]
+    NoDisable = 0,
+    #[doc = "1: The channel's ERQ field is cleared when the major loop is complete"]
+    DisableOnComplete = 1,
 }
 impl From<Dreq> for bool {
     #[inline(always)]
@@ -182,19 +182,19 @@ impl DreqR {
     #[inline(always)]
     pub const fn variant(&self) -> Dreq {
         match self.bits {
-            false => Dreq::_0,
-            true => Dreq::_1,
+            false => Dreq::NoDisable,
+            true => Dreq::DisableOnComplete,
         }
     }
-    #[doc = "The channel's ERQ bit is not affected"]
+    #[doc = "The channel's ERQ field is not affected"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Dreq::_0
+    pub fn is_no_disable(&self) -> bool {
+        *self == Dreq::NoDisable
     }
-    #[doc = "The channel's ERQ bit is cleared when the major loop is complete"]
+    #[doc = "The channel's ERQ field is cleared when the major loop is complete"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Dreq::_1
+    pub fn is_disable_on_complete(&self) -> bool {
+        *self == Dreq::DisableOnComplete
     }
 }
 #[doc = "Field `DREQ` writer - Disable Request"]
@@ -203,24 +203,24 @@ impl<'a, REG> DreqW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The channel's ERQ bit is not affected"]
+    #[doc = "The channel's ERQ field is not affected"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Dreq::_0)
+    pub fn no_disable(self) -> &'a mut crate::W<REG> {
+        self.variant(Dreq::NoDisable)
     }
-    #[doc = "The channel's ERQ bit is cleared when the major loop is complete"]
+    #[doc = "The channel's ERQ field is cleared when the major loop is complete"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Dreq::_1)
+    pub fn disable_on_complete(self) -> &'a mut crate::W<REG> {
+        self.variant(Dreq::DisableOnComplete)
     }
 }
 #[doc = "Enable Scatter/Gather Processing\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Esg {
-    #[doc = "0: The current channel's TCD is normal format."]
-    _0 = 0,
-    #[doc = "1: The current channel's TCD specifies a scatter gather format. The DLASTSGA field provides a memory pointer to the next TCD to be loaded into this channel after the major loop completes its execution."]
-    _1 = 1,
+    #[doc = "0: The current channel's TCD is normal format"]
+    Disabled = 0,
+    #[doc = "1: The current channel's TCD specifies a scatter gather format"]
+    Enabled = 1,
 }
 impl From<Esg> for bool {
     #[inline(always)]
@@ -235,19 +235,19 @@ impl EsgR {
     #[inline(always)]
     pub const fn variant(&self) -> Esg {
         match self.bits {
-            false => Esg::_0,
-            true => Esg::_1,
+            false => Esg::Disabled,
+            true => Esg::Enabled,
         }
     }
-    #[doc = "The current channel's TCD is normal format."]
+    #[doc = "The current channel's TCD is normal format"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Esg::_0
+    pub fn is_disabled(&self) -> bool {
+        *self == Esg::Disabled
     }
-    #[doc = "The current channel's TCD specifies a scatter gather format. The DLASTSGA field provides a memory pointer to the next TCD to be loaded into this channel after the major loop completes its execution."]
+    #[doc = "The current channel's TCD specifies a scatter gather format"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Esg::_1
+    pub fn is_enabled(&self) -> bool {
+        *self == Esg::Enabled
     }
 }
 #[doc = "Field `ESG` writer - Enable Scatter/Gather Processing"]
@@ -256,24 +256,24 @@ impl<'a, REG> EsgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The current channel's TCD is normal format."]
+    #[doc = "The current channel's TCD is normal format"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Esg::_0)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Esg::Disabled)
     }
-    #[doc = "The current channel's TCD specifies a scatter gather format. The DLASTSGA field provides a memory pointer to the next TCD to be loaded into this channel after the major loop completes its execution."]
+    #[doc = "The current channel's TCD specifies a scatter gather format"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Esg::_1)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Esg::Enabled)
     }
 }
 #[doc = "Enable channel-to-channel linking on major loop complete\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Majorelink {
     #[doc = "0: The channel-to-channel linking is disabled"]
-    _0 = 0,
+    Disabled = 0,
     #[doc = "1: The channel-to-channel linking is enabled"]
-    _1 = 1,
+    Enabled = 1,
 }
 impl From<Majorelink> for bool {
     #[inline(always)]
@@ -288,19 +288,19 @@ impl MajorelinkR {
     #[inline(always)]
     pub const fn variant(&self) -> Majorelink {
         match self.bits {
-            false => Majorelink::_0,
-            true => Majorelink::_1,
+            false => Majorelink::Disabled,
+            true => Majorelink::Enabled,
         }
     }
     #[doc = "The channel-to-channel linking is disabled"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Majorelink::_0
+    pub fn is_disabled(&self) -> bool {
+        *self == Majorelink::Disabled
     }
     #[doc = "The channel-to-channel linking is enabled"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Majorelink::_1
+    pub fn is_enabled(&self) -> bool {
+        *self == Majorelink::Enabled
     }
 }
 #[doc = "Field `MAJORELINK` writer - Enable channel-to-channel linking on major loop complete"]
@@ -311,13 +311,13 @@ where
 {
     #[doc = "The channel-to-channel linking is disabled"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Majorelink::_0)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Majorelink::Disabled)
     }
     #[doc = "The channel-to-channel linking is enabled"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Majorelink::_1)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Majorelink::Enabled)
     }
 }
 #[doc = "Field `ACTIVE` reader - Channel Active"]
@@ -337,11 +337,11 @@ pub type MajorlinkchW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[repr(u8)]
 pub enum Bwc {
     #[doc = "0: No eDMA engine stalls"]
-    _00 = 0,
-    #[doc = "2: eDMA engine stalls for 4 cycles after each r/w"]
-    _10 = 2,
-    #[doc = "3: eDMA engine stalls for 8 cycles after each r/w"]
-    _11 = 3,
+    NoStall = 0,
+    #[doc = "2: eDMA engine stalls for 4 cycles after each R/W"]
+    Stall4cycles = 2,
+    #[doc = "3: eDMA engine stalls for 8 cycles after each R/W"]
+    Stall8cycles = 3,
 }
 impl From<Bwc> for u8 {
     #[inline(always)]
@@ -360,26 +360,26 @@ impl BwcR {
     #[inline(always)]
     pub const fn variant(&self) -> Option<Bwc> {
         match self.bits {
-            0 => Some(Bwc::_00),
-            2 => Some(Bwc::_10),
-            3 => Some(Bwc::_11),
+            0 => Some(Bwc::NoStall),
+            2 => Some(Bwc::Stall4cycles),
+            3 => Some(Bwc::Stall8cycles),
             _ => None,
         }
     }
     #[doc = "No eDMA engine stalls"]
     #[inline(always)]
-    pub fn is_00(&self) -> bool {
-        *self == Bwc::_00
+    pub fn is_no_stall(&self) -> bool {
+        *self == Bwc::NoStall
     }
-    #[doc = "eDMA engine stalls for 4 cycles after each r/w"]
+    #[doc = "eDMA engine stalls for 4 cycles after each R/W"]
     #[inline(always)]
-    pub fn is_10(&self) -> bool {
-        *self == Bwc::_10
+    pub fn is_stall4cycles(&self) -> bool {
+        *self == Bwc::Stall4cycles
     }
-    #[doc = "eDMA engine stalls for 8 cycles after each r/w"]
+    #[doc = "eDMA engine stalls for 8 cycles after each R/W"]
     #[inline(always)]
-    pub fn is_11(&self) -> bool {
-        *self == Bwc::_11
+    pub fn is_stall8cycles(&self) -> bool {
+        *self == Bwc::Stall8cycles
     }
 }
 #[doc = "Field `BWC` writer - Bandwidth Control"]
@@ -391,18 +391,18 @@ where
 {
     #[doc = "No eDMA engine stalls"]
     #[inline(always)]
-    pub fn _00(self) -> &'a mut crate::W<REG> {
-        self.variant(Bwc::_00)
+    pub fn no_stall(self) -> &'a mut crate::W<REG> {
+        self.variant(Bwc::NoStall)
     }
-    #[doc = "eDMA engine stalls for 4 cycles after each r/w"]
+    #[doc = "eDMA engine stalls for 4 cycles after each R/W"]
     #[inline(always)]
-    pub fn _10(self) -> &'a mut crate::W<REG> {
-        self.variant(Bwc::_10)
+    pub fn stall4cycles(self) -> &'a mut crate::W<REG> {
+        self.variant(Bwc::Stall4cycles)
     }
-    #[doc = "eDMA engine stalls for 8 cycles after each r/w"]
+    #[doc = "eDMA engine stalls for 8 cycles after each R/W"]
     #[inline(always)]
-    pub fn _11(self) -> &'a mut crate::W<REG> {
-        self.variant(Bwc::_11)
+    pub fn stall8cycles(self) -> &'a mut crate::W<REG> {
+        self.variant(Bwc::Stall8cycles)
     }
 }
 impl R {

@@ -4,9 +4,9 @@ pub type R = crate::R<EsSpec>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dbe {
     #[doc = "0: No destination bus error"]
-    _0 = 0,
+    NoError = 0,
     #[doc = "1: The last recorded error was a bus error on a destination write"]
-    _1 = 1,
+    Error = 1,
 }
 impl From<Dbe> for bool {
     #[inline(always)]
@@ -21,28 +21,28 @@ impl DbeR {
     #[inline(always)]
     pub const fn variant(&self) -> Dbe {
         match self.bits {
-            false => Dbe::_0,
-            true => Dbe::_1,
+            false => Dbe::NoError,
+            true => Dbe::Error,
         }
     }
     #[doc = "No destination bus error"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Dbe::_0
+    pub fn is_no_error(&self) -> bool {
+        *self == Dbe::NoError
     }
     #[doc = "The last recorded error was a bus error on a destination write"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Dbe::_1
+    pub fn is_error(&self) -> bool {
+        *self == Dbe::Error
     }
 }
 #[doc = "Source Bus Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sbe {
     #[doc = "0: No source bus error"]
-    _0 = 0,
+    NoError = 0,
     #[doc = "1: The last recorded error was a bus error on a source read"]
-    _1 = 1,
+    Error = 1,
 }
 impl From<Sbe> for bool {
     #[inline(always)]
@@ -57,28 +57,28 @@ impl SbeR {
     #[inline(always)]
     pub const fn variant(&self) -> Sbe {
         match self.bits {
-            false => Sbe::_0,
-            true => Sbe::_1,
+            false => Sbe::NoError,
+            true => Sbe::Error,
         }
     }
     #[doc = "No source bus error"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Sbe::_0
+    pub fn is_no_error(&self) -> bool {
+        *self == Sbe::NoError
     }
     #[doc = "The last recorded error was a bus error on a source read"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Sbe::_1
+    pub fn is_error(&self) -> bool {
+        *self == Sbe::Error
     }
 }
 #[doc = "Scatter/Gather Configuration Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sge {
     #[doc = "0: No scatter/gather configuration error"]
-    _0 = 0,
-    #[doc = "1: The last recorded error was a configuration error detected in the TCDn_DLASTSGA field. This field is checked at the beginning of a scatter/gather operation after major loop completion if TCDn_CSR\\[ESG\\] is enabled. TCDn_DLASTSGA is not on a 32 byte boundary."]
-    _1 = 1,
+    NoError = 0,
+    #[doc = "1: The last recorded error was a scatter/gather configuration error"]
+    Error = 1,
 }
 impl From<Sge> for bool {
     #[inline(always)]
@@ -93,28 +93,28 @@ impl SgeR {
     #[inline(always)]
     pub const fn variant(&self) -> Sge {
         match self.bits {
-            false => Sge::_0,
-            true => Sge::_1,
+            false => Sge::NoError,
+            true => Sge::Error,
         }
     }
     #[doc = "No scatter/gather configuration error"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Sge::_0
+    pub fn is_no_error(&self) -> bool {
+        *self == Sge::NoError
     }
-    #[doc = "The last recorded error was a configuration error detected in the TCDn_DLASTSGA field. This field is checked at the beginning of a scatter/gather operation after major loop completion if TCDn_CSR\\[ESG\\] is enabled. TCDn_DLASTSGA is not on a 32 byte boundary."]
+    #[doc = "The last recorded error was a scatter/gather configuration error"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Sge::_1
+    pub fn is_error(&self) -> bool {
+        *self == Sge::Error
     }
 }
 #[doc = "NBYTES/CITER Configuration Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Nce {
     #[doc = "0: No NBYTES/CITER configuration error"]
-    _0 = 0,
-    #[doc = "1: The last recorded error was a configuration error detected in the TCDn_NBYTES or TCDn_CITER fields. TCDn_NBYTES is not a multiple of TCDn_ATTR\\[SSIZE\\] and TCDn_ATTR\\[DSIZE\\], or TCDn_CITER\\[CITER\\] is equal to zero, or TCDn_CITER\\[ELINK\\] is not equal to TCDn_BITER\\[ELINK\\]"]
-    _1 = 1,
+    NoError = 0,
+    #[doc = "1: The last recorded error was a configuration error in the TCDn_NBYTES or TCDn_CITER fields"]
+    Error = 1,
 }
 impl From<Nce> for bool {
     #[inline(always)]
@@ -129,28 +129,28 @@ impl NceR {
     #[inline(always)]
     pub const fn variant(&self) -> Nce {
         match self.bits {
-            false => Nce::_0,
-            true => Nce::_1,
+            false => Nce::NoError,
+            true => Nce::Error,
         }
     }
     #[doc = "No NBYTES/CITER configuration error"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Nce::_0
+    pub fn is_no_error(&self) -> bool {
+        *self == Nce::NoError
     }
-    #[doc = "The last recorded error was a configuration error detected in the TCDn_NBYTES or TCDn_CITER fields. TCDn_NBYTES is not a multiple of TCDn_ATTR\\[SSIZE\\] and TCDn_ATTR\\[DSIZE\\], or TCDn_CITER\\[CITER\\] is equal to zero, or TCDn_CITER\\[ELINK\\] is not equal to TCDn_BITER\\[ELINK\\]"]
+    #[doc = "The last recorded error was a configuration error in the TCDn_NBYTES or TCDn_CITER fields"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Nce::_1
+    pub fn is_error(&self) -> bool {
+        *self == Nce::Error
     }
 }
 #[doc = "Destination Offset Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Doe {
     #[doc = "0: No destination offset configuration error"]
-    _0 = 0,
-    #[doc = "1: The last recorded error was a configuration error detected in the TCDn_DOFF field. TCDn_DOFF is inconsistent with TCDn_ATTR\\[DSIZE\\]."]
-    _1 = 1,
+    NoError = 0,
+    #[doc = "1: The last recorded error was a configuration error in the TCDn_DOFF field"]
+    Error = 1,
 }
 impl From<Doe> for bool {
     #[inline(always)]
@@ -165,28 +165,28 @@ impl DoeR {
     #[inline(always)]
     pub const fn variant(&self) -> Doe {
         match self.bits {
-            false => Doe::_0,
-            true => Doe::_1,
+            false => Doe::NoError,
+            true => Doe::Error,
         }
     }
     #[doc = "No destination offset configuration error"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Doe::_0
+    pub fn is_no_error(&self) -> bool {
+        *self == Doe::NoError
     }
-    #[doc = "The last recorded error was a configuration error detected in the TCDn_DOFF field. TCDn_DOFF is inconsistent with TCDn_ATTR\\[DSIZE\\]."]
+    #[doc = "The last recorded error was a configuration error in the TCDn_DOFF field"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Doe::_1
+    pub fn is_error(&self) -> bool {
+        *self == Doe::Error
     }
 }
 #[doc = "Destination Address Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dae {
     #[doc = "0: No destination address configuration error"]
-    _0 = 0,
-    #[doc = "1: The last recorded error was a configuration error detected in the TCDn_DADDR field. TCDn_DADDR is inconsistent with TCDn_ATTR\\[DSIZE\\]."]
-    _1 = 1,
+    NoError = 0,
+    #[doc = "1: The last recorded error was a configuration error in the TCDn_DADDR field"]
+    Error = 1,
 }
 impl From<Dae> for bool {
     #[inline(always)]
@@ -201,28 +201,28 @@ impl DaeR {
     #[inline(always)]
     pub const fn variant(&self) -> Dae {
         match self.bits {
-            false => Dae::_0,
-            true => Dae::_1,
+            false => Dae::NoError,
+            true => Dae::Error,
         }
     }
     #[doc = "No destination address configuration error"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Dae::_0
+    pub fn is_no_error(&self) -> bool {
+        *self == Dae::NoError
     }
-    #[doc = "The last recorded error was a configuration error detected in the TCDn_DADDR field. TCDn_DADDR is inconsistent with TCDn_ATTR\\[DSIZE\\]."]
+    #[doc = "The last recorded error was a configuration error in the TCDn_DADDR field"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Dae::_1
+    pub fn is_error(&self) -> bool {
+        *self == Dae::Error
     }
 }
 #[doc = "Source Offset Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Soe {
     #[doc = "0: No source offset configuration error"]
-    _0 = 0,
-    #[doc = "1: The last recorded error was a configuration error detected in the TCDn_SOFF field. TCDn_SOFF is inconsistent with TCDn_ATTR\\[SSIZE\\]."]
-    _1 = 1,
+    NoError = 0,
+    #[doc = "1: The last recorded error was a configuration error in the TCDn_SOFF field"]
+    Error = 1,
 }
 impl From<Soe> for bool {
     #[inline(always)]
@@ -237,28 +237,28 @@ impl SoeR {
     #[inline(always)]
     pub const fn variant(&self) -> Soe {
         match self.bits {
-            false => Soe::_0,
-            true => Soe::_1,
+            false => Soe::NoError,
+            true => Soe::Error,
         }
     }
     #[doc = "No source offset configuration error"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Soe::_0
+    pub fn is_no_error(&self) -> bool {
+        *self == Soe::NoError
     }
-    #[doc = "The last recorded error was a configuration error detected in the TCDn_SOFF field. TCDn_SOFF is inconsistent with TCDn_ATTR\\[SSIZE\\]."]
+    #[doc = "The last recorded error was a configuration error in the TCDn_SOFF field"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Soe::_1
+    pub fn is_error(&self) -> bool {
+        *self == Soe::Error
     }
 }
 #[doc = "Source Address Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sae {
-    #[doc = "0: No source address configuration error."]
-    _0 = 0,
-    #[doc = "1: The last recorded error was a configuration error detected in the TCDn_SADDR field. TCDn_SADDR is inconsistent with TCDn_ATTR\\[SSIZE\\]."]
-    _1 = 1,
+    #[doc = "0: No source address configuration error"]
+    NoError = 0,
+    #[doc = "1: The last recorded error was a configuration error in the TCDn_SADDR field"]
+    Error = 1,
 }
 impl From<Sae> for bool {
     #[inline(always)]
@@ -273,19 +273,19 @@ impl SaeR {
     #[inline(always)]
     pub const fn variant(&self) -> Sae {
         match self.bits {
-            false => Sae::_0,
-            true => Sae::_1,
+            false => Sae::NoError,
+            true => Sae::Error,
         }
     }
-    #[doc = "No source address configuration error."]
+    #[doc = "No source address configuration error"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Sae::_0
+    pub fn is_no_error(&self) -> bool {
+        *self == Sae::NoError
     }
-    #[doc = "The last recorded error was a configuration error detected in the TCDn_SADDR field. TCDn_SADDR is inconsistent with TCDn_ATTR\\[SSIZE\\]."]
+    #[doc = "The last recorded error was a configuration error in the TCDn_SADDR field"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Sae::_1
+    pub fn is_error(&self) -> bool {
+        *self == Sae::Error
     }
 }
 #[doc = "Field `ERRCHN` reader - Error Channel Number or Cancelled Channel Number"]
@@ -293,10 +293,10 @@ pub type ErrchnR = crate::FieldReader;
 #[doc = "Channel Priority Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpe {
-    #[doc = "0: No channel priority error"]
-    _0 = 0,
-    #[doc = "1: The last recorded error was a configuration error in the channel priorities. Channel priorities are not unique."]
-    _1 = 1,
+    #[doc = "0: No channel priority configuration error"]
+    NoError = 0,
+    #[doc = "1: The last recorded error was a configuration error in the channel priorities"]
+    Error = 1,
 }
 impl From<Cpe> for bool {
     #[inline(always)]
@@ -311,28 +311,28 @@ impl CpeR {
     #[inline(always)]
     pub const fn variant(&self) -> Cpe {
         match self.bits {
-            false => Cpe::_0,
-            true => Cpe::_1,
+            false => Cpe::NoError,
+            true => Cpe::Error,
         }
     }
-    #[doc = "No channel priority error"]
+    #[doc = "No channel priority configuration error"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Cpe::_0
+    pub fn is_no_error(&self) -> bool {
+        *self == Cpe::NoError
     }
-    #[doc = "The last recorded error was a configuration error in the channel priorities. Channel priorities are not unique."]
+    #[doc = "The last recorded error was a configuration error in the channel priorities"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Cpe::_1
+    pub fn is_error(&self) -> bool {
+        *self == Cpe::Error
     }
 }
 #[doc = "Transfer Cancelled\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ecx {
     #[doc = "0: No cancelled transfers"]
-    _0 = 0,
+    NotCancelled = 0,
     #[doc = "1: The last recorded entry was a cancelled transfer by the error cancel transfer input"]
-    _1 = 1,
+    Cancelled = 1,
 }
 impl From<Ecx> for bool {
     #[inline(always)]
@@ -347,28 +347,28 @@ impl EcxR {
     #[inline(always)]
     pub const fn variant(&self) -> Ecx {
         match self.bits {
-            false => Ecx::_0,
-            true => Ecx::_1,
+            false => Ecx::NotCancelled,
+            true => Ecx::Cancelled,
         }
     }
     #[doc = "No cancelled transfers"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Ecx::_0
+    pub fn is_not_cancelled(&self) -> bool {
+        *self == Ecx::NotCancelled
     }
     #[doc = "The last recorded entry was a cancelled transfer by the error cancel transfer input"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Ecx::_1
+    pub fn is_cancelled(&self) -> bool {
+        *self == Ecx::Cancelled
     }
 }
 #[doc = "Logical OR of all ERR status bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vld {
     #[doc = "0: No ERR bits are set"]
-    _0 = 0,
+    NoErrors = 0,
     #[doc = "1: At least one ERR bit is set indicating a valid error exists that has not been cleared"]
-    _1 = 1,
+    Valid = 1,
 }
 impl From<Vld> for bool {
     #[inline(always)]
@@ -383,19 +383,19 @@ impl VldR {
     #[inline(always)]
     pub const fn variant(&self) -> Vld {
         match self.bits {
-            false => Vld::_0,
-            true => Vld::_1,
+            false => Vld::NoErrors,
+            true => Vld::Valid,
         }
     }
     #[doc = "No ERR bits are set"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Vld::_0
+    pub fn is_no_errors(&self) -> bool {
+        *self == Vld::NoErrors
     }
     #[doc = "At least one ERR bit is set indicating a valid error exists that has not been cleared"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Vld::_1
+    pub fn is_valid(&self) -> bool {
+        *self == Vld::Valid
     }
 }
 impl R {

@@ -1,0 +1,50 @@
+# WDOG STCTRLH enumerated values
+# Source: K20 Sub-Family Reference Manual, Watchdog chapter
+WDOG:
+  STCTRLH:
+    WDOGEN:
+      _replace_enum:
+        Disabled: [0, "WDOG is disabled"]
+        Enabled: [1, "WDOG is enabled"]
+    CLKSRC:
+      _replace_enum:
+        LpoOscillator: [0, "Dedicated LPO clock source selected as WDOG clock"]
+        AlternateClock: [1, "WDOG clock sourced from alternate clock source"]
+    IRQRSTEN:
+      _replace_enum:
+        ResetOnly: [0, "WDOG time-out generates reset only"]
+        InterruptThenReset: [1, "WDOG time-out initially generates an interrupt, then a reset after WCT time"]
+    WINEN:
+      _replace_enum:
+        Disabled: [0, "Windowing mode is disabled"]
+        Enabled: [1, "Windowing mode is enabled"]
+    ALLOWUPDATE:
+      _replace_enum:
+        Locked: [0, "No further updates allowed to WDOG write-once registers"]
+        Unlocked: [1, "WDOG write-once registers can be unlocked for updating"]
+    DBGEN:
+      _replace_enum:
+        Disabled: [0, "WDOG is disabled in CPU debug mode"]
+        Enabled: [1, "WDOG is enabled in CPU debug mode"]
+    STOPEN:
+      _replace_enum:
+        Disabled: [0, "WDOG is disabled in CPU Stop mode"]
+        Enabled: [1, "WDOG is enabled in CPU Stop mode"]
+    WAITEN:
+      _replace_enum:
+        Disabled: [0, "WDOG is disabled in CPU Wait mode"]
+        Enabled: [1, "WDOG is enabled in CPU Wait mode"]
+    TESTSEL:
+      _replace_enum:
+        QuickTest: [0, "Quick test. The timer runs normally. After 16 clock cycles the counter is loaded with 0xFFFF to reduce the time taken for the counter to expire."]
+        ByteTest: [1, "Byte test. Puts the timer in the byte test mode where individual bytes of the counter are enabled for operation and are compared for time out against the TOVALL/TOVALH depending on BYTESEL[1:0]"]
+    BYTESEL:
+      _replace_enum:
+        Byte0: [0, "Byte 0 selected"]
+        Byte1: [1, "Byte 1 selected"]
+        Byte2: [2, "Byte 2 selected"]
+        Byte3: [3, "Byte 3 selected"]
+    DISTESTWDOG:
+      _replace_enum:
+        Allowed: [0, "WDOG functional test mode is not disabled"]
+        Disabled: [1, "WDOG functional test mode is disabled permanently until reset"]

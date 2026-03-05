@@ -5,10 +5,10 @@ pub type W = crate::W<CrSpec>;
 #[doc = "Enable Debug\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Edbg {
-    #[doc = "0: When in debug mode, the DMA continues to operate."]
-    _0 = 0,
-    #[doc = "1: When in debug mode, the DMA stalls the start of a new channel. Executing channels are allowed to complete. Channel execution resumes when the system exits debug mode or the EDBG bit is cleared."]
-    _1 = 1,
+    #[doc = "0: When in debug mode, the DMA continues to operate"]
+    ContinueOnDebug = 0,
+    #[doc = "1: When in debug mode, the DMA stalls the start of a new channel"]
+    HaltOnDebug = 1,
 }
 impl From<Edbg> for bool {
     #[inline(always)]
@@ -23,19 +23,19 @@ impl EdbgR {
     #[inline(always)]
     pub const fn variant(&self) -> Edbg {
         match self.bits {
-            false => Edbg::_0,
-            true => Edbg::_1,
+            false => Edbg::ContinueOnDebug,
+            true => Edbg::HaltOnDebug,
         }
     }
-    #[doc = "When in debug mode, the DMA continues to operate."]
+    #[doc = "When in debug mode, the DMA continues to operate"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Edbg::_0
+    pub fn is_continue_on_debug(&self) -> bool {
+        *self == Edbg::ContinueOnDebug
     }
-    #[doc = "When in debug mode, the DMA stalls the start of a new channel. Executing channels are allowed to complete. Channel execution resumes when the system exits debug mode or the EDBG bit is cleared."]
+    #[doc = "When in debug mode, the DMA stalls the start of a new channel"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Edbg::_1
+    pub fn is_halt_on_debug(&self) -> bool {
+        *self == Edbg::HaltOnDebug
     }
 }
 #[doc = "Field `EDBG` writer - Enable Debug"]
@@ -44,24 +44,24 @@ impl<'a, REG> EdbgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "When in debug mode, the DMA continues to operate."]
+    #[doc = "When in debug mode, the DMA continues to operate"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Edbg::_0)
+    pub fn continue_on_debug(self) -> &'a mut crate::W<REG> {
+        self.variant(Edbg::ContinueOnDebug)
     }
-    #[doc = "When in debug mode, the DMA stalls the start of a new channel. Executing channels are allowed to complete. Channel execution resumes when the system exits debug mode or the EDBG bit is cleared."]
+    #[doc = "When in debug mode, the DMA stalls the start of a new channel"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Edbg::_1)
+    pub fn halt_on_debug(self) -> &'a mut crate::W<REG> {
+        self.variant(Edbg::HaltOnDebug)
     }
 }
 #[doc = "Enable Round Robin Channel Arbitration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Erca {
-    #[doc = "0: Fixed priority arbitration is used for channel selection."]
-    _0 = 0,
-    #[doc = "1: Round robin arbitration is used for channel selection."]
-    _1 = 1,
+    #[doc = "0: Fixed priority arbitration is used for channel selection"]
+    FixedPriority = 0,
+    #[doc = "1: Round robin arbitration is used for channel selection"]
+    RoundRobin = 1,
 }
 impl From<Erca> for bool {
     #[inline(always)]
@@ -76,19 +76,19 @@ impl ErcaR {
     #[inline(always)]
     pub const fn variant(&self) -> Erca {
         match self.bits {
-            false => Erca::_0,
-            true => Erca::_1,
+            false => Erca::FixedPriority,
+            true => Erca::RoundRobin,
         }
     }
-    #[doc = "Fixed priority arbitration is used for channel selection."]
+    #[doc = "Fixed priority arbitration is used for channel selection"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Erca::_0
+    pub fn is_fixed_priority(&self) -> bool {
+        *self == Erca::FixedPriority
     }
-    #[doc = "Round robin arbitration is used for channel selection."]
+    #[doc = "Round robin arbitration is used for channel selection"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Erca::_1
+    pub fn is_round_robin(&self) -> bool {
+        *self == Erca::RoundRobin
     }
 }
 #[doc = "Field `ERCA` writer - Enable Round Robin Channel Arbitration"]
@@ -97,24 +97,24 @@ impl<'a, REG> ErcaW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Fixed priority arbitration is used for channel selection."]
+    #[doc = "Fixed priority arbitration is used for channel selection"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Erca::_0)
+    pub fn fixed_priority(self) -> &'a mut crate::W<REG> {
+        self.variant(Erca::FixedPriority)
     }
-    #[doc = "Round robin arbitration is used for channel selection."]
+    #[doc = "Round robin arbitration is used for channel selection"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Erca::_1)
+    pub fn round_robin(self) -> &'a mut crate::W<REG> {
+        self.variant(Erca::RoundRobin)
     }
 }
 #[doc = "Halt On Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hoe {
     #[doc = "0: Normal operation"]
-    _0 = 0,
-    #[doc = "1: Any error causes the HALT bit to set. Subsequently, all service requests are ignored until the HALT bit is cleared."]
-    _1 = 1,
+    Normal = 0,
+    #[doc = "1: Any error causes the HALT bit to set"]
+    HaltOnError = 1,
 }
 impl From<Hoe> for bool {
     #[inline(always)]
@@ -129,19 +129,19 @@ impl HoeR {
     #[inline(always)]
     pub const fn variant(&self) -> Hoe {
         match self.bits {
-            false => Hoe::_0,
-            true => Hoe::_1,
+            false => Hoe::Normal,
+            true => Hoe::HaltOnError,
         }
     }
     #[doc = "Normal operation"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Hoe::_0
+    pub fn is_normal(&self) -> bool {
+        *self == Hoe::Normal
     }
-    #[doc = "Any error causes the HALT bit to set. Subsequently, all service requests are ignored until the HALT bit is cleared."]
+    #[doc = "Any error causes the HALT bit to set"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Hoe::_1
+    pub fn is_halt_on_error(&self) -> bool {
+        *self == Hoe::HaltOnError
     }
 }
 #[doc = "Field `HOE` writer - Halt On Error"]
@@ -152,22 +152,22 @@ where
 {
     #[doc = "Normal operation"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Hoe::_0)
+    pub fn normal(self) -> &'a mut crate::W<REG> {
+        self.variant(Hoe::Normal)
     }
-    #[doc = "Any error causes the HALT bit to set. Subsequently, all service requests are ignored until the HALT bit is cleared."]
+    #[doc = "Any error causes the HALT bit to set"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Hoe::_1)
+    pub fn halt_on_error(self) -> &'a mut crate::W<REG> {
+        self.variant(Hoe::HaltOnError)
     }
 }
 #[doc = "Halt DMA Operations\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Halt {
     #[doc = "0: Normal operation"]
-    _0 = 0,
-    #[doc = "1: Stall the start of any new channels. Executing channels are allowed to complete. Channel execution resumes when this bit is cleared."]
-    _1 = 1,
+    Normal = 0,
+    #[doc = "1: Stall the start of any new channels"]
+    Halt = 1,
 }
 impl From<Halt> for bool {
     #[inline(always)]
@@ -182,19 +182,19 @@ impl HaltR {
     #[inline(always)]
     pub const fn variant(&self) -> Halt {
         match self.bits {
-            false => Halt::_0,
-            true => Halt::_1,
+            false => Halt::Normal,
+            true => Halt::Halt,
         }
     }
     #[doc = "Normal operation"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Halt::_0
+    pub fn is_normal(&self) -> bool {
+        *self == Halt::Normal
     }
-    #[doc = "Stall the start of any new channels. Executing channels are allowed to complete. Channel execution resumes when this bit is cleared."]
+    #[doc = "Stall the start of any new channels"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Halt::_1
+    pub fn is_halt(&self) -> bool {
+        *self == Halt::Halt
     }
 }
 #[doc = "Field `HALT` writer - Halt DMA Operations"]
@@ -205,22 +205,22 @@ where
 {
     #[doc = "Normal operation"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Halt::_0)
+    pub fn normal(self) -> &'a mut crate::W<REG> {
+        self.variant(Halt::Normal)
     }
-    #[doc = "Stall the start of any new channels. Executing channels are allowed to complete. Channel execution resumes when this bit is cleared."]
+    #[doc = "Stall the start of any new channels"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Halt::_1)
+    pub fn halt(self) -> &'a mut crate::W<REG> {
+        self.variant(Halt::Halt)
     }
 }
 #[doc = "Continuous Link Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Clm {
-    #[doc = "0: A minor loop channel link made to itself goes through channel arbitration before being activated again."]
-    _0 = 0,
-    #[doc = "1: A minor loop channel link made to itself does not go through channel arbitration before being activated again. Upon minor loop completion, the channel activates again if that channel has a minor loop channel link enabled and the link channel is itself. This effectively applies the minor loop offsets and restarts the next minor loop."]
-    _1 = 1,
+    #[doc = "0: A minor loop channel link made to itself goes through channel arbitration before being activated again"]
+    Arbitrate = 0,
+    #[doc = "1: A minor loop channel link made to itself does not go through channel arbitration before being activated again"]
+    ContinuousMinorLink = 1,
 }
 impl From<Clm> for bool {
     #[inline(always)]
@@ -235,19 +235,19 @@ impl ClmR {
     #[inline(always)]
     pub const fn variant(&self) -> Clm {
         match self.bits {
-            false => Clm::_0,
-            true => Clm::_1,
+            false => Clm::Arbitrate,
+            true => Clm::ContinuousMinorLink,
         }
     }
-    #[doc = "A minor loop channel link made to itself goes through channel arbitration before being activated again."]
+    #[doc = "A minor loop channel link made to itself goes through channel arbitration before being activated again"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Clm::_0
+    pub fn is_arbitrate(&self) -> bool {
+        *self == Clm::Arbitrate
     }
-    #[doc = "A minor loop channel link made to itself does not go through channel arbitration before being activated again. Upon minor loop completion, the channel activates again if that channel has a minor loop channel link enabled and the link channel is itself. This effectively applies the minor loop offsets and restarts the next minor loop."]
+    #[doc = "A minor loop channel link made to itself does not go through channel arbitration before being activated again"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Clm::_1
+    pub fn is_continuous_minor_link(&self) -> bool {
+        *self == Clm::ContinuousMinorLink
     }
 }
 #[doc = "Field `CLM` writer - Continuous Link Mode"]
@@ -256,24 +256,24 @@ impl<'a, REG> ClmW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "A minor loop channel link made to itself goes through channel arbitration before being activated again."]
+    #[doc = "A minor loop channel link made to itself goes through channel arbitration before being activated again"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Clm::_0)
+    pub fn arbitrate(self) -> &'a mut crate::W<REG> {
+        self.variant(Clm::Arbitrate)
     }
-    #[doc = "A minor loop channel link made to itself does not go through channel arbitration before being activated again. Upon minor loop completion, the channel activates again if that channel has a minor loop channel link enabled and the link channel is itself. This effectively applies the minor loop offsets and restarts the next minor loop."]
+    #[doc = "A minor loop channel link made to itself does not go through channel arbitration before being activated again"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Clm::_1)
+    pub fn continuous_minor_link(self) -> &'a mut crate::W<REG> {
+        self.variant(Clm::ContinuousMinorLink)
     }
 }
 #[doc = "Enable Minor Loop Mapping\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Emlm {
-    #[doc = "0: Disabled. TCDn.word2 is defined as a 32-bit NBYTES field."]
-    _0 = 0,
-    #[doc = "1: Enabled. TCDn.word2 is redefined to include individual enable fields, an offset field, and the NBYTES field. The individual enable fields allow the minor loop offset to be applied to the source address, the destination address, or both. The NBYTES field is reduced when either offset is enabled."]
-    _1 = 1,
+    #[doc = "0: Disabled. TCDn.word2 is defined as a 32-bit NBYTES field"]
+    Disabled = 0,
+    #[doc = "1: Enabled. TCDn.word2 is redefined to include individual enable fields, an offset field, and the NBYTES field"]
+    Enabled = 1,
 }
 impl From<Emlm> for bool {
     #[inline(always)]
@@ -288,19 +288,19 @@ impl EmlmR {
     #[inline(always)]
     pub const fn variant(&self) -> Emlm {
         match self.bits {
-            false => Emlm::_0,
-            true => Emlm::_1,
+            false => Emlm::Disabled,
+            true => Emlm::Enabled,
         }
     }
-    #[doc = "Disabled. TCDn.word2 is defined as a 32-bit NBYTES field."]
+    #[doc = "Disabled. TCDn.word2 is defined as a 32-bit NBYTES field"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Emlm::_0
+    pub fn is_disabled(&self) -> bool {
+        *self == Emlm::Disabled
     }
-    #[doc = "Enabled. TCDn.word2 is redefined to include individual enable fields, an offset field, and the NBYTES field. The individual enable fields allow the minor loop offset to be applied to the source address, the destination address, or both. The NBYTES field is reduced when either offset is enabled."]
+    #[doc = "Enabled. TCDn.word2 is redefined to include individual enable fields, an offset field, and the NBYTES field"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Emlm::_1
+    pub fn is_enabled(&self) -> bool {
+        *self == Emlm::Enabled
     }
 }
 #[doc = "Field `EMLM` writer - Enable Minor Loop Mapping"]
@@ -309,24 +309,24 @@ impl<'a, REG> EmlmW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disabled. TCDn.word2 is defined as a 32-bit NBYTES field."]
+    #[doc = "Disabled. TCDn.word2 is defined as a 32-bit NBYTES field"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Emlm::_0)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Emlm::Disabled)
     }
-    #[doc = "Enabled. TCDn.word2 is redefined to include individual enable fields, an offset field, and the NBYTES field. The individual enable fields allow the minor loop offset to be applied to the source address, the destination address, or both. The NBYTES field is reduced when either offset is enabled."]
+    #[doc = "Enabled. TCDn.word2 is redefined to include individual enable fields, an offset field, and the NBYTES field"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Emlm::_1)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Emlm::Enabled)
     }
 }
 #[doc = "Error Cancel Transfer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ecx {
     #[doc = "0: Normal operation"]
-    _0 = 0,
-    #[doc = "1: Cancel the remaining data transfer in the same fashion as the CX bit. Stop the executing channel and force the minor loop to finish. The cancel takes effect after the last write of the current read/write sequence. The ECX bit clears itself after the cancel is honored. In addition to cancelling the transfer, ECX treats the cancel as an error condition, thus updating the ES register and generating an optional error interrupt."]
-    _1 = 1,
+    Normal = 0,
+    #[doc = "1: Cancel the remaining data transfer in the same fashion as the EBW bit"]
+    Cancel = 1,
 }
 impl From<Ecx> for bool {
     #[inline(always)]
@@ -341,19 +341,19 @@ impl EcxR {
     #[inline(always)]
     pub const fn variant(&self) -> Ecx {
         match self.bits {
-            false => Ecx::_0,
-            true => Ecx::_1,
+            false => Ecx::Normal,
+            true => Ecx::Cancel,
         }
     }
     #[doc = "Normal operation"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Ecx::_0
+    pub fn is_normal(&self) -> bool {
+        *self == Ecx::Normal
     }
-    #[doc = "Cancel the remaining data transfer in the same fashion as the CX bit. Stop the executing channel and force the minor loop to finish. The cancel takes effect after the last write of the current read/write sequence. The ECX bit clears itself after the cancel is honored. In addition to cancelling the transfer, ECX treats the cancel as an error condition, thus updating the ES register and generating an optional error interrupt."]
+    #[doc = "Cancel the remaining data transfer in the same fashion as the EBW bit"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Ecx::_1
+    pub fn is_cancel(&self) -> bool {
+        *self == Ecx::Cancel
     }
 }
 #[doc = "Field `ECX` writer - Error Cancel Transfer"]
@@ -364,22 +364,22 @@ where
 {
     #[doc = "Normal operation"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Ecx::_0)
+    pub fn normal(self) -> &'a mut crate::W<REG> {
+        self.variant(Ecx::Normal)
     }
-    #[doc = "Cancel the remaining data transfer in the same fashion as the CX bit. Stop the executing channel and force the minor loop to finish. The cancel takes effect after the last write of the current read/write sequence. The ECX bit clears itself after the cancel is honored. In addition to cancelling the transfer, ECX treats the cancel as an error condition, thus updating the ES register and generating an optional error interrupt."]
+    #[doc = "Cancel the remaining data transfer in the same fashion as the EBW bit"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ecx::_1)
+    pub fn cancel(self) -> &'a mut crate::W<REG> {
+        self.variant(Ecx::Cancel)
     }
 }
 #[doc = "Cancel Transfer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cx {
     #[doc = "0: Normal operation"]
-    _0 = 0,
-    #[doc = "1: Cancel the remaining data transfer. Stop the executing channel and force the minor loop to finish. The cancel takes effect after the last write of the current read/write sequence. The CX bit clears itself after the cancel has been honored. This cancel retires the channel normally as if the minor loop was completed."]
-    _1 = 1,
+    Normal = 0,
+    #[doc = "1: Cancel the remaining data transfer in the same fashion as the EBW bit"]
+    Cancel = 1,
 }
 impl From<Cx> for bool {
     #[inline(always)]
@@ -394,19 +394,19 @@ impl CxR {
     #[inline(always)]
     pub const fn variant(&self) -> Cx {
         match self.bits {
-            false => Cx::_0,
-            true => Cx::_1,
+            false => Cx::Normal,
+            true => Cx::Cancel,
         }
     }
     #[doc = "Normal operation"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Cx::_0
+    pub fn is_normal(&self) -> bool {
+        *self == Cx::Normal
     }
-    #[doc = "Cancel the remaining data transfer. Stop the executing channel and force the minor loop to finish. The cancel takes effect after the last write of the current read/write sequence. The CX bit clears itself after the cancel has been honored. This cancel retires the channel normally as if the minor loop was completed."]
+    #[doc = "Cancel the remaining data transfer in the same fashion as the EBW bit"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Cx::_1
+    pub fn is_cancel(&self) -> bool {
+        *self == Cx::Cancel
     }
 }
 #[doc = "Field `CX` writer - Cancel Transfer"]
@@ -417,13 +417,13 @@ where
 {
     #[doc = "Normal operation"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Cx::_0)
+    pub fn normal(self) -> &'a mut crate::W<REG> {
+        self.variant(Cx::Normal)
     }
-    #[doc = "Cancel the remaining data transfer. Stop the executing channel and force the minor loop to finish. The cancel takes effect after the last write of the current read/write sequence. The CX bit clears itself after the cancel has been honored. This cancel retires the channel normally as if the minor loop was completed."]
+    #[doc = "Cancel the remaining data transfer in the same fashion as the EBW bit"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cx::_1)
+    pub fn cancel(self) -> &'a mut crate::W<REG> {
+        self.variant(Cx::Cancel)
     }
 }
 impl R {

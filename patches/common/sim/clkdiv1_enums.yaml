@@ -1,0 +1,60 @@
+# SIM CLKDIV1 output divider enumerated values (common fields)
+# OUTDIV1 (core), OUTDIV2 (bus), OUTDIV4 (flash) — present in both MK20D5 and MK20D7
+# OUTDIV3 (FlexBus) is MK20D7-only and patched separately
+# Source: K20 Sub-Family Reference Manual, SIM chapter
+SIM:
+  CLKDIV1:
+    OUTDIV4:
+      _replace_enum:
+        Div1: [0, "Divide-by-1"]
+        Div2: [1, "Divide-by-2"]
+        Div3: [2, "Divide-by-3"]
+        Div4: [3, "Divide-by-4"]
+        Div5: [4, "Divide-by-5"]
+        Div6: [5, "Divide-by-6"]
+        Div7: [6, "Divide-by-7"]
+        Div8: [7, "Divide-by-8"]
+        Div9: [8, "Divide-by-9"]
+        Div10: [9, "Divide-by-10"]
+        Div11: [10, "Divide-by-11"]
+        Div12: [11, "Divide-by-12"]
+        Div13: [12, "Divide-by-13"]
+        Div14: [13, "Divide-by-14"]
+        Div15: [14, "Divide-by-15"]
+        Div16: [15, "Divide-by-16"]
+    OUTDIV2:
+      _replace_enum:
+        Div1: [0, "Divide-by-1"]
+        Div2: [1, "Divide-by-2"]
+        Div3: [2, "Divide-by-3"]
+        Div4: [3, "Divide-by-4"]
+        Div5: [4, "Divide-by-5"]
+        Div6: [5, "Divide-by-6"]
+        Div7: [6, "Divide-by-7"]
+        Div8: [7, "Divide-by-8"]
+        Div9: [8, "Divide-by-9"]
+        Div10: [9, "Divide-by-10"]
+        Div11: [10, "Divide-by-11"]
+        Div12: [11, "Divide-by-12"]
+        Div13: [12, "Divide-by-13"]
+        Div14: [13, "Divide-by-14"]
+        Div15: [14, "Divide-by-15"]
+        Div16: [15, "Divide-by-16"]
+    OUTDIV1:
+      _replace_enum:
+        Div1: [0, "Divide-by-1"]
+        Div2: [1, "Divide-by-2"]
+        Div3: [2, "Divide-by-3"]
+        Div4: [3, "Divide-by-4"]
+        Div5: [4, "Divide-by-5"]
+        Div6: [5, "Divide-by-6"]
+        Div7: [6, "Divide-by-7"]
+        Div8: [7, "Divide-by-8"]
+        Div9: [8, "Divide-by-9"]
+        Div10: [9, "Divide-by-10"]
+        Div11: [10, "Divide-by-11"]
+        Div12: [11, "Divide-by-12"]
+        Div13: [12, "Divide-by-13"]
+        Div14: [13, "Divide-by-14"]
+        Div15: [14, "Divide-by-15"]
+        Div16: [15, "Divide-by-16"]

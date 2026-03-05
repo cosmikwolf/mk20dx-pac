@@ -1,0 +1,13 @@
+# DMAMUX CHCFG TRIG/ENBL enumerated values
+# SOURCE enum is already fully semantic — not patched here
+# Source: K20 Sub-Family Reference Manual, DMAMUX chapter
+DMAMUX:
+  "CHCFG%s":
+    TRIG:
+      _replace_enum:
+        Normal: [0, "Triggering is disabled; source routed directly to DMA channel"]
+        PeriodicTrigger: [1, "Triggering is enabled; DMAMUX is in periodic trigger mode"]
+    ENBL:
+      _replace_enum:
+        Disabled: [0, "DMA channel is disabled"]
+        Enabled: [1, "DMA channel is enabled"]

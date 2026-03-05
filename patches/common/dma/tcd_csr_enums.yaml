@@ -1,0 +1,34 @@
+# DMA TCD CSR (Control and Status Register) enumerated values
+# Must be included BEFORE tcd_cluster.yaml (targets TCD%s_CSR before clustering)
+# Source: K20 Sub-Family Reference Manual, eDMA chapter
+DMA:
+  "TCD%s_CSR":
+    START:
+      _replace_enum:
+        Inactive: [0, "The channel is not explicitly started"]
+        Active: [1, "The channel is explicitly started via a software initiated service request"]
+    INTMAJOR:
+      _replace_enum:
+        Disabled: [0, "The end-of-major loop interrupt is disabled"]
+        Enabled: [1, "The end-of-major loop interrupt is enabled"]
+    INTHALF:
+      _replace_enum:
+        Disabled: [0, "The half-point interrupt is disabled"]
+        Enabled: [1, "The half-point interrupt is enabled"]
+    DREQ:
+      _replace_enum:
+        NoDisable: [0, "The channel's ERQ field is not affected"]
+        DisableOnComplete: [1, "The channel's ERQ field is cleared when the major loop is complete"]
+    ESG:
+      _replace_enum:
+        Disabled: [0, "The current channel's TCD is normal format"]
+        Enabled: [1, "The current channel's TCD specifies a scatter gather format"]
+    MAJORELINK:
+      _replace_enum:
+        Disabled: [0, "The channel-to-channel linking is disabled"]
+        Enabled: [1, "The channel-to-channel linking is enabled"]
+    BWC:
+      _replace_enum:
+        NoStall: [0, "No eDMA engine stalls"]
+        Stall4Cycles: [2, "eDMA engine stalls for 4 cycles after each R/W"]
+        Stall8Cycles: [3, "eDMA engine stalls for 8 cycles after each R/W"]

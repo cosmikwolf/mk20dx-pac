@@ -10,9 +10,9 @@ pub type CiterW<'a, REG> = crate::FieldWriter<'a, REG, 15, u16>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Elink {
     #[doc = "0: The channel-to-channel linking is disabled"]
-    _0 = 0,
+    Disabled = 0,
     #[doc = "1: The channel-to-channel linking is enabled"]
-    _1 = 1,
+    Enabled = 1,
 }
 impl From<Elink> for bool {
     #[inline(always)]
@@ -27,19 +27,19 @@ impl ElinkR {
     #[inline(always)]
     pub const fn variant(&self) -> Elink {
         match self.bits {
-            false => Elink::_0,
-            true => Elink::_1,
+            false => Elink::Disabled,
+            true => Elink::Enabled,
         }
     }
     #[doc = "The channel-to-channel linking is disabled"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Elink::_0
+    pub fn is_disabled(&self) -> bool {
+        *self == Elink::Disabled
     }
     #[doc = "The channel-to-channel linking is enabled"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Elink::_1
+    pub fn is_enabled(&self) -> bool {
+        *self == Elink::Enabled
     }
 }
 #[doc = "Field `ELINK` writer - Enable channel-to-channel linking on minor-loop complete"]
@@ -50,13 +50,13 @@ where
 {
     #[doc = "The channel-to-channel linking is disabled"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Elink::_0)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Elink::Disabled)
     }
     #[doc = "The channel-to-channel linking is enabled"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Elink::_1)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Elink::Enabled)
     }
 }
 impl R {

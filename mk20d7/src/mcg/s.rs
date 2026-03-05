@@ -5,10 +5,10 @@ pub type W = crate::W<SSpec>;
 #[doc = "Internal Reference Clock Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ircst {
-    #[doc = "0: Source of internal reference clock is the slow clock (32 kHz IRC)."]
-    _0 = 0,
-    #[doc = "1: Source of internal reference clock is the fast clock (2 MHz IRC)."]
-    _1 = 1,
+    #[doc = "0: Source of internal reference clock is the slow clock (32 kHz IRC)"]
+    Slow = 0,
+    #[doc = "1: Source of internal reference clock is the fast clock (4 MHz IRC)"]
+    Fast = 1,
 }
 impl From<Ircst> for bool {
     #[inline(always)]
@@ -23,19 +23,19 @@ impl IrcstR {
     #[inline(always)]
     pub const fn variant(&self) -> Ircst {
         match self.bits {
-            false => Ircst::_0,
-            true => Ircst::_1,
+            false => Ircst::Slow,
+            true => Ircst::Fast,
         }
     }
-    #[doc = "Source of internal reference clock is the slow clock (32 kHz IRC)."]
+    #[doc = "Source of internal reference clock is the slow clock (32 kHz IRC)"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Ircst::_0
+    pub fn is_slow(&self) -> bool {
+        *self == Ircst::Slow
     }
-    #[doc = "Source of internal reference clock is the fast clock (2 MHz IRC)."]
+    #[doc = "Source of internal reference clock is the fast clock (4 MHz IRC)"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Ircst::_1
+    pub fn is_fast(&self) -> bool {
+        *self == Ircst::Fast
     }
 }
 #[doc = "Field `OSCINIT0` reader - OSC Initialization"]
@@ -44,14 +44,14 @@ pub type Oscinit0R = crate::BitReader;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Clkst {
-    #[doc = "0: Encoding 0 - Output of the FLL is selected (reset default)."]
-    _00 = 0,
-    #[doc = "1: Encoding 1 - Internal reference clock is selected."]
-    _01 = 1,
-    #[doc = "2: Encoding 2 - External reference clock is selected."]
-    _10 = 2,
-    #[doc = "3: Encoding 3 - Output of the PLL is selected."]
-    _11 = 3,
+    #[doc = "0: Output of the FLL is selected (reset default)"]
+    Fll = 0,
+    #[doc = "1: Internal reference clock is selected"]
+    Internal = 1,
+    #[doc = "2: External reference clock is selected"]
+    External = 2,
+    #[doc = "3: Output of the PLL is selected"]
+    Pll = 3,
 }
 impl From<Clkst> for u8 {
     #[inline(always)]
@@ -70,41 +70,41 @@ impl ClkstR {
     #[inline(always)]
     pub const fn variant(&self) -> Clkst {
         match self.bits {
-            0 => Clkst::_00,
-            1 => Clkst::_01,
-            2 => Clkst::_10,
-            3 => Clkst::_11,
+            0 => Clkst::Fll,
+            1 => Clkst::Internal,
+            2 => Clkst::External,
+            3 => Clkst::Pll,
             _ => unreachable!(),
         }
     }
-    #[doc = "Encoding 0 - Output of the FLL is selected (reset default)."]
+    #[doc = "Output of the FLL is selected (reset default)"]
     #[inline(always)]
-    pub fn is_00(&self) -> bool {
-        *self == Clkst::_00
+    pub fn is_fll(&self) -> bool {
+        *self == Clkst::Fll
     }
-    #[doc = "Encoding 1 - Internal reference clock is selected."]
+    #[doc = "Internal reference clock is selected"]
     #[inline(always)]
-    pub fn is_01(&self) -> bool {
-        *self == Clkst::_01
+    pub fn is_internal(&self) -> bool {
+        *self == Clkst::Internal
     }
-    #[doc = "Encoding 2 - External reference clock is selected."]
+    #[doc = "External reference clock is selected"]
     #[inline(always)]
-    pub fn is_10(&self) -> bool {
-        *self == Clkst::_10
+    pub fn is_external(&self) -> bool {
+        *self == Clkst::External
     }
-    #[doc = "Encoding 3 - Output of the PLL is selected."]
+    #[doc = "Output of the PLL is selected"]
     #[inline(always)]
-    pub fn is_11(&self) -> bool {
-        *self == Clkst::_11
+    pub fn is_pll(&self) -> bool {
+        *self == Clkst::Pll
     }
 }
 #[doc = "Internal Reference Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Irefst {
-    #[doc = "0: Source of FLL reference clock is the external reference clock."]
-    _0 = 0,
-    #[doc = "1: Source of FLL reference clock is the internal reference clock."]
-    _1 = 1,
+    #[doc = "0: Source of FLL reference clock is the external reference clock"]
+    External = 0,
+    #[doc = "1: Source of FLL reference clock is the internal reference clock"]
+    Internal = 1,
 }
 impl From<Irefst> for bool {
     #[inline(always)]
@@ -119,28 +119,28 @@ impl IrefstR {
     #[inline(always)]
     pub const fn variant(&self) -> Irefst {
         match self.bits {
-            false => Irefst::_0,
-            true => Irefst::_1,
+            false => Irefst::External,
+            true => Irefst::Internal,
         }
     }
-    #[doc = "Source of FLL reference clock is the external reference clock."]
+    #[doc = "Source of FLL reference clock is the external reference clock"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Irefst::_0
+    pub fn is_external(&self) -> bool {
+        *self == Irefst::External
     }
-    #[doc = "Source of FLL reference clock is the internal reference clock."]
+    #[doc = "Source of FLL reference clock is the internal reference clock"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Irefst::_1
+    pub fn is_internal(&self) -> bool {
+        *self == Irefst::Internal
     }
 }
 #[doc = "PLL Select Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pllst {
-    #[doc = "0: Source of PLLS clock is FLL clock."]
-    _0 = 0,
-    #[doc = "1: Source of PLLS clock is PLL clock."]
-    _1 = 1,
+    #[doc = "0: Source of PLLS clock is FLL clock"]
+    Fll = 0,
+    #[doc = "1: Source of PLLS clock is PLL output clock"]
+    Pll = 1,
 }
 impl From<Pllst> for bool {
     #[inline(always)]
@@ -155,28 +155,28 @@ impl PllstR {
     #[inline(always)]
     pub const fn variant(&self) -> Pllst {
         match self.bits {
-            false => Pllst::_0,
-            true => Pllst::_1,
+            false => Pllst::Fll,
+            true => Pllst::Pll,
         }
     }
-    #[doc = "Source of PLLS clock is FLL clock."]
+    #[doc = "Source of PLLS clock is FLL clock"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Pllst::_0
+    pub fn is_fll(&self) -> bool {
+        *self == Pllst::Fll
     }
-    #[doc = "Source of PLLS clock is PLL clock."]
+    #[doc = "Source of PLLS clock is PLL output clock"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Pllst::_1
+    pub fn is_pll(&self) -> bool {
+        *self == Pllst::Pll
     }
 }
 #[doc = "Lock Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lock0 {
-    #[doc = "0: PLL is currently unlocked."]
-    _0 = 0,
-    #[doc = "1: PLL is currently locked."]
-    _1 = 1,
+    #[doc = "0: PLL is currently unlocked"]
+    Unlocked = 0,
+    #[doc = "1: PLL is currently locked"]
+    Locked = 1,
 }
 impl From<Lock0> for bool {
     #[inline(always)]
@@ -191,28 +191,28 @@ impl Lock0R {
     #[inline(always)]
     pub const fn variant(&self) -> Lock0 {
         match self.bits {
-            false => Lock0::_0,
-            true => Lock0::_1,
+            false => Lock0::Unlocked,
+            true => Lock0::Locked,
         }
     }
-    #[doc = "PLL is currently unlocked."]
+    #[doc = "PLL is currently unlocked"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Lock0::_0
+    pub fn is_unlocked(&self) -> bool {
+        *self == Lock0::Unlocked
     }
-    #[doc = "PLL is currently locked."]
+    #[doc = "PLL is currently locked"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Lock0::_1
+    pub fn is_locked(&self) -> bool {
+        *self == Lock0::Locked
     }
 }
 #[doc = "Loss of Lock Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lols0 {
-    #[doc = "0: PLL has not lost lock since LOLS 0 was last cleared."]
-    _0 = 0,
-    #[doc = "1: PLL has lost lock since LOLS 0 was last cleared."]
-    _1 = 1,
+    #[doc = "0: PLL has not lost lock since LOLS0 was last cleared"]
+    NoLoss = 0,
+    #[doc = "1: PLL has lost lock since LOLS0 was last cleared"]
+    LossDetected = 1,
 }
 impl From<Lols0> for bool {
     #[inline(always)]
@@ -227,19 +227,19 @@ impl Lols0R {
     #[inline(always)]
     pub const fn variant(&self) -> Lols0 {
         match self.bits {
-            false => Lols0::_0,
-            true => Lols0::_1,
+            false => Lols0::NoLoss,
+            true => Lols0::LossDetected,
         }
     }
-    #[doc = "PLL has not lost lock since LOLS 0 was last cleared."]
+    #[doc = "PLL has not lost lock since LOLS0 was last cleared"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Lols0::_0
+    pub fn is_no_loss(&self) -> bool {
+        *self == Lols0::NoLoss
     }
-    #[doc = "PLL has lost lock since LOLS 0 was last cleared."]
+    #[doc = "PLL has lost lock since LOLS0 was last cleared"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Lols0::_1
+    pub fn is_loss_detected(&self) -> bool {
+        *self == Lols0::LossDetected
     }
 }
 #[doc = "Field `LOLS0` writer - Loss of Lock Status"]
@@ -248,15 +248,15 @@ impl<'a, REG> Lols0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "PLL has not lost lock since LOLS 0 was last cleared."]
+    #[doc = "PLL has not lost lock since LOLS0 was last cleared"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Lols0::_0)
+    pub fn no_loss(self) -> &'a mut crate::W<REG> {
+        self.variant(Lols0::NoLoss)
     }
-    #[doc = "PLL has lost lock since LOLS 0 was last cleared."]
+    #[doc = "PLL has lost lock since LOLS0 was last cleared"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Lols0::_1)
+    pub fn loss_detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Lols0::LossDetected)
     }
 }
 impl R {

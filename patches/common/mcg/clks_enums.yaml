@@ -9,8 +9,67 @@ MCG:
         Internal: [1, "Internal reference clock"]
         External: [2, "External reference clock"]
         Reserved: [3, "Reserved"]
+    IREFSTEN:
+      _replace_enum:
+        Disabled: [0, "Internal reference clock is disabled in Stop mode"]
+        Enabled: [1, "Internal reference clock stays enabled in Stop mode"]
+    IRCLKEN:
+      _replace_enum:
+        Inactive: [0, "MCGIRCLK inactive"]
+        Active: [1, "MCGIRCLK active"]
+    IREFS:
+      _replace_enum:
+        External: [0, "External reference clock is selected"]
+        Internal: [1, "The slow internal reference clock is selected"]
   C2:
     RANGE0:
       _replace_enum:
         Low: [0, "Low frequency range for the crystal oscillator"]
         High: [1, "High frequency range for the crystal oscillator"]
+    IRCS:
+      _replace_enum:
+        SlowIrc: [0, "Slow internal reference clock selected"]
+        FastIrc: [1, "Fast internal reference clock selected"]
+    LP:
+      _replace_enum:
+        FllPllActive: [0, "FLL or PLL is not disabled in bypass modes"]
+        FllPllDisabled: [1, "FLL or PLL is disabled in bypass modes"]
+    EREFS0:
+      _replace_enum:
+        ExternalClock: [0, "External clock requested"]
+        Oscillator: [1, "Oscillator requested"]
+    HGO0:
+      _replace_enum:
+        LowPower: [0, "Configure crystal oscillator for low-power operation"]
+        HighGain: [1, "Configure crystal oscillator for high-gain operation"]
+    LOCRE0:
+      _replace_enum:
+        Interrupt: [0, "Interrupt request is generated on a loss of OSC0 external reference clock"]
+        Reset: [1, "Generate a reset request on a loss of OSC0 external reference clock"]
+  S:
+    IRCST:
+      _replace_enum:
+        Slow: [0, "Source of internal reference clock is the slow clock (32 kHz IRC)"]
+        Fast: [1, "Source of internal reference clock is the fast clock (4 MHz IRC)"]
+    CLKST:
+      _replace_enum:
+        Fll: [0, "Output of the FLL is selected (reset default)"]
+        Internal: [1, "Internal reference clock is selected"]
+        External: [2, "External reference clock is selected"]
+        Pll: [3, "Output of the PLL is selected"]
+    IREFST:
+      _replace_enum:
+        External: [0, "Source of FLL reference clock is the external reference clock"]
+        Internal: [1, "Source of FLL reference clock is the internal reference clock"]
+    PLLST:
+      _replace_enum:
+        Fll: [0, "Source of PLLS clock is FLL clock"]
+        Pll: [1, "Source of PLLS clock is PLL output clock"]
+    LOCK0:
+      _replace_enum:
+        Unlocked: [0, "PLL is currently unlocked"]
+        Locked: [1, "PLL is currently locked"]
+    LOLS0:
+      _replace_enum:
+        NoLoss: [0, "PLL has not lost lock since LOLS0 was last cleared"]
+        LossDetected: [1, "PLL has lost lock since LOLS0 was last cleared"]

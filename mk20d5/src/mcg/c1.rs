@@ -5,10 +5,10 @@ pub type W = crate::W<C1Spec>;
 #[doc = "Internal Reference Stop Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Irefsten {
-    #[doc = "0: Internal reference clock is disabled in Stop mode."]
-    _0 = 0,
-    #[doc = "1: Internal reference clock is enabled in Stop mode if IRCLKEN is set or if MCG is in FEI, FBI, or BLPI modes before entering Stop mode."]
-    _1 = 1,
+    #[doc = "0: Internal reference clock is disabled in Stop mode"]
+    Disabled = 0,
+    #[doc = "1: Internal reference clock stays enabled in Stop mode"]
+    Enabled = 1,
 }
 impl From<Irefsten> for bool {
     #[inline(always)]
@@ -23,19 +23,19 @@ impl IrefstenR {
     #[inline(always)]
     pub const fn variant(&self) -> Irefsten {
         match self.bits {
-            false => Irefsten::_0,
-            true => Irefsten::_1,
+            false => Irefsten::Disabled,
+            true => Irefsten::Enabled,
         }
     }
-    #[doc = "Internal reference clock is disabled in Stop mode."]
+    #[doc = "Internal reference clock is disabled in Stop mode"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Irefsten::_0
+    pub fn is_disabled(&self) -> bool {
+        *self == Irefsten::Disabled
     }
-    #[doc = "Internal reference clock is enabled in Stop mode if IRCLKEN is set or if MCG is in FEI, FBI, or BLPI modes before entering Stop mode."]
+    #[doc = "Internal reference clock stays enabled in Stop mode"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Irefsten::_1
+    pub fn is_enabled(&self) -> bool {
+        *self == Irefsten::Enabled
     }
 }
 #[doc = "Field `IREFSTEN` writer - Internal Reference Stop Enable"]
@@ -44,24 +44,24 @@ impl<'a, REG> IrefstenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Internal reference clock is disabled in Stop mode."]
+    #[doc = "Internal reference clock is disabled in Stop mode"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Irefsten::_0)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Irefsten::Disabled)
     }
-    #[doc = "Internal reference clock is enabled in Stop mode if IRCLKEN is set or if MCG is in FEI, FBI, or BLPI modes before entering Stop mode."]
+    #[doc = "Internal reference clock stays enabled in Stop mode"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Irefsten::_1)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Irefsten::Enabled)
     }
 }
 #[doc = "Internal Reference Clock Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Irclken {
-    #[doc = "0: MCGIRCLK inactive."]
-    _0 = 0,
-    #[doc = "1: MCGIRCLK active."]
-    _1 = 1,
+    #[doc = "0: MCGIRCLK inactive"]
+    Inactive = 0,
+    #[doc = "1: MCGIRCLK active"]
+    Active = 1,
 }
 impl From<Irclken> for bool {
     #[inline(always)]
@@ -76,19 +76,19 @@ impl IrclkenR {
     #[inline(always)]
     pub const fn variant(&self) -> Irclken {
         match self.bits {
-            false => Irclken::_0,
-            true => Irclken::_1,
+            false => Irclken::Inactive,
+            true => Irclken::Active,
         }
     }
-    #[doc = "MCGIRCLK inactive."]
+    #[doc = "MCGIRCLK inactive"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Irclken::_0
+    pub fn is_inactive(&self) -> bool {
+        *self == Irclken::Inactive
     }
-    #[doc = "MCGIRCLK active."]
+    #[doc = "MCGIRCLK active"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Irclken::_1
+    pub fn is_active(&self) -> bool {
+        *self == Irclken::Active
     }
 }
 #[doc = "Field `IRCLKEN` writer - Internal Reference Clock Enable"]
@@ -97,24 +97,24 @@ impl<'a, REG> IrclkenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "MCGIRCLK inactive."]
+    #[doc = "MCGIRCLK inactive"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Irclken::_0)
+    pub fn inactive(self) -> &'a mut crate::W<REG> {
+        self.variant(Irclken::Inactive)
     }
-    #[doc = "MCGIRCLK active."]
+    #[doc = "MCGIRCLK active"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Irclken::_1)
+    pub fn active(self) -> &'a mut crate::W<REG> {
+        self.variant(Irclken::Active)
     }
 }
 #[doc = "Internal Reference Select\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Irefs {
-    #[doc = "0: External reference clock is selected."]
-    _0 = 0,
-    #[doc = "1: The slow internal reference clock is selected."]
-    _1 = 1,
+    #[doc = "0: External reference clock is selected"]
+    External = 0,
+    #[doc = "1: The slow internal reference clock is selected"]
+    Internal = 1,
 }
 impl From<Irefs> for bool {
     #[inline(always)]
@@ -129,19 +129,19 @@ impl IrefsR {
     #[inline(always)]
     pub const fn variant(&self) -> Irefs {
         match self.bits {
-            false => Irefs::_0,
-            true => Irefs::_1,
+            false => Irefs::External,
+            true => Irefs::Internal,
         }
     }
-    #[doc = "External reference clock is selected."]
+    #[doc = "External reference clock is selected"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Irefs::_0
+    pub fn is_external(&self) -> bool {
+        *self == Irefs::External
     }
-    #[doc = "The slow internal reference clock is selected."]
+    #[doc = "The slow internal reference clock is selected"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Irefs::_1
+    pub fn is_internal(&self) -> bool {
+        *self == Irefs::Internal
     }
 }
 #[doc = "Field `IREFS` writer - Internal Reference Select"]
@@ -150,15 +150,15 @@ impl<'a, REG> IrefsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "External reference clock is selected."]
+    #[doc = "External reference clock is selected"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Irefs::_0)
+    pub fn external(self) -> &'a mut crate::W<REG> {
+        self.variant(Irefs::External)
     }
-    #[doc = "The slow internal reference clock is selected."]
+    #[doc = "The slow internal reference clock is selected"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Irefs::_1)
+    pub fn internal(self) -> &'a mut crate::W<REG> {
+        self.variant(Irefs::Internal)
     }
 }
 #[doc = "FLL External Reference Divider\n\nValue on reset: 0"]

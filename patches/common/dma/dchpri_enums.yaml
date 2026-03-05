@@ -1,0 +1,8 @@
+# DMA Channel Priority Register (DCHPRI) ECP enumerated values
+# Source: K20 Sub-Family Reference Manual, eDMA chapter
+DMA:
+  "DCHPRI%s":
+    ECP:
+      _replace_enum:
+        Disabled: [0, "Channel n cannot be suspended by a higher priority channel's service request"]
+        Enabled: [1, "Channel n can be temporarily suspended by the service request of a higher priority channel"]

@@ -1,0 +1,36 @@
+# DMA Control Register (CR) enumerated values
+# Source: K20 Sub-Family Reference Manual, eDMA chapter
+DMA:
+  CR:
+    EDBG:
+      _replace_enum:
+        ContinueOnDebug: [0, "When in debug mode, the DMA continues to operate"]
+        HaltOnDebug: [1, "When in debug mode, the DMA stalls the start of a new channel"]
+    ERCA:
+      _replace_enum:
+        FixedPriority: [0, "Fixed priority arbitration is used for channel selection"]
+        RoundRobin: [1, "Round robin arbitration is used for channel selection"]
+    HOE:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        HaltOnError: [1, "Any error causes the HALT bit to set"]
+    HALT:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Halt: [1, "Stall the start of any new channels"]
+    CLM:
+      _replace_enum:
+        Arbitrate: [0, "A minor loop channel link made to itself goes through channel arbitration before being activated again"]
+        ContinuousMinorLink: [1, "A minor loop channel link made to itself does not go through channel arbitration before being activated again"]
+    EMLM:
+      _replace_enum:
+        Disabled: [0, "Disabled. TCDn.word2 is defined as a 32-bit NBYTES field"]
+        Enabled: [1, "Enabled. TCDn.word2 is redefined to include individual enable fields, an offset field, and the NBYTES field"]
+    ECX:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Cancel: [1, "Cancel the remaining data transfer in the same fashion as the EBW bit"]
+    CX:
+      _replace_enum:
+        Normal: [0, "Normal operation"]
+        Cancel: [1, "Cancel the remaining data transfer in the same fashion as the EBW bit"]

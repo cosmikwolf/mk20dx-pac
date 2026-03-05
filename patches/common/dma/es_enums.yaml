@@ -1,0 +1,48 @@
+# DMA Error Status Register (ES) enumerated values
+# Source: K20 Sub-Family Reference Manual, eDMA chapter
+DMA:
+  ES:
+    DBE:
+      _replace_enum:
+        NoError: [0, "No destination bus error"]
+        Error: [1, "The last recorded error was a bus error on a destination write"]
+    SBE:
+      _replace_enum:
+        NoError: [0, "No source bus error"]
+        Error: [1, "The last recorded error was a bus error on a source read"]
+    SGE:
+      _replace_enum:
+        NoError: [0, "No scatter/gather configuration error"]
+        Error: [1, "The last recorded error was a scatter/gather configuration error"]
+    NCE:
+      _replace_enum:
+        NoError: [0, "No NBYTES/CITER configuration error"]
+        Error: [1, "The last recorded error was a configuration error in the TCDn_NBYTES or TCDn_CITER fields"]
+    DOE:
+      _replace_enum:
+        NoError: [0, "No destination offset configuration error"]
+        Error: [1, "The last recorded error was a configuration error in the TCDn_DOFF field"]
+    DAE:
+      _replace_enum:
+        NoError: [0, "No destination address configuration error"]
+        Error: [1, "The last recorded error was a configuration error in the TCDn_DADDR field"]
+    SOE:
+      _replace_enum:
+        NoError: [0, "No source offset configuration error"]
+        Error: [1, "The last recorded error was a configuration error in the TCDn_SOFF field"]
+    SAE:
+      _replace_enum:
+        NoError: [0, "No source address configuration error"]
+        Error: [1, "The last recorded error was a configuration error in the TCDn_SADDR field"]
+    CPE:
+      _replace_enum:
+        NoError: [0, "No channel priority configuration error"]
+        Error: [1, "The last recorded error was a configuration error in the channel priorities"]
+    ECX:
+      _replace_enum:
+        NotCancelled: [0, "No cancelled transfers"]
+        Cancelled: [1, "The last recorded entry was a cancelled transfer by the error cancel transfer input"]
+    VLD:
+      _replace_enum:
+        NoErrors: [0, "No ERR bits are set"]
+        Valid: [1, "At least one ERR bit is set indicating a valid error exists that has not been cleared"]

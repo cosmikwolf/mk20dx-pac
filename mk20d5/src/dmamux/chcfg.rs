@@ -598,10 +598,10 @@ where
 #[doc = "DMA Channel Trigger Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Trig {
-    #[doc = "0: Triggering is disabled. If triggering is disabled, and the ENBL bit is set, the DMA Channel will simply route the specified source to the DMA channel. (normal mode)"]
-    _0 = 0,
-    #[doc = "1: Triggering is enabled. If triggering is enabled, and the ENBL bit is set, the DMAMUX is in periodic trigger mode."]
-    _1 = 1,
+    #[doc = "0: Triggering is disabled; source routed directly to DMA channel"]
+    Normal = 0,
+    #[doc = "1: Triggering is enabled; DMAMUX is in periodic trigger mode"]
+    PeriodicTrigger = 1,
 }
 impl From<Trig> for bool {
     #[inline(always)]
@@ -616,19 +616,19 @@ impl TrigR {
     #[inline(always)]
     pub const fn variant(&self) -> Trig {
         match self.bits {
-            false => Trig::_0,
-            true => Trig::_1,
+            false => Trig::Normal,
+            true => Trig::PeriodicTrigger,
         }
     }
-    #[doc = "Triggering is disabled. If triggering is disabled, and the ENBL bit is set, the DMA Channel will simply route the specified source to the DMA channel. (normal mode)"]
+    #[doc = "Triggering is disabled; source routed directly to DMA channel"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Trig::_0
+    pub fn is_normal(&self) -> bool {
+        *self == Trig::Normal
     }
-    #[doc = "Triggering is enabled. If triggering is enabled, and the ENBL bit is set, the DMAMUX is in periodic trigger mode."]
+    #[doc = "Triggering is enabled; DMAMUX is in periodic trigger mode"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Trig::_1
+    pub fn is_periodic_trigger(&self) -> bool {
+        *self == Trig::PeriodicTrigger
     }
 }
 #[doc = "Field `TRIG` writer - DMA Channel Trigger Enable"]
@@ -637,24 +637,24 @@ impl<'a, REG> TrigW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Triggering is disabled. If triggering is disabled, and the ENBL bit is set, the DMA Channel will simply route the specified source to the DMA channel. (normal mode)"]
+    #[doc = "Triggering is disabled; source routed directly to DMA channel"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Trig::_0)
+    pub fn normal(self) -> &'a mut crate::W<REG> {
+        self.variant(Trig::Normal)
     }
-    #[doc = "Triggering is enabled. If triggering is enabled, and the ENBL bit is set, the DMAMUX is in periodic trigger mode."]
+    #[doc = "Triggering is enabled; DMAMUX is in periodic trigger mode"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Trig::_1)
+    pub fn periodic_trigger(self) -> &'a mut crate::W<REG> {
+        self.variant(Trig::PeriodicTrigger)
     }
 }
 #[doc = "DMA Channel Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enbl {
-    #[doc = "0: DMA channel is disabled. This mode is primarily used during configuration of the DMA Mux. The DMA has separate channel enables/disables, which should be used to disable or re-configure a DMA channel."]
-    _0 = 0,
+    #[doc = "0: DMA channel is disabled"]
+    Disabled = 0,
     #[doc = "1: DMA channel is enabled"]
-    _1 = 1,
+    Enabled = 1,
 }
 impl From<Enbl> for bool {
     #[inline(always)]
@@ -669,19 +669,19 @@ impl EnblR {
     #[inline(always)]
     pub const fn variant(&self) -> Enbl {
         match self.bits {
-            false => Enbl::_0,
-            true => Enbl::_1,
+            false => Enbl::Disabled,
+            true => Enbl::Enabled,
         }
     }
-    #[doc = "DMA channel is disabled. This mode is primarily used during configuration of the DMA Mux. The DMA has separate channel enables/disables, which should be used to disable or re-configure a DMA channel."]
+    #[doc = "DMA channel is disabled"]
     #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        *self == Enbl::_0
+    pub fn is_disabled(&self) -> bool {
+        *self == Enbl::Disabled
     }
     #[doc = "DMA channel is enabled"]
     #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == Enbl::_1
+    pub fn is_enabled(&self) -> bool {
+        *self == Enbl::Enabled
     }
 }
 #[doc = "Field `ENBL` writer - DMA Channel Enable"]
@@ -690,15 +690,15 @@ impl<'a, REG> EnblW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "DMA channel is disabled. This mode is primarily used during configuration of the DMA Mux. The DMA has separate channel enables/disables, which should be used to disable or re-configure a DMA channel."]
+    #[doc = "DMA channel is disabled"]
     #[inline(always)]
-    pub fn _0(self) -> &'a mut crate::W<REG> {
-        self.variant(Enbl::_0)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Enbl::Disabled)
     }
     #[doc = "DMA channel is enabled"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut crate::W<REG> {
-        self.variant(Enbl::_1)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Enbl::Enabled)
     }
 }
 impl R {

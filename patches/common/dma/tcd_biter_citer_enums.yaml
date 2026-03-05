@@ -1,0 +1,25 @@
+# DMA TCD BITER/CITER ELINK enumerated values
+# Applies to all 4 register variants: ELINKNO and ELINKYES for both BITER and CITER
+# Must be included BEFORE tcd_cluster.yaml (targets TCD%s_* before clustering)
+# Source: K20 Sub-Family Reference Manual, eDMA chapter
+DMA:
+  "TCD%s_BITER_ELINKNO":
+    ELINK:
+      _replace_enum:
+        Disabled: [0, "The channel-to-channel linking is disabled"]
+        Enabled: [1, "The channel-to-channel linking is enabled"]
+  "TCD%s_BITER_ELINKYES":
+    ELINK:
+      _replace_enum:
+        Disabled: [0, "The channel-to-channel linking is disabled"]
+        Enabled: [1, "The channel-to-channel linking is enabled"]
+  "TCD%s_CITER_ELINKNO":
+    ELINK:
+      _replace_enum:
+        Disabled: [0, "The channel-to-channel linking is disabled"]
+        Enabled: [1, "The channel-to-channel linking is enabled"]
+  "TCD%s_CITER_ELINKYES":
+    ELINK:
+      _replace_enum:
+        Disabled: [0, "The channel-to-channel linking is disabled"]
+        Enabled: [1, "The channel-to-channel linking is enabled"]

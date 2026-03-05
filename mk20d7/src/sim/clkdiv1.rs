@@ -6,38 +6,38 @@ pub type W = crate::W<Clkdiv1Spec>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Outdiv4 {
-    #[doc = "0: Divide-by-1."]
-    _0000 = 0,
-    #[doc = "1: Divide-by-2."]
-    _0001 = 1,
-    #[doc = "2: Divide-by-3."]
-    _0010 = 2,
-    #[doc = "3: Divide-by-4."]
-    _0011 = 3,
-    #[doc = "4: Divide-by-5."]
-    _0100 = 4,
-    #[doc = "5: Divide-by-6."]
-    _0101 = 5,
-    #[doc = "6: Divide-by-7."]
-    _0110 = 6,
-    #[doc = "7: Divide-by-8."]
-    _0111 = 7,
-    #[doc = "8: Divide-by-9."]
-    _1000 = 8,
-    #[doc = "9: Divide-by-10."]
-    _1001 = 9,
-    #[doc = "10: Divide-by-11."]
-    _1010 = 10,
-    #[doc = "11: Divide-by-12."]
-    _1011 = 11,
-    #[doc = "12: Divide-by-13."]
-    _1100 = 12,
-    #[doc = "13: Divide-by-14."]
-    _1101 = 13,
-    #[doc = "14: Divide-by-15."]
-    _1110 = 14,
-    #[doc = "15: Divide-by-16."]
-    _1111 = 15,
+    #[doc = "0: Divide-by-1"]
+    Div1 = 0,
+    #[doc = "1: Divide-by-2"]
+    Div2 = 1,
+    #[doc = "2: Divide-by-3"]
+    Div3 = 2,
+    #[doc = "3: Divide-by-4"]
+    Div4 = 3,
+    #[doc = "4: Divide-by-5"]
+    Div5 = 4,
+    #[doc = "5: Divide-by-6"]
+    Div6 = 5,
+    #[doc = "6: Divide-by-7"]
+    Div7 = 6,
+    #[doc = "7: Divide-by-8"]
+    Div8 = 7,
+    #[doc = "8: Divide-by-9"]
+    Div9 = 8,
+    #[doc = "9: Divide-by-10"]
+    Div10 = 9,
+    #[doc = "10: Divide-by-11"]
+    Div11 = 10,
+    #[doc = "11: Divide-by-12"]
+    Div12 = 11,
+    #[doc = "12: Divide-by-13"]
+    Div13 = 12,
+    #[doc = "13: Divide-by-14"]
+    Div14 = 13,
+    #[doc = "14: Divide-by-15"]
+    Div15 = 14,
+    #[doc = "15: Divide-by-16"]
+    Div16 = 15,
 }
 impl From<Outdiv4> for u8 {
     #[inline(always)]
@@ -56,104 +56,104 @@ impl Outdiv4R {
     #[inline(always)]
     pub const fn variant(&self) -> Outdiv4 {
         match self.bits {
-            0 => Outdiv4::_0000,
-            1 => Outdiv4::_0001,
-            2 => Outdiv4::_0010,
-            3 => Outdiv4::_0011,
-            4 => Outdiv4::_0100,
-            5 => Outdiv4::_0101,
-            6 => Outdiv4::_0110,
-            7 => Outdiv4::_0111,
-            8 => Outdiv4::_1000,
-            9 => Outdiv4::_1001,
-            10 => Outdiv4::_1010,
-            11 => Outdiv4::_1011,
-            12 => Outdiv4::_1100,
-            13 => Outdiv4::_1101,
-            14 => Outdiv4::_1110,
-            15 => Outdiv4::_1111,
+            0 => Outdiv4::Div1,
+            1 => Outdiv4::Div2,
+            2 => Outdiv4::Div3,
+            3 => Outdiv4::Div4,
+            4 => Outdiv4::Div5,
+            5 => Outdiv4::Div6,
+            6 => Outdiv4::Div7,
+            7 => Outdiv4::Div8,
+            8 => Outdiv4::Div9,
+            9 => Outdiv4::Div10,
+            10 => Outdiv4::Div11,
+            11 => Outdiv4::Div12,
+            12 => Outdiv4::Div13,
+            13 => Outdiv4::Div14,
+            14 => Outdiv4::Div15,
+            15 => Outdiv4::Div16,
             _ => unreachable!(),
         }
     }
-    #[doc = "Divide-by-1."]
+    #[doc = "Divide-by-1"]
     #[inline(always)]
-    pub fn is_0000(&self) -> bool {
-        *self == Outdiv4::_0000
+    pub fn is_div1(&self) -> bool {
+        *self == Outdiv4::Div1
     }
-    #[doc = "Divide-by-2."]
+    #[doc = "Divide-by-2"]
     #[inline(always)]
-    pub fn is_0001(&self) -> bool {
-        *self == Outdiv4::_0001
+    pub fn is_div2(&self) -> bool {
+        *self == Outdiv4::Div2
     }
-    #[doc = "Divide-by-3."]
+    #[doc = "Divide-by-3"]
     #[inline(always)]
-    pub fn is_0010(&self) -> bool {
-        *self == Outdiv4::_0010
+    pub fn is_div3(&self) -> bool {
+        *self == Outdiv4::Div3
     }
-    #[doc = "Divide-by-4."]
+    #[doc = "Divide-by-4"]
     #[inline(always)]
-    pub fn is_0011(&self) -> bool {
-        *self == Outdiv4::_0011
+    pub fn is_div4(&self) -> bool {
+        *self == Outdiv4::Div4
     }
-    #[doc = "Divide-by-5."]
+    #[doc = "Divide-by-5"]
     #[inline(always)]
-    pub fn is_0100(&self) -> bool {
-        *self == Outdiv4::_0100
+    pub fn is_div5(&self) -> bool {
+        *self == Outdiv4::Div5
     }
-    #[doc = "Divide-by-6."]
+    #[doc = "Divide-by-6"]
     #[inline(always)]
-    pub fn is_0101(&self) -> bool {
-        *self == Outdiv4::_0101
+    pub fn is_div6(&self) -> bool {
+        *self == Outdiv4::Div6
     }
-    #[doc = "Divide-by-7."]
+    #[doc = "Divide-by-7"]
     #[inline(always)]
-    pub fn is_0110(&self) -> bool {
-        *self == Outdiv4::_0110
+    pub fn is_div7(&self) -> bool {
+        *self == Outdiv4::Div7
     }
-    #[doc = "Divide-by-8."]
+    #[doc = "Divide-by-8"]
     #[inline(always)]
-    pub fn is_0111(&self) -> bool {
-        *self == Outdiv4::_0111
+    pub fn is_div8(&self) -> bool {
+        *self == Outdiv4::Div8
     }
-    #[doc = "Divide-by-9."]
+    #[doc = "Divide-by-9"]
     #[inline(always)]
-    pub fn is_1000(&self) -> bool {
-        *self == Outdiv4::_1000
+    pub fn is_div9(&self) -> bool {
+        *self == Outdiv4::Div9
     }
-    #[doc = "Divide-by-10."]
+    #[doc = "Divide-by-10"]
     #[inline(always)]
-    pub fn is_1001(&self) -> bool {
-        *self == Outdiv4::_1001
+    pub fn is_div10(&self) -> bool {
+        *self == Outdiv4::Div10
     }
-    #[doc = "Divide-by-11."]
+    #[doc = "Divide-by-11"]
     #[inline(always)]
-    pub fn is_1010(&self) -> bool {
-        *self == Outdiv4::_1010
+    pub fn is_div11(&self) -> bool {
+        *self == Outdiv4::Div11
     }
-    #[doc = "Divide-by-12."]
+    #[doc = "Divide-by-12"]
     #[inline(always)]
-    pub fn is_1011(&self) -> bool {
-        *self == Outdiv4::_1011
+    pub fn is_div12(&self) -> bool {
+        *self == Outdiv4::Div12
     }
-    #[doc = "Divide-by-13."]
+    #[doc = "Divide-by-13"]
     #[inline(always)]
-    pub fn is_1100(&self) -> bool {
-        *self == Outdiv4::_1100
+    pub fn is_div13(&self) -> bool {
+        *self == Outdiv4::Div13
     }
-    #[doc = "Divide-by-14."]
+    #[doc = "Divide-by-14"]
     #[inline(always)]
-    pub fn is_1101(&self) -> bool {
-        *self == Outdiv4::_1101
+    pub fn is_div14(&self) -> bool {
+        *self == Outdiv4::Div14
     }
-    #[doc = "Divide-by-15."]
+    #[doc = "Divide-by-15"]
     #[inline(always)]
-    pub fn is_1110(&self) -> bool {
-        *self == Outdiv4::_1110
+    pub fn is_div15(&self) -> bool {
+        *self == Outdiv4::Div15
     }
-    #[doc = "Divide-by-16."]
+    #[doc = "Divide-by-16"]
     #[inline(always)]
-    pub fn is_1111(&self) -> bool {
-        *self == Outdiv4::_1111
+    pub fn is_div16(&self) -> bool {
+        *self == Outdiv4::Div16
     }
 }
 #[doc = "Field `OUTDIV4` writer - Clock 4 output divider value"]
@@ -163,123 +163,123 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Divide-by-1."]
+    #[doc = "Divide-by-1"]
     #[inline(always)]
-    pub fn _0000(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_0000)
+    pub fn div1(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div1)
     }
-    #[doc = "Divide-by-2."]
+    #[doc = "Divide-by-2"]
     #[inline(always)]
-    pub fn _0001(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_0001)
+    pub fn div2(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div2)
     }
-    #[doc = "Divide-by-3."]
+    #[doc = "Divide-by-3"]
     #[inline(always)]
-    pub fn _0010(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_0010)
+    pub fn div3(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div3)
     }
-    #[doc = "Divide-by-4."]
+    #[doc = "Divide-by-4"]
     #[inline(always)]
-    pub fn _0011(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_0011)
+    pub fn div4(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div4)
     }
-    #[doc = "Divide-by-5."]
+    #[doc = "Divide-by-5"]
     #[inline(always)]
-    pub fn _0100(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_0100)
+    pub fn div5(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div5)
     }
-    #[doc = "Divide-by-6."]
+    #[doc = "Divide-by-6"]
     #[inline(always)]
-    pub fn _0101(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_0101)
+    pub fn div6(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div6)
     }
-    #[doc = "Divide-by-7."]
+    #[doc = "Divide-by-7"]
     #[inline(always)]
-    pub fn _0110(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_0110)
+    pub fn div7(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div7)
     }
-    #[doc = "Divide-by-8."]
+    #[doc = "Divide-by-8"]
     #[inline(always)]
-    pub fn _0111(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_0111)
+    pub fn div8(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div8)
     }
-    #[doc = "Divide-by-9."]
+    #[doc = "Divide-by-9"]
     #[inline(always)]
-    pub fn _1000(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_1000)
+    pub fn div9(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div9)
     }
-    #[doc = "Divide-by-10."]
+    #[doc = "Divide-by-10"]
     #[inline(always)]
-    pub fn _1001(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_1001)
+    pub fn div10(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div10)
     }
-    #[doc = "Divide-by-11."]
+    #[doc = "Divide-by-11"]
     #[inline(always)]
-    pub fn _1010(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_1010)
+    pub fn div11(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div11)
     }
-    #[doc = "Divide-by-12."]
+    #[doc = "Divide-by-12"]
     #[inline(always)]
-    pub fn _1011(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_1011)
+    pub fn div12(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div12)
     }
-    #[doc = "Divide-by-13."]
+    #[doc = "Divide-by-13"]
     #[inline(always)]
-    pub fn _1100(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_1100)
+    pub fn div13(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div13)
     }
-    #[doc = "Divide-by-14."]
+    #[doc = "Divide-by-14"]
     #[inline(always)]
-    pub fn _1101(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_1101)
+    pub fn div14(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div14)
     }
-    #[doc = "Divide-by-15."]
+    #[doc = "Divide-by-15"]
     #[inline(always)]
-    pub fn _1110(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_1110)
+    pub fn div15(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div15)
     }
-    #[doc = "Divide-by-16."]
+    #[doc = "Divide-by-16"]
     #[inline(always)]
-    pub fn _1111(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv4::_1111)
+    pub fn div16(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv4::Div16)
     }
 }
 #[doc = "Clock 3 output divider value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Outdiv3 {
-    #[doc = "0: Divide-by-1."]
-    _0000 = 0,
-    #[doc = "1: Divide-by-2."]
-    _0001 = 1,
-    #[doc = "2: Divide-by-3."]
-    _0010 = 2,
-    #[doc = "3: Divide-by-4."]
-    _0011 = 3,
-    #[doc = "4: Divide-by-5."]
-    _0100 = 4,
-    #[doc = "5: Divide-by-6."]
-    _0101 = 5,
-    #[doc = "6: Divide-by-7."]
-    _0110 = 6,
-    #[doc = "7: Divide-by-8."]
-    _0111 = 7,
-    #[doc = "8: Divide-by-9."]
-    _1000 = 8,
-    #[doc = "9: Divide-by-10."]
-    _1001 = 9,
-    #[doc = "10: Divide-by-11."]
-    _1010 = 10,
-    #[doc = "11: Divide-by-12."]
-    _1011 = 11,
-    #[doc = "12: Divide-by-13."]
-    _1100 = 12,
-    #[doc = "13: Divide-by-14."]
-    _1101 = 13,
-    #[doc = "14: Divide-by-15."]
-    _1110 = 14,
-    #[doc = "15: Divide-by-16."]
-    _1111 = 15,
+    #[doc = "0: Divide-by-1"]
+    Div1 = 0,
+    #[doc = "1: Divide-by-2"]
+    Div2 = 1,
+    #[doc = "2: Divide-by-3"]
+    Div3 = 2,
+    #[doc = "3: Divide-by-4"]
+    Div4 = 3,
+    #[doc = "4: Divide-by-5"]
+    Div5 = 4,
+    #[doc = "5: Divide-by-6"]
+    Div6 = 5,
+    #[doc = "6: Divide-by-7"]
+    Div7 = 6,
+    #[doc = "7: Divide-by-8"]
+    Div8 = 7,
+    #[doc = "8: Divide-by-9"]
+    Div9 = 8,
+    #[doc = "9: Divide-by-10"]
+    Div10 = 9,
+    #[doc = "10: Divide-by-11"]
+    Div11 = 10,
+    #[doc = "11: Divide-by-12"]
+    Div12 = 11,
+    #[doc = "12: Divide-by-13"]
+    Div13 = 12,
+    #[doc = "13: Divide-by-14"]
+    Div14 = 13,
+    #[doc = "14: Divide-by-15"]
+    Div15 = 14,
+    #[doc = "15: Divide-by-16"]
+    Div16 = 15,
 }
 impl From<Outdiv3> for u8 {
     #[inline(always)]
@@ -298,104 +298,104 @@ impl Outdiv3R {
     #[inline(always)]
     pub const fn variant(&self) -> Outdiv3 {
         match self.bits {
-            0 => Outdiv3::_0000,
-            1 => Outdiv3::_0001,
-            2 => Outdiv3::_0010,
-            3 => Outdiv3::_0011,
-            4 => Outdiv3::_0100,
-            5 => Outdiv3::_0101,
-            6 => Outdiv3::_0110,
-            7 => Outdiv3::_0111,
-            8 => Outdiv3::_1000,
-            9 => Outdiv3::_1001,
-            10 => Outdiv3::_1010,
-            11 => Outdiv3::_1011,
-            12 => Outdiv3::_1100,
-            13 => Outdiv3::_1101,
-            14 => Outdiv3::_1110,
-            15 => Outdiv3::_1111,
+            0 => Outdiv3::Div1,
+            1 => Outdiv3::Div2,
+            2 => Outdiv3::Div3,
+            3 => Outdiv3::Div4,
+            4 => Outdiv3::Div5,
+            5 => Outdiv3::Div6,
+            6 => Outdiv3::Div7,
+            7 => Outdiv3::Div8,
+            8 => Outdiv3::Div9,
+            9 => Outdiv3::Div10,
+            10 => Outdiv3::Div11,
+            11 => Outdiv3::Div12,
+            12 => Outdiv3::Div13,
+            13 => Outdiv3::Div14,
+            14 => Outdiv3::Div15,
+            15 => Outdiv3::Div16,
             _ => unreachable!(),
         }
     }
-    #[doc = "Divide-by-1."]
+    #[doc = "Divide-by-1"]
     #[inline(always)]
-    pub fn is_0000(&self) -> bool {
-        *self == Outdiv3::_0000
+    pub fn is_div1(&self) -> bool {
+        *self == Outdiv3::Div1
     }
-    #[doc = "Divide-by-2."]
+    #[doc = "Divide-by-2"]
     #[inline(always)]
-    pub fn is_0001(&self) -> bool {
-        *self == Outdiv3::_0001
+    pub fn is_div2(&self) -> bool {
+        *self == Outdiv3::Div2
     }
-    #[doc = "Divide-by-3."]
+    #[doc = "Divide-by-3"]
     #[inline(always)]
-    pub fn is_0010(&self) -> bool {
-        *self == Outdiv3::_0010
+    pub fn is_div3(&self) -> bool {
+        *self == Outdiv3::Div3
     }
-    #[doc = "Divide-by-4."]
+    #[doc = "Divide-by-4"]
     #[inline(always)]
-    pub fn is_0011(&self) -> bool {
-        *self == Outdiv3::_0011
+    pub fn is_div4(&self) -> bool {
+        *self == Outdiv3::Div4
     }
-    #[doc = "Divide-by-5."]
+    #[doc = "Divide-by-5"]
     #[inline(always)]
-    pub fn is_0100(&self) -> bool {
-        *self == Outdiv3::_0100
+    pub fn is_div5(&self) -> bool {
+        *self == Outdiv3::Div5
     }
-    #[doc = "Divide-by-6."]
+    #[doc = "Divide-by-6"]
     #[inline(always)]
-    pub fn is_0101(&self) -> bool {
-        *self == Outdiv3::_0101
+    pub fn is_div6(&self) -> bool {
+        *self == Outdiv3::Div6
     }
-    #[doc = "Divide-by-7."]
+    #[doc = "Divide-by-7"]
     #[inline(always)]
-    pub fn is_0110(&self) -> bool {
-        *self == Outdiv3::_0110
+    pub fn is_div7(&self) -> bool {
+        *self == Outdiv3::Div7
     }
-    #[doc = "Divide-by-8."]
+    #[doc = "Divide-by-8"]
     #[inline(always)]
-    pub fn is_0111(&self) -> bool {
-        *self == Outdiv3::_0111
+    pub fn is_div8(&self) -> bool {
+        *self == Outdiv3::Div8
     }
-    #[doc = "Divide-by-9."]
+    #[doc = "Divide-by-9"]
     #[inline(always)]
-    pub fn is_1000(&self) -> bool {
-        *self == Outdiv3::_1000
+    pub fn is_div9(&self) -> bool {
+        *self == Outdiv3::Div9
     }
-    #[doc = "Divide-by-10."]
+    #[doc = "Divide-by-10"]
     #[inline(always)]
-    pub fn is_1001(&self) -> bool {
-        *self == Outdiv3::_1001
+    pub fn is_div10(&self) -> bool {
+        *self == Outdiv3::Div10
     }
-    #[doc = "Divide-by-11."]
+    #[doc = "Divide-by-11"]
     #[inline(always)]
-    pub fn is_1010(&self) -> bool {
-        *self == Outdiv3::_1010
+    pub fn is_div11(&self) -> bool {
+        *self == Outdiv3::Div11
     }
-    #[doc = "Divide-by-12."]
+    #[doc = "Divide-by-12"]
     #[inline(always)]
-    pub fn is_1011(&self) -> bool {
-        *self == Outdiv3::_1011
+    pub fn is_div12(&self) -> bool {
+        *self == Outdiv3::Div12
     }
-    #[doc = "Divide-by-13."]
+    #[doc = "Divide-by-13"]
     #[inline(always)]
-    pub fn is_1100(&self) -> bool {
-        *self == Outdiv3::_1100
+    pub fn is_div13(&self) -> bool {
+        *self == Outdiv3::Div13
     }
-    #[doc = "Divide-by-14."]
+    #[doc = "Divide-by-14"]
     #[inline(always)]
-    pub fn is_1101(&self) -> bool {
-        *self == Outdiv3::_1101
+    pub fn is_div14(&self) -> bool {
+        *self == Outdiv3::Div14
     }
-    #[doc = "Divide-by-15."]
+    #[doc = "Divide-by-15"]
     #[inline(always)]
-    pub fn is_1110(&self) -> bool {
-        *self == Outdiv3::_1110
+    pub fn is_div15(&self) -> bool {
+        *self == Outdiv3::Div15
     }
-    #[doc = "Divide-by-16."]
+    #[doc = "Divide-by-16"]
     #[inline(always)]
-    pub fn is_1111(&self) -> bool {
-        *self == Outdiv3::_1111
+    pub fn is_div16(&self) -> bool {
+        *self == Outdiv3::Div16
     }
 }
 #[doc = "Field `OUTDIV3` writer - Clock 3 output divider value"]
@@ -405,123 +405,123 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Divide-by-1."]
+    #[doc = "Divide-by-1"]
     #[inline(always)]
-    pub fn _0000(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_0000)
+    pub fn div1(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div1)
     }
-    #[doc = "Divide-by-2."]
+    #[doc = "Divide-by-2"]
     #[inline(always)]
-    pub fn _0001(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_0001)
+    pub fn div2(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div2)
     }
-    #[doc = "Divide-by-3."]
+    #[doc = "Divide-by-3"]
     #[inline(always)]
-    pub fn _0010(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_0010)
+    pub fn div3(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div3)
     }
-    #[doc = "Divide-by-4."]
+    #[doc = "Divide-by-4"]
     #[inline(always)]
-    pub fn _0011(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_0011)
+    pub fn div4(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div4)
     }
-    #[doc = "Divide-by-5."]
+    #[doc = "Divide-by-5"]
     #[inline(always)]
-    pub fn _0100(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_0100)
+    pub fn div5(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div5)
     }
-    #[doc = "Divide-by-6."]
+    #[doc = "Divide-by-6"]
     #[inline(always)]
-    pub fn _0101(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_0101)
+    pub fn div6(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div6)
     }
-    #[doc = "Divide-by-7."]
+    #[doc = "Divide-by-7"]
     #[inline(always)]
-    pub fn _0110(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_0110)
+    pub fn div7(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div7)
     }
-    #[doc = "Divide-by-8."]
+    #[doc = "Divide-by-8"]
     #[inline(always)]
-    pub fn _0111(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_0111)
+    pub fn div8(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div8)
     }
-    #[doc = "Divide-by-9."]
+    #[doc = "Divide-by-9"]
     #[inline(always)]
-    pub fn _1000(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_1000)
+    pub fn div9(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div9)
     }
-    #[doc = "Divide-by-10."]
+    #[doc = "Divide-by-10"]
     #[inline(always)]
-    pub fn _1001(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_1001)
+    pub fn div10(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div10)
     }
-    #[doc = "Divide-by-11."]
+    #[doc = "Divide-by-11"]
     #[inline(always)]
-    pub fn _1010(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_1010)
+    pub fn div11(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div11)
     }
-    #[doc = "Divide-by-12."]
+    #[doc = "Divide-by-12"]
     #[inline(always)]
-    pub fn _1011(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_1011)
+    pub fn div12(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div12)
     }
-    #[doc = "Divide-by-13."]
+    #[doc = "Divide-by-13"]
     #[inline(always)]
-    pub fn _1100(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_1100)
+    pub fn div13(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div13)
     }
-    #[doc = "Divide-by-14."]
+    #[doc = "Divide-by-14"]
     #[inline(always)]
-    pub fn _1101(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_1101)
+    pub fn div14(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div14)
     }
-    #[doc = "Divide-by-15."]
+    #[doc = "Divide-by-15"]
     #[inline(always)]
-    pub fn _1110(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_1110)
+    pub fn div15(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div15)
     }
-    #[doc = "Divide-by-16."]
+    #[doc = "Divide-by-16"]
     #[inline(always)]
-    pub fn _1111(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv3::_1111)
+    pub fn div16(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv3::Div16)
     }
 }
 #[doc = "Clock 2 output divider value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Outdiv2 {
-    #[doc = "0: Divide-by-1."]
-    _0000 = 0,
-    #[doc = "1: Divide-by-2."]
-    _0001 = 1,
-    #[doc = "2: Divide-by-3."]
-    _0010 = 2,
-    #[doc = "3: Divide-by-4."]
-    _0011 = 3,
-    #[doc = "4: Divide-by-5."]
-    _0100 = 4,
-    #[doc = "5: Divide-by-6."]
-    _0101 = 5,
-    #[doc = "6: Divide-by-7."]
-    _0110 = 6,
-    #[doc = "7: Divide-by-8."]
-    _0111 = 7,
-    #[doc = "8: Divide-by-9."]
-    _1000 = 8,
-    #[doc = "9: Divide-by-10."]
-    _1001 = 9,
-    #[doc = "10: Divide-by-11."]
-    _1010 = 10,
-    #[doc = "11: Divide-by-12."]
-    _1011 = 11,
-    #[doc = "12: Divide-by-13."]
-    _1100 = 12,
-    #[doc = "13: Divide-by-14."]
-    _1101 = 13,
-    #[doc = "14: Divide-by-15."]
-    _1110 = 14,
-    #[doc = "15: Divide-by-16."]
-    _1111 = 15,
+    #[doc = "0: Divide-by-1"]
+    Div1 = 0,
+    #[doc = "1: Divide-by-2"]
+    Div2 = 1,
+    #[doc = "2: Divide-by-3"]
+    Div3 = 2,
+    #[doc = "3: Divide-by-4"]
+    Div4 = 3,
+    #[doc = "4: Divide-by-5"]
+    Div5 = 4,
+    #[doc = "5: Divide-by-6"]
+    Div6 = 5,
+    #[doc = "6: Divide-by-7"]
+    Div7 = 6,
+    #[doc = "7: Divide-by-8"]
+    Div8 = 7,
+    #[doc = "8: Divide-by-9"]
+    Div9 = 8,
+    #[doc = "9: Divide-by-10"]
+    Div10 = 9,
+    #[doc = "10: Divide-by-11"]
+    Div11 = 10,
+    #[doc = "11: Divide-by-12"]
+    Div12 = 11,
+    #[doc = "12: Divide-by-13"]
+    Div13 = 12,
+    #[doc = "13: Divide-by-14"]
+    Div14 = 13,
+    #[doc = "14: Divide-by-15"]
+    Div15 = 14,
+    #[doc = "15: Divide-by-16"]
+    Div16 = 15,
 }
 impl From<Outdiv2> for u8 {
     #[inline(always)]
@@ -540,104 +540,104 @@ impl Outdiv2R {
     #[inline(always)]
     pub const fn variant(&self) -> Outdiv2 {
         match self.bits {
-            0 => Outdiv2::_0000,
-            1 => Outdiv2::_0001,
-            2 => Outdiv2::_0010,
-            3 => Outdiv2::_0011,
-            4 => Outdiv2::_0100,
-            5 => Outdiv2::_0101,
-            6 => Outdiv2::_0110,
-            7 => Outdiv2::_0111,
-            8 => Outdiv2::_1000,
-            9 => Outdiv2::_1001,
-            10 => Outdiv2::_1010,
-            11 => Outdiv2::_1011,
-            12 => Outdiv2::_1100,
-            13 => Outdiv2::_1101,
-            14 => Outdiv2::_1110,
-            15 => Outdiv2::_1111,
+            0 => Outdiv2::Div1,
+            1 => Outdiv2::Div2,
+            2 => Outdiv2::Div3,
+            3 => Outdiv2::Div4,
+            4 => Outdiv2::Div5,
+            5 => Outdiv2::Div6,
+            6 => Outdiv2::Div7,
+            7 => Outdiv2::Div8,
+            8 => Outdiv2::Div9,
+            9 => Outdiv2::Div10,
+            10 => Outdiv2::Div11,
+            11 => Outdiv2::Div12,
+            12 => Outdiv2::Div13,
+            13 => Outdiv2::Div14,
+            14 => Outdiv2::Div15,
+            15 => Outdiv2::Div16,
             _ => unreachable!(),
         }
     }
-    #[doc = "Divide-by-1."]
+    #[doc = "Divide-by-1"]
     #[inline(always)]
-    pub fn is_0000(&self) -> bool {
-        *self == Outdiv2::_0000
+    pub fn is_div1(&self) -> bool {
+        *self == Outdiv2::Div1
     }
-    #[doc = "Divide-by-2."]
+    #[doc = "Divide-by-2"]
     #[inline(always)]
-    pub fn is_0001(&self) -> bool {
-        *self == Outdiv2::_0001
+    pub fn is_div2(&self) -> bool {
+        *self == Outdiv2::Div2
     }
-    #[doc = "Divide-by-3."]
+    #[doc = "Divide-by-3"]
     #[inline(always)]
-    pub fn is_0010(&self) -> bool {
-        *self == Outdiv2::_0010
+    pub fn is_div3(&self) -> bool {
+        *self == Outdiv2::Div3
     }
-    #[doc = "Divide-by-4."]
+    #[doc = "Divide-by-4"]
     #[inline(always)]
-    pub fn is_0011(&self) -> bool {
-        *self == Outdiv2::_0011
+    pub fn is_div4(&self) -> bool {
+        *self == Outdiv2::Div4
     }
-    #[doc = "Divide-by-5."]
+    #[doc = "Divide-by-5"]
     #[inline(always)]
-    pub fn is_0100(&self) -> bool {
-        *self == Outdiv2::_0100
+    pub fn is_div5(&self) -> bool {
+        *self == Outdiv2::Div5
     }
-    #[doc = "Divide-by-6."]
+    #[doc = "Divide-by-6"]
     #[inline(always)]
-    pub fn is_0101(&self) -> bool {
-        *self == Outdiv2::_0101
+    pub fn is_div6(&self) -> bool {
+        *self == Outdiv2::Div6
     }
-    #[doc = "Divide-by-7."]
+    #[doc = "Divide-by-7"]
     #[inline(always)]
-    pub fn is_0110(&self) -> bool {
-        *self == Outdiv2::_0110
+    pub fn is_div7(&self) -> bool {
+        *self == Outdiv2::Div7
     }
-    #[doc = "Divide-by-8."]
+    #[doc = "Divide-by-8"]
     #[inline(always)]
-    pub fn is_0111(&self) -> bool {
-        *self == Outdiv2::_0111
+    pub fn is_div8(&self) -> bool {
+        *self == Outdiv2::Div8
     }
-    #[doc = "Divide-by-9."]
+    #[doc = "Divide-by-9"]
     #[inline(always)]
-    pub fn is_1000(&self) -> bool {
-        *self == Outdiv2::_1000
+    pub fn is_div9(&self) -> bool {
+        *self == Outdiv2::Div9
     }
-    #[doc = "Divide-by-10."]
+    #[doc = "Divide-by-10"]
     #[inline(always)]
-    pub fn is_1001(&self) -> bool {
-        *self == Outdiv2::_1001
+    pub fn is_div10(&self) -> bool {
+        *self == Outdiv2::Div10
     }
-    #[doc = "Divide-by-11."]
+    #[doc = "Divide-by-11"]
     #[inline(always)]
-    pub fn is_1010(&self) -> bool {
-        *self == Outdiv2::_1010
+    pub fn is_div11(&self) -> bool {
+        *self == Outdiv2::Div11
     }
-    #[doc = "Divide-by-12."]
+    #[doc = "Divide-by-12"]
     #[inline(always)]
-    pub fn is_1011(&self) -> bool {
-        *self == Outdiv2::_1011
+    pub fn is_div12(&self) -> bool {
+        *self == Outdiv2::Div12
     }
-    #[doc = "Divide-by-13."]
+    #[doc = "Divide-by-13"]
     #[inline(always)]
-    pub fn is_1100(&self) -> bool {
-        *self == Outdiv2::_1100
+    pub fn is_div13(&self) -> bool {
+        *self == Outdiv2::Div13
     }
-    #[doc = "Divide-by-14."]
+    #[doc = "Divide-by-14"]
     #[inline(always)]
-    pub fn is_1101(&self) -> bool {
-        *self == Outdiv2::_1101
+    pub fn is_div14(&self) -> bool {
+        *self == Outdiv2::Div14
     }
-    #[doc = "Divide-by-15."]
+    #[doc = "Divide-by-15"]
     #[inline(always)]
-    pub fn is_1110(&self) -> bool {
-        *self == Outdiv2::_1110
+    pub fn is_div15(&self) -> bool {
+        *self == Outdiv2::Div15
     }
-    #[doc = "Divide-by-16."]
+    #[doc = "Divide-by-16"]
     #[inline(always)]
-    pub fn is_1111(&self) -> bool {
-        *self == Outdiv2::_1111
+    pub fn is_div16(&self) -> bool {
+        *self == Outdiv2::Div16
     }
 }
 #[doc = "Field `OUTDIV2` writer - Clock 2 output divider value"]
@@ -647,123 +647,123 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Divide-by-1."]
+    #[doc = "Divide-by-1"]
     #[inline(always)]
-    pub fn _0000(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_0000)
+    pub fn div1(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div1)
     }
-    #[doc = "Divide-by-2."]
+    #[doc = "Divide-by-2"]
     #[inline(always)]
-    pub fn _0001(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_0001)
+    pub fn div2(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div2)
     }
-    #[doc = "Divide-by-3."]
+    #[doc = "Divide-by-3"]
     #[inline(always)]
-    pub fn _0010(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_0010)
+    pub fn div3(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div3)
     }
-    #[doc = "Divide-by-4."]
+    #[doc = "Divide-by-4"]
     #[inline(always)]
-    pub fn _0011(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_0011)
+    pub fn div4(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div4)
     }
-    #[doc = "Divide-by-5."]
+    #[doc = "Divide-by-5"]
     #[inline(always)]
-    pub fn _0100(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_0100)
+    pub fn div5(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div5)
     }
-    #[doc = "Divide-by-6."]
+    #[doc = "Divide-by-6"]
     #[inline(always)]
-    pub fn _0101(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_0101)
+    pub fn div6(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div6)
     }
-    #[doc = "Divide-by-7."]
+    #[doc = "Divide-by-7"]
     #[inline(always)]
-    pub fn _0110(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_0110)
+    pub fn div7(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div7)
     }
-    #[doc = "Divide-by-8."]
+    #[doc = "Divide-by-8"]
     #[inline(always)]
-    pub fn _0111(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_0111)
+    pub fn div8(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div8)
     }
-    #[doc = "Divide-by-9."]
+    #[doc = "Divide-by-9"]
     #[inline(always)]
-    pub fn _1000(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_1000)
+    pub fn div9(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div9)
     }
-    #[doc = "Divide-by-10."]
+    #[doc = "Divide-by-10"]
     #[inline(always)]
-    pub fn _1001(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_1001)
+    pub fn div10(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div10)
     }
-    #[doc = "Divide-by-11."]
+    #[doc = "Divide-by-11"]
     #[inline(always)]
-    pub fn _1010(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_1010)
+    pub fn div11(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div11)
     }
-    #[doc = "Divide-by-12."]
+    #[doc = "Divide-by-12"]
     #[inline(always)]
-    pub fn _1011(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_1011)
+    pub fn div12(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div12)
     }
-    #[doc = "Divide-by-13."]
+    #[doc = "Divide-by-13"]
     #[inline(always)]
-    pub fn _1100(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_1100)
+    pub fn div13(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div13)
     }
-    #[doc = "Divide-by-14."]
+    #[doc = "Divide-by-14"]
     #[inline(always)]
-    pub fn _1101(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_1101)
+    pub fn div14(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div14)
     }
-    #[doc = "Divide-by-15."]
+    #[doc = "Divide-by-15"]
     #[inline(always)]
-    pub fn _1110(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_1110)
+    pub fn div15(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div15)
     }
-    #[doc = "Divide-by-16."]
+    #[doc = "Divide-by-16"]
     #[inline(always)]
-    pub fn _1111(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv2::_1111)
+    pub fn div16(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv2::Div16)
     }
 }
 #[doc = "Clock 1 output divider value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Outdiv1 {
-    #[doc = "0: Divide-by-1."]
-    _0000 = 0,
-    #[doc = "1: Divide-by-2."]
-    _0001 = 1,
-    #[doc = "2: Divide-by-3."]
-    _0010 = 2,
-    #[doc = "3: Divide-by-4."]
-    _0011 = 3,
-    #[doc = "4: Divide-by-5."]
-    _0100 = 4,
-    #[doc = "5: Divide-by-6."]
-    _0101 = 5,
-    #[doc = "6: Divide-by-7."]
-    _0110 = 6,
-    #[doc = "7: Divide-by-8."]
-    _0111 = 7,
-    #[doc = "8: Divide-by-9."]
-    _1000 = 8,
-    #[doc = "9: Divide-by-10."]
-    _1001 = 9,
-    #[doc = "10: Divide-by-11."]
-    _1010 = 10,
-    #[doc = "11: Divide-by-12."]
-    _1011 = 11,
-    #[doc = "12: Divide-by-13."]
-    _1100 = 12,
-    #[doc = "13: Divide-by-14."]
-    _1101 = 13,
-    #[doc = "14: Divide-by-15."]
-    _1110 = 14,
-    #[doc = "15: Divide-by-16."]
-    _1111 = 15,
+    #[doc = "0: Divide-by-1"]
+    Div1 = 0,
+    #[doc = "1: Divide-by-2"]
+    Div2 = 1,
+    #[doc = "2: Divide-by-3"]
+    Div3 = 2,
+    #[doc = "3: Divide-by-4"]
+    Div4 = 3,
+    #[doc = "4: Divide-by-5"]
+    Div5 = 4,
+    #[doc = "5: Divide-by-6"]
+    Div6 = 5,
+    #[doc = "6: Divide-by-7"]
+    Div7 = 6,
+    #[doc = "7: Divide-by-8"]
+    Div8 = 7,
+    #[doc = "8: Divide-by-9"]
+    Div9 = 8,
+    #[doc = "9: Divide-by-10"]
+    Div10 = 9,
+    #[doc = "10: Divide-by-11"]
+    Div11 = 10,
+    #[doc = "11: Divide-by-12"]
+    Div12 = 11,
+    #[doc = "12: Divide-by-13"]
+    Div13 = 12,
+    #[doc = "13: Divide-by-14"]
+    Div14 = 13,
+    #[doc = "14: Divide-by-15"]
+    Div15 = 14,
+    #[doc = "15: Divide-by-16"]
+    Div16 = 15,
 }
 impl From<Outdiv1> for u8 {
     #[inline(always)]
@@ -782,104 +782,104 @@ impl Outdiv1R {
     #[inline(always)]
     pub const fn variant(&self) -> Outdiv1 {
         match self.bits {
-            0 => Outdiv1::_0000,
-            1 => Outdiv1::_0001,
-            2 => Outdiv1::_0010,
-            3 => Outdiv1::_0011,
-            4 => Outdiv1::_0100,
-            5 => Outdiv1::_0101,
-            6 => Outdiv1::_0110,
-            7 => Outdiv1::_0111,
-            8 => Outdiv1::_1000,
-            9 => Outdiv1::_1001,
-            10 => Outdiv1::_1010,
-            11 => Outdiv1::_1011,
-            12 => Outdiv1::_1100,
-            13 => Outdiv1::_1101,
-            14 => Outdiv1::_1110,
-            15 => Outdiv1::_1111,
+            0 => Outdiv1::Div1,
+            1 => Outdiv1::Div2,
+            2 => Outdiv1::Div3,
+            3 => Outdiv1::Div4,
+            4 => Outdiv1::Div5,
+            5 => Outdiv1::Div6,
+            6 => Outdiv1::Div7,
+            7 => Outdiv1::Div8,
+            8 => Outdiv1::Div9,
+            9 => Outdiv1::Div10,
+            10 => Outdiv1::Div11,
+            11 => Outdiv1::Div12,
+            12 => Outdiv1::Div13,
+            13 => Outdiv1::Div14,
+            14 => Outdiv1::Div15,
+            15 => Outdiv1::Div16,
             _ => unreachable!(),
         }
     }
-    #[doc = "Divide-by-1."]
+    #[doc = "Divide-by-1"]
     #[inline(always)]
-    pub fn is_0000(&self) -> bool {
-        *self == Outdiv1::_0000
+    pub fn is_div1(&self) -> bool {
+        *self == Outdiv1::Div1
     }
-    #[doc = "Divide-by-2."]
+    #[doc = "Divide-by-2"]
     #[inline(always)]
-    pub fn is_0001(&self) -> bool {
-        *self == Outdiv1::_0001
+    pub fn is_div2(&self) -> bool {
+        *self == Outdiv1::Div2
     }
-    #[doc = "Divide-by-3."]
+    #[doc = "Divide-by-3"]
     #[inline(always)]
-    pub fn is_0010(&self) -> bool {
-        *self == Outdiv1::_0010
+    pub fn is_div3(&self) -> bool {
+        *self == Outdiv1::Div3
     }
-    #[doc = "Divide-by-4."]
+    #[doc = "Divide-by-4"]
     #[inline(always)]
-    pub fn is_0011(&self) -> bool {
-        *self == Outdiv1::_0011
+    pub fn is_div4(&self) -> bool {
+        *self == Outdiv1::Div4
     }
-    #[doc = "Divide-by-5."]
+    #[doc = "Divide-by-5"]
     #[inline(always)]
-    pub fn is_0100(&self) -> bool {
-        *self == Outdiv1::_0100
+    pub fn is_div5(&self) -> bool {
+        *self == Outdiv1::Div5
     }
-    #[doc = "Divide-by-6."]
+    #[doc = "Divide-by-6"]
     #[inline(always)]
-    pub fn is_0101(&self) -> bool {
-        *self == Outdiv1::_0101
+    pub fn is_div6(&self) -> bool {
+        *self == Outdiv1::Div6
     }
-    #[doc = "Divide-by-7."]
+    #[doc = "Divide-by-7"]
     #[inline(always)]
-    pub fn is_0110(&self) -> bool {
-        *self == Outdiv1::_0110
+    pub fn is_div7(&self) -> bool {
+        *self == Outdiv1::Div7
     }
-    #[doc = "Divide-by-8."]
+    #[doc = "Divide-by-8"]
     #[inline(always)]
-    pub fn is_0111(&self) -> bool {
-        *self == Outdiv1::_0111
+    pub fn is_div8(&self) -> bool {
+        *self == Outdiv1::Div8
     }
-    #[doc = "Divide-by-9."]
+    #[doc = "Divide-by-9"]
     #[inline(always)]
-    pub fn is_1000(&self) -> bool {
-        *self == Outdiv1::_1000
+    pub fn is_div9(&self) -> bool {
+        *self == Outdiv1::Div9
     }
-    #[doc = "Divide-by-10."]
+    #[doc = "Divide-by-10"]
     #[inline(always)]
-    pub fn is_1001(&self) -> bool {
-        *self == Outdiv1::_1001
+    pub fn is_div10(&self) -> bool {
+        *self == Outdiv1::Div10
     }
-    #[doc = "Divide-by-11."]
+    #[doc = "Divide-by-11"]
     #[inline(always)]
-    pub fn is_1010(&self) -> bool {
-        *self == Outdiv1::_1010
+    pub fn is_div11(&self) -> bool {
+        *self == Outdiv1::Div11
     }
-    #[doc = "Divide-by-12."]
+    #[doc = "Divide-by-12"]
     #[inline(always)]
-    pub fn is_1011(&self) -> bool {
-        *self == Outdiv1::_1011
+    pub fn is_div12(&self) -> bool {
+        *self == Outdiv1::Div12
     }
-    #[doc = "Divide-by-13."]
+    #[doc = "Divide-by-13"]
     #[inline(always)]
-    pub fn is_1100(&self) -> bool {
-        *self == Outdiv1::_1100
+    pub fn is_div13(&self) -> bool {
+        *self == Outdiv1::Div13
     }
-    #[doc = "Divide-by-14."]
+    #[doc = "Divide-by-14"]
     #[inline(always)]
-    pub fn is_1101(&self) -> bool {
-        *self == Outdiv1::_1101
+    pub fn is_div14(&self) -> bool {
+        *self == Outdiv1::Div14
     }
-    #[doc = "Divide-by-15."]
+    #[doc = "Divide-by-15"]
     #[inline(always)]
-    pub fn is_1110(&self) -> bool {
-        *self == Outdiv1::_1110
+    pub fn is_div15(&self) -> bool {
+        *self == Outdiv1::Div15
     }
-    #[doc = "Divide-by-16."]
+    #[doc = "Divide-by-16"]
     #[inline(always)]
-    pub fn is_1111(&self) -> bool {
-        *self == Outdiv1::_1111
+    pub fn is_div16(&self) -> bool {
+        *self == Outdiv1::Div16
     }
 }
 #[doc = "Field `OUTDIV1` writer - Clock 1 output divider value"]
@@ -889,85 +889,85 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Divide-by-1."]
+    #[doc = "Divide-by-1"]
     #[inline(always)]
-    pub fn _0000(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_0000)
+    pub fn div1(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div1)
     }
-    #[doc = "Divide-by-2."]
+    #[doc = "Divide-by-2"]
     #[inline(always)]
-    pub fn _0001(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_0001)
+    pub fn div2(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div2)
     }
-    #[doc = "Divide-by-3."]
+    #[doc = "Divide-by-3"]
     #[inline(always)]
-    pub fn _0010(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_0010)
+    pub fn div3(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div3)
     }
-    #[doc = "Divide-by-4."]
+    #[doc = "Divide-by-4"]
     #[inline(always)]
-    pub fn _0011(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_0011)
+    pub fn div4(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div4)
     }
-    #[doc = "Divide-by-5."]
+    #[doc = "Divide-by-5"]
     #[inline(always)]
-    pub fn _0100(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_0100)
+    pub fn div5(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div5)
     }
-    #[doc = "Divide-by-6."]
+    #[doc = "Divide-by-6"]
     #[inline(always)]
-    pub fn _0101(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_0101)
+    pub fn div6(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div6)
     }
-    #[doc = "Divide-by-7."]
+    #[doc = "Divide-by-7"]
     #[inline(always)]
-    pub fn _0110(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_0110)
+    pub fn div7(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div7)
     }
-    #[doc = "Divide-by-8."]
+    #[doc = "Divide-by-8"]
     #[inline(always)]
-    pub fn _0111(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_0111)
+    pub fn div8(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div8)
     }
-    #[doc = "Divide-by-9."]
+    #[doc = "Divide-by-9"]
     #[inline(always)]
-    pub fn _1000(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_1000)
+    pub fn div9(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div9)
     }
-    #[doc = "Divide-by-10."]
+    #[doc = "Divide-by-10"]
     #[inline(always)]
-    pub fn _1001(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_1001)
+    pub fn div10(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div10)
     }
-    #[doc = "Divide-by-11."]
+    #[doc = "Divide-by-11"]
     #[inline(always)]
-    pub fn _1010(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_1010)
+    pub fn div11(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div11)
     }
-    #[doc = "Divide-by-12."]
+    #[doc = "Divide-by-12"]
     #[inline(always)]
-    pub fn _1011(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_1011)
+    pub fn div12(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div12)
     }
-    #[doc = "Divide-by-13."]
+    #[doc = "Divide-by-13"]
     #[inline(always)]
-    pub fn _1100(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_1100)
+    pub fn div13(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div13)
     }
-    #[doc = "Divide-by-14."]
+    #[doc = "Divide-by-14"]
     #[inline(always)]
-    pub fn _1101(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_1101)
+    pub fn div14(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div14)
     }
-    #[doc = "Divide-by-15."]
+    #[doc = "Divide-by-15"]
     #[inline(always)]
-    pub fn _1110(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_1110)
+    pub fn div15(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div15)
     }
-    #[doc = "Divide-by-16."]
+    #[doc = "Divide-by-16"]
     #[inline(always)]
-    pub fn _1111(self) -> &'a mut crate::W<REG> {
-        self.variant(Outdiv1::_1111)
+    pub fn div16(self) -> &'a mut crate::W<REG> {
+        self.variant(Outdiv1::Div16)
     }
 }
 impl R {
