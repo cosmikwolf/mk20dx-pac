@@ -1,0 +1,22 @@
+# SPI SR (Status Register) write-1-to-clear field annotations
+# Correctness: six flag bits are w1c in hardware but SVD lacks modifiedWriteValues.
+# Without this, svd2rust omits w1c bits from ONE_TO_MODIFY_FIELDS_BITMAP, so
+# write() starts from RESET_VALUE=0x0200_0000 (TFFF=1) and inadvertently clears
+# TFFF on every write — stalling SPI DMA transfers.
+# See docs/SPI_SR_W1C_BUG.md for full analysis.
+# Source: K20 Sub-Family Reference Manual, Section 43.3.5
+SPI0:
+  SR:
+    _modify:
+      RFDF:
+        modifiedWriteValues: oneToClear
+      RFOF:
+        modifiedWriteValues: oneToClear
+      TFFF:
+        modifiedWriteValues: oneToClear
+      TFUF:
+        modifiedWriteValues: oneToClear
+      EOQF:
+        modifiedWriteValues: oneToClear
+      TCF:
+        modifiedWriteValues: oneToClear

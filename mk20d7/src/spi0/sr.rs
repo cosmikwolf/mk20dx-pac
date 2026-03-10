@@ -47,7 +47,7 @@ impl RfdfR {
     }
 }
 #[doc = "Field `RFDF` writer - Receive FIFO Drain Flag"]
-pub type RfdfW<'a, REG> = crate::BitWriter<'a, REG, Rfdf>;
+pub type RfdfW<'a, REG> = crate::BitWriter1C<'a, REG, Rfdf>;
 impl<'a, REG> RfdfW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -100,7 +100,7 @@ impl RfofR {
     }
 }
 #[doc = "Field `RFOF` writer - Receive FIFO Overflow Flag"]
-pub type RfofW<'a, REG> = crate::BitWriter<'a, REG, Rfof>;
+pub type RfofW<'a, REG> = crate::BitWriter1C<'a, REG, Rfof>;
 impl<'a, REG> RfofW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -153,7 +153,7 @@ impl TfffR {
     }
 }
 #[doc = "Field `TFFF` writer - Transmit FIFO Fill Flag"]
-pub type TfffW<'a, REG> = crate::BitWriter<'a, REG, Tfff>;
+pub type TfffW<'a, REG> = crate::BitWriter1C<'a, REG, Tfff>;
 impl<'a, REG> TfffW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -206,7 +206,7 @@ impl TfufR {
     }
 }
 #[doc = "Field `TFUF` writer - Transmit FIFO Underflow Flag"]
-pub type TfufW<'a, REG> = crate::BitWriter<'a, REG, Tfuf>;
+pub type TfufW<'a, REG> = crate::BitWriter1C<'a, REG, Tfuf>;
 impl<'a, REG> TfufW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -259,7 +259,7 @@ impl EoqfR {
     }
 }
 #[doc = "Field `EOQF` writer - End of Queue Flag"]
-pub type EoqfW<'a, REG> = crate::BitWriter<'a, REG, Eoqf>;
+pub type EoqfW<'a, REG> = crate::BitWriter1C<'a, REG, Eoqf>;
 impl<'a, REG> EoqfW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -365,7 +365,7 @@ impl TcfR {
     }
 }
 #[doc = "Field `TCF` writer - Transfer Complete Flag"]
-pub type TcfW<'a, REG> = crate::BitWriter<'a, REG, Tcf>;
+pub type TcfW<'a, REG> = crate::BitWriter1C<'a, REG, Tcf>;
 impl<'a, REG> TcfW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -485,6 +485,7 @@ impl crate::Readable for SrSpec {}
 #[doc = "`write(|w| ..)` method takes [`sr::W`](W) writer structure"]
 impl crate::Writable for SrSpec {
     type Safety = crate::Unsafe;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x9a0a_0000;
 }
 #[doc = "`reset()` method sets SR to value 0x0200_0000"]
 impl crate::Resettable for SrSpec {

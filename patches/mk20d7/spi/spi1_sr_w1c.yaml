@@ -1,0 +1,18 @@
+# SPI1 SR (Status Register) write-1-to-clear field annotations (MK20D7 only)
+# Same w1c correctness fix as patches/common/spi/sr_w1c.yaml, applied to SPI1.
+# See docs/SPI_SR_W1C_BUG.md for full analysis.
+SPI1:
+  SR:
+    _modify:
+      RFDF:
+        modifiedWriteValues: oneToClear
+      RFOF:
+        modifiedWriteValues: oneToClear
+      TFFF:
+        modifiedWriteValues: oneToClear
+      TFUF:
+        modifiedWriteValues: oneToClear
+      EOQF:
+        modifiedWriteValues: oneToClear
+      TCF:
+        modifiedWriteValues: oneToClear

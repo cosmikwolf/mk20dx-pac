@@ -22,6 +22,7 @@ _include:
   - ../patches/common/dmamux/chcfg_enums.yaml
   - ../patches/common/wdog/stctrlh_enums.yaml
   - ../patches/common/sim/clkdiv1_enums.yaml
+  - ../patches/common/spi/sr_w1c.yaml
   - ../patches/common/spi/mcr_enums.yaml
   - ../patches/common/spi/ctar_enums.yaml
   - ../patches/common/spi/sr_enums.yaml
