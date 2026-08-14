@@ -8,8 +8,8 @@ Generated with [svd2rust](https://github.com/rust-embedded/svd2rust) from NXP ve
 
 | Crate | Chip | Board | Core | Flash | RAM | DMA Ch |
 |-------|------|-------|------|-------|-----|--------|
-| `mk20d5` | MK20DX128VLH5 | Teensy 3.0 | Cortex-M4 @ 50 MHz | 128K | 16K | 4 |
-| `mk20d7` | MK20DX256VLH7 | Teensy 3.1/3.2 | Cortex-M4 @ 72 MHz | 256K | 64K | 16 |
+| `mk20d5-pac` | MK20DX128VLH5 | Teensy 3.0 | Cortex-M4 @ 50 MHz | 128K | 16K | 4 |
+| `mk20d7-pac` | MK20DX256VLH7 | Teensy 3.1/3.2 | Cortex-M4 @ 72 MHz | 256K | 64K | 16 |
 
 ## Usage
 
@@ -17,8 +17,13 @@ Add the appropriate crate to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-mk20d7 = { git = "https://github.com/zetaohm/mk20dx-pac", features = ["rt"] }
+mk20d7-pac = { version = "0.1", features = ["rt", "critical-section"] }
 ```
+
+`rt` installs the vector table; `critical-section` is what provides
+`Peripherals::take()`. A single-core Cortex-M project also needs a
+critical-section implementation, usually `cortex-m` with
+`critical-section-single-core`.
 
 Then access peripheral registers:
 
@@ -26,18 +31,18 @@ Then access peripheral registers:
 #![no_std]
 #![no_main]
 
-use mk20d7;
+use mk20d7_pac as pac;
 
 #[cortex_m_rt::entry]
 fn main() -> ! {
-    let peripherals = mk20d7::Peripherals::take().unwrap();
+    let peripherals = pac::Peripherals::take().unwrap();
 
     // Enable clock gate for GPIO port C
-    peripherals.SIM.scgc5.modify(|_, w| w.portc().enabled());
+    peripherals.sim.scgc5().modify(|_, w| w.portc().enabled());
 
     // Configure pin C5 as GPIO output
-    peripherals.PORTC.pcr[5].write(|w| w.mux().gpio());
-    peripherals.PTC.pddr.modify(|r, w| unsafe { w.bits(r.bits() | (1 << 5)) });
+    peripherals.portc.pcr(5).write(|w| w.mux().gpio());
+    peripherals.ptc.pddr().modify(|r, w| unsafe { w.bits(r.bits() | (1 << 5)) });
 
     loop {}
 }
