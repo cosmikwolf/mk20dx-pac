@@ -6,66 +6,10 @@ pub type W = crate::W<Spi1PushrSpec>;
 pub type TxdataR = crate::FieldReader<u16>;
 #[doc = "Field `TXDATA` writer - Transmit Data"]
 pub type TxdataW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "no description available\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u8)]
-pub enum Pcs {
-    #[doc = "0: Negate the PCS\\[x\\] signal"]
-    Negate = 0,
-    #[doc = "1: Assert the PCS\\[x\\] signal"]
-    Assert = 1,
-}
-impl From<Pcs> for u8 {
-    #[inline(always)]
-    fn from(variant: Pcs) -> Self {
-        variant as _
-    }
-}
-impl crate::FieldSpec for Pcs {
-    type Ux = u8;
-}
-impl crate::IsEnum for Pcs {}
-#[doc = "Field `PCS` reader - no description available"]
-pub type PcsR = crate::FieldReader<Pcs>;
-impl PcsR {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> Option<Pcs> {
-        match self.bits {
-            0 => Some(Pcs::Negate),
-            1 => Some(Pcs::Assert),
-            _ => None,
-        }
-    }
-    #[doc = "Negate the PCS\\[x\\] signal"]
-    #[inline(always)]
-    pub fn is_negate(&self) -> bool {
-        *self == Pcs::Negate
-    }
-    #[doc = "Assert the PCS\\[x\\] signal"]
-    #[inline(always)]
-    pub fn is_assert(&self) -> bool {
-        *self == Pcs::Assert
-    }
-}
-#[doc = "Field `PCS` writer - no description available"]
-pub type PcsW<'a, REG> = crate::FieldWriter<'a, REG, 6, Pcs>;
-impl<'a, REG> PcsW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-    REG::Ux: From<u8>,
-{
-    #[doc = "Negate the PCS\\[x\\] signal"]
-    #[inline(always)]
-    pub fn negate(self) -> &'a mut crate::W<REG> {
-        self.variant(Pcs::Negate)
-    }
-    #[doc = "Assert the PCS\\[x\\] signal"]
-    #[inline(always)]
-    pub fn assert(self) -> &'a mut crate::W<REG> {
-        self.variant(Pcs::Assert)
-    }
-}
+#[doc = "Field `PCS` reader - Select which PCS signals are asserted for the transfer (one bit per PCSx; 0 = negate, 1 = assert)"]
+pub type PcsR = crate::FieldReader;
+#[doc = "Field `PCS` writer - Select which PCS signals are asserted for the transfer (one bit per PCSx; 0 = negate, 1 = assert)"]
+pub type PcsW<'a, REG> = crate::FieldWriter<'a, REG, 6, u8, crate::Safe>;
 #[doc = "Clear Transfer Counter.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ctcnt {
@@ -291,7 +235,7 @@ impl R {
     pub fn txdata(&self) -> TxdataR {
         TxdataR::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:21 - no description available"]
+    #[doc = "Bits 16:21 - Select which PCS signals are asserted for the transfer (one bit per PCSx; 0 = negate, 1 = assert)"]
     #[inline(always)]
     pub fn pcs(&self) -> PcsR {
         PcsR::new(((self.bits >> 16) & 0x3f) as u8)
@@ -323,7 +267,7 @@ impl W {
     pub fn txdata(&mut self) -> TxdataW<'_, Spi1PushrSpec> {
         TxdataW::new(self, 0)
     }
-    #[doc = "Bits 16:21 - no description available"]
+    #[doc = "Bits 16:21 - Select which PCS signals are asserted for the transfer (one bit per PCSx; 0 = negate, 1 = assert)"]
     #[inline(always)]
     pub fn pcs(&mut self) -> PcsW<'_, Spi1PushrSpec> {
         PcsW::new(self, 16)

@@ -1,0 +1,25 @@
+# SPI1: PCSIS (MCR) and PCS (PUSHR) are per-bit chip-select bitmasks, not
+# enumerated values. The vendor SVD gives each a two-variant 0/1 enum, but the
+# reference manual defines 0/1 per *bit* ("the inactive state of PCSx", "assert
+# the PCS[x] signal"), so a whole-field enum cannot express a multi-line mask.
+# Delete the field and re-add it without enumeratedValues so svd2rust emits a
+# plain `bits(u8)` accessor.
+SPI1:
+  MCR:
+    _delete: [PCSIS]
+    _add:
+      PCSIS:
+        description: Peripheral Chip Select x Inactive State (one bit per PCSx; 0 = inactive low, 1 = inactive high)
+        bitOffset: 16
+        bitWidth: 6
+        access: read-write
+        writeConstraint: [0, 63]
+  PUSHR:
+    _delete: [PCS]
+    _add:
+      PCS:
+        description: Select which PCS signals are asserted for the transfer (one bit per PCSx; 0 = negate, 1 = assert)
+        bitOffset: 16
+        bitWidth: 6
+        access: read-write
+        writeConstraint: [0, 63]

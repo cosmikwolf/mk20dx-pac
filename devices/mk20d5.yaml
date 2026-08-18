@@ -27,6 +27,7 @@ _include:
   - ../patches/common/spi/ctar_enums.yaml
   - ../patches/common/spi/sr_enums.yaml
   - ../patches/common/spi/pushr_enums.yaml
+  - ../patches/common/spi/pcs_bitmask.yaml
   - ../patches/common/spi/rser_enums.yaml
   - ../patches/common/uart/control_enums.yaml
   - ../patches/common/uart/status_enums.yaml

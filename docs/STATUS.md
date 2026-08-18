@@ -459,33 +459,46 @@ Overloaded registers (NBYTES ×3, CITER ×2, BITER ×2) at shared offsets are pr
 
 Raw bit-pattern enum names (e.g., `_010`, `_101`) were replaced with meaningful names across 9 peripheral groups, making the generated API self-documenting.
 
-**Patch files created (23 total):**
+**Patch files created (32 total):**
 
 | Patch File | Peripheral | Fields Renamed |
 |-----------|-----------|----------------|
-| `patches/common/port/pcr_mux_enums.yaml` | PORT | PCR MUX (Alt0-Alt7 → Disabled, Gpio, etc.) |
-| `patches/common/port/pcr_bitfield_enums.yaml` | PORT | PCR PE, PS, SRE, PFE, DSE, IRQC bitfield enums |
+| `patches/common/port/pcr_mux_enums.yaml` | PORT | PCR MUX (Alt0-Alt7 -> Disabled, Gpio, etc.) |
+| `patches/common/port/pcr_bitfield_enums.yaml` | PORT | PCR DSE, LK, ODE, PE, PFE, PS, SRE |
 | `patches/common/ftm/sc_enums.yaml` | FTM0, FTM1 | SC CLKS, PS |
-| `patches/common/ftm/channel_enums.yaml` | FTM0, FTM1 | Channel control enums (MSx, ELSx) |
-| `patches/common/adc/cfg_enums.yaml` | ADC0 | CFG1 MODE, ADICLK, ADLSMP; CFG2 ADACKEN, ADHSC |
-| `patches/common/mcg/clks_enums.yaml` | MCG | C1 CLKS, FRDIV, IREFS; C2 RANGE, IRCS; C6 VDIV |
+| `patches/common/ftm/channel_enums.yaml` | FTM0, FTM1 | SWOCTRL, OUTINIT, POL, COMBINE, INVCTRL, OUTMASK per-channel fields |
+| `patches/common/adc/cfg_enums.yaml` | ADC0 | CFG1 MODE; SC2 REFSEL |
+| `patches/common/mcg/clks_enums.yaml` | MCG | C1 CLKS, IRCLKEN, IREFS, IREFSTEN; C2 EREFS0, HGO0, IRCS, LOCRE0, LP, RANGE0; S CLKST, IRCST, IREFST, LOCK0, LOLS0, PLLST |
 | `patches/common/sim/sopt2_enums.yaml` | SIM | SOPT2 PLLFLLSEL, CLKOUTSEL |
-| `patches/common/sim/scgc_clock_gate_enums.yaml` | SIM | SCGC4/5/6/7 clock gate fields → Enabled/Disabled |
+| `patches/common/sim/clkdiv1_enums.yaml` | SIM | CLKDIV1 OUTDIV1, OUTDIV2, OUTDIV4 |
+| `patches/common/sim/scgc_clock_gate_enums.yaml` | SIM | SCGC4/5/6/7 clock gate fields -> Enabled/Disabled |
 | `patches/common/dma/tcd_attr_enums.yaml` | DMA TCD | ATTR SSIZE, DSIZE |
-| `patches/common/spi/mcr_enums.yaml` | SPI0 | MCR module control enums (HALT, CLR_RXF/TXF, DIS_RXF/TXF, MDIS, DOZE, ROOE, PCSSE, MTFE, FRZ, CONT_SCKE, MSTR, DCONF, PCSIS, SMPL_PT) |
-| `patches/common/spi/ctar_enums.yaml` | SPI0 | CTAR baud rate / frame enums |
-| `patches/common/spi/sr_enums.yaml` | SPI0 | SR status flag enums |
-| `patches/common/spi/pushr_enums.yaml` | SPI0 | PUSHR command enums (PCS, CTCNT, EOQ, CTAS, CONT) |
+| `patches/common/dma/tcd_csr_enums.yaml` | DMA TCD | CSR BWC, DREQ, ESG, INTHALF, INTMAJOR, MAJORELINK, START |
+| `patches/common/dma/tcd_biter_citer_enums.yaml` | DMA TCD | BITER/CITER ELINKNO, ELINKYES ELINK |
+| `patches/common/dma/cr_enums.yaml` | DMA | CR CLM, CX, ECX, EDBG, EMLM, ERCA, HALT, HOE |
+| `patches/common/dma/es_enums.yaml` | DMA | ES CPE, DAE, DBE, DOE, ECX, NCE, SAE, SBE, SGE, SOE, VLD |
+| `patches/common/dma/dchpri_enums.yaml` | DMA | DCHPRI ECP |
+| `patches/common/dmamux/chcfg_enums.yaml` | DMAMUX | CHCFG ENBL, TRIG |
+| `patches/common/wdog/stctrlh_enums.yaml` | WDOG | STCTRLH ALLOWUPDATE, BYTESEL, CLKSRC, DBGEN, DISTESTWDOG, IRQRSTEN, STOPEN, TESTSEL, WAITEN, WDOGEN, WINEN |
+| `patches/common/spi/mcr_enums.yaml` | SPI0 | MCR HALT, CLR_RXF/TXF, DIS_RXF/TXF, MDIS, DOZE, ROOE, PCSSE, MTFE, FRZ, CONT_SCKE, MSTR, DCONF, SMPL_PT |
+| `patches/common/spi/ctar_enums.yaml` | SPI0 | CTAR CPHA, CPOL, DBR, LSBFE, PASC, PBR, PCSSCK, PDT |
+| `patches/common/spi/sr_enums.yaml` | SPI0 | SR EOQF, RFDF, RFOF, TCF, TFFF, TFUF, TXRXS |
+| `patches/common/spi/pushr_enums.yaml` | SPI0 | PUSHR CONT, CTAS, CTCNT, EOQ |
 | `patches/common/spi/rser_enums.yaml` | SPI0 | RSER DMA/interrupt request enums |
 | `patches/common/uart/control_enums.yaml` | UART0/1/2 | C1-C5 (PE, PT, M, TE, RE, TIE, RIE, TCIE, TDMAS, RDMAS) |
 | `patches/common/uart/status_enums.yaml` | UART0/1/2 | S1, S2 (PF, FE, NF, OR, RDRF, TC, TDRE, RAF, etc.) |
 | `patches/common/uart/fifo_enums.yaml` | UART0/1/2 | PFIFO, CFIFO, SFIFO (TXFE, RXFE, TXFLUSH, etc.) |
 | `patches/mk20d7/ftm/ftm2_sc_enums.yaml` | FTM2 (MK20D7 only) | SC CLKS, PS |
-| `patches/mk20d7/ftm/ftm2_channel_enums.yaml` | FTM2 (MK20D7 only) | Channel control enums (MSx, ELSx) |
-| `patches/mk20d7/adc/adc1_cfg_enums.yaml` | ADC1 (MK20D7 only) | CFG1 MODE, ADICLK, ADLSMP; CFG2 ADACKEN, ADHSC |
+| `patches/mk20d7/ftm/ftm2_channel_enums.yaml` | FTM2 (MK20D7 only) | Same channel fields as FTM0/FTM1 |
+| `patches/mk20d7/adc/adc1_cfg_enums.yaml` | ADC1 (MK20D7 only) | CFG1 MODE; SC2 REFSEL |
+| `patches/mk20d7/sim/clkdiv1_outdiv3_enums.yaml` | SIM (MK20D7 only) | CLKDIV1 OUTDIV3 |
 | `patches/mk20d7/spi/spi1_enums.yaml` | SPI1 (MK20D7 only) | MCR, CTAR, SR, PUSHR, RSER enums |
 | `patches/mk20d7/uart/uart34_enums.yaml` | UART3/4 (MK20D7 only) | C1-C5, S1, S2, PFIFO, CFIFO, SFIFO |
 | `patches/mk20d7/sim/scgc_extra_enums.yaml` | SIM (MK20D7 only) | SCGC1/2/3 + extra SCGC4/6/7 clock gate fields |
+
+This table lists only the fields a patch converts. Every field that is absent
+keeps the vendor `_0` / `_1` names. `MCR PCSIS` and `PUSHR PCS` are absent on
+purpose — see section 5.6.
 
 Used `_replace_enum` for fields that already had NXP-provided enums with raw bit-pattern names. Used standard `_write_constraint: "enum"` to make writers safe.
 
@@ -493,11 +506,37 @@ Used `_replace_enum` for fields that already had NXP-provided enums with raw bit
 
 | Item | Status | Notes |
 |------|--------|-------|
-| Semantic enum variant names | COMPLETE | 23 patch files across 10 peripheral groups (PORT, FTM, ADC, MCG, SIM SOPT2, SIM SCGC, DMA, SPI, UART) |
+| Semantic enum variant names | COMPLETE | 32 patch files across 10 peripheral groups (PORT, FTM, ADC, MCG, SIM, DMA, DMAMUX, WDOG, SPI, UART) |
+| MCG `C2.RANGE0` third encoding | OPEN | The patch defines `Low` / `High` only. The manual (ch24) defines `1X` = very high range, so values 2 and 3 have no variant |
 | DMAMUX source enums | COMPLETE | 43 variants (MK20D5), 50 variants (MK20D7) |
 | DMA TCD clustering | COMPLETE | Per-channel struct access |
 | Register array collection | N/A | Already using dim arrays (FTM channels, PORT PCRs) |
 | Peripheral name prefix stripping | N/A | Already correct via svd2rust register block structure |
+
+### 5.6 SPI PCS Bitmask Correction — COMPLETE
+
+`SPI MCR[PCSIS]` and `SPI PUSHR[PCS]` are 6-bit fields with one bit per PCSx
+chip-select line. The vendor SVD gives each field a two-variant `0` / `1` enum,
+because the manual states the two values **per bit**, not per field. An earlier
+patch renamed those variants to `Low` / `High` and `Negate` / `Assert`, which
+made the wrong model look correct.
+
+`patches/common/spi/pcs_bitmask.yaml` and
+`patches/mk20d7/spi/spi1_pcs_bitmask.yaml` delete each field and add it back with
+no `enumeratedValues` and `writeConstraint: [0, 63]`. svd2rust then emits a plain
+bitmask accessor with a safe setter:
+
+```rust
+pub type PcsisW<'a, REG> = crate::FieldWriter<'a, REG, 6, u8, crate::Safe>;
+// w.pcsis().set(0b00_0001)   // PCS0 idles high, PCS1-5 idle low
+```
+
+See `docs/SPI_PCS_BITMASK_BUG.md` for the full analysis.
+
+This is a breaking API change for `MCR PCSIS` and `PUSHR PCS`. Both crates went
+to 0.1.1.
+
+---
 
 ---
 
@@ -525,8 +564,8 @@ Used `_replace_enum` for fields that already had NXP-provided enums with raw bit
 | `reference/K20P64M50SF0RM.pdf` | 50MHz K20 ref manual | Downloaded from PJRC |
 | `reference/refman_chapters/` | Extracted 72MHz chapters (51 files) | Generated, gitignored |
 | `reference/refman_50mhz_chapters/` | Extracted 50MHz chapters (49 files) | Generated, gitignored |
-| `devices/mk20d5.yaml` | svdtools device config | Includes 21 patches |
-| `devices/mk20d7.yaml` | svdtools device config | Includes 25 patches |
+| `devices/mk20d5.yaml` | svdtools device config | Includes 31 patches |
+| `devices/mk20d7.yaml` | svdtools device config | Includes 38 patches |
 | `patches/mk20d5/sim/sopt5_uart_txsrc.yaml` | SIM_SOPT5 field width fix | Applied, verified |
 | `patches/mk20d5/fmc/cache_addresses.yaml` | FMC address + dimIncrement fix | Applied, verified |
 | `patches/mk20d5/dmamux/source_enums.yaml` | DMAMUX SOURCE field enums (43 variants) | Applied, verified |
@@ -534,11 +573,13 @@ Used `_replace_enum` for fields that already had NXP-provided enums with raw bit
 | `patches/mk20d5/dma/tcd_cluster.yaml` | DMA TCD clustering (4 channels) | Applied, verified |
 | `patches/mk20d7/dma/tcd_cluster.yaml` | DMA TCD clustering (16 channels) | Applied, verified |
 | `patches/common/port/pcr_mux_enums.yaml` | PORT PCR MUX semantic enums | Applied, verified |
-| `patches/common/port/pcr_bitfield_enums.yaml` | PORT PCR PE, PS, SRE, PFE, DSE, IRQC enums | Applied, verified |
+| `patches/common/port/pcr_bitfield_enums.yaml` | PORT PCR PE, PS, SRE, PFE, ODE, DSE, LK enums | Applied, verified |
 | `patches/common/ftm/sc_enums.yaml` | FTM SC CLKS/PS semantic enums | Applied, verified |
 | `patches/common/ftm/channel_enums.yaml` | FTM channel MSx/ELSx semantic enums | Applied, verified |
-| `patches/common/adc/cfg_enums.yaml` | ADC CFG1/CFG2 semantic enums | Applied, verified |
-| `patches/common/mcg/clks_enums.yaml` | MCG C1/C2/C6 semantic enums | Applied, verified |
+| `patches/common/adc/cfg_enums.yaml` | ADC CFG1 MODE, SC2 REFSEL semantic enums | Applied, verified |
+| `patches/common/mcg/clks_enums.yaml` | MCG C1/C2/S semantic enums | Applied, verified |
+| `patches/common/spi/pcs_bitmask.yaml` | SPI0 MCR PCSIS / PUSHR PCS bitmask fix | Applied, verified |
+| `patches/mk20d7/spi/spi1_pcs_bitmask.yaml` | SPI1 MCR PCSIS / PUSHR PCS bitmask fix | Applied, verified |
 | `patches/common/sim/sopt2_enums.yaml` | SIM SOPT2 semantic enums | Applied, verified |
 | `patches/common/dma/tcd_attr_enums.yaml` | DMA TCD ATTR SSIZE/DSIZE semantic enums | Applied, verified |
 | `patches/mk20d7/ftm/ftm2_sc_enums.yaml` | FTM2 SC enums (MK20D7 only) | Applied, verified |

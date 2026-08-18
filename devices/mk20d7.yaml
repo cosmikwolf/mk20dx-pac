@@ -26,6 +26,7 @@ _include:
   - ../patches/common/spi/ctar_enums.yaml
   - ../patches/common/spi/sr_enums.yaml
   - ../patches/common/spi/pushr_enums.yaml
+  - ../patches/common/spi/pcs_bitmask.yaml
   - ../patches/common/spi/rser_enums.yaml
   - ../patches/common/uart/control_enums.yaml
   - ../patches/common/uart/status_enums.yaml
@@ -36,6 +37,7 @@ _include:
   - ../patches/mk20d7/ftm/ftm2_channel_enums.yaml
   - ../patches/mk20d7/adc/adc1_cfg_enums.yaml
   - ../patches/mk20d7/spi/spi1_enums.yaml
+  - ../patches/mk20d7/spi/spi1_pcs_bitmask.yaml
   - ../patches/mk20d7/uart/uart34_enums.yaml
   - ../patches/mk20d7/sim/scgc_extra_enums.yaml
   # Clustering (must come after DMA ATTR enums)

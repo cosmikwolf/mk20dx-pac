@@ -402,66 +402,10 @@ where
         self.variant(Doze::Disabled)
     }
 }
-#[doc = "Peripheral Chip Select x Inactive State\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u8)]
-pub enum Pcsis {
-    #[doc = "0: The inactive state of PCSx is low"]
-    Low = 0,
-    #[doc = "1: The inactive state of PCSx is high"]
-    High = 1,
-}
-impl From<Pcsis> for u8 {
-    #[inline(always)]
-    fn from(variant: Pcsis) -> Self {
-        variant as _
-    }
-}
-impl crate::FieldSpec for Pcsis {
-    type Ux = u8;
-}
-impl crate::IsEnum for Pcsis {}
-#[doc = "Field `PCSIS` reader - Peripheral Chip Select x Inactive State"]
-pub type PcsisR = crate::FieldReader<Pcsis>;
-impl PcsisR {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> Option<Pcsis> {
-        match self.bits {
-            0 => Some(Pcsis::Low),
-            1 => Some(Pcsis::High),
-            _ => None,
-        }
-    }
-    #[doc = "The inactive state of PCSx is low"]
-    #[inline(always)]
-    pub fn is_low(&self) -> bool {
-        *self == Pcsis::Low
-    }
-    #[doc = "The inactive state of PCSx is high"]
-    #[inline(always)]
-    pub fn is_high(&self) -> bool {
-        *self == Pcsis::High
-    }
-}
-#[doc = "Field `PCSIS` writer - Peripheral Chip Select x Inactive State"]
-pub type PcsisW<'a, REG> = crate::FieldWriter<'a, REG, 6, Pcsis>;
-impl<'a, REG> PcsisW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-    REG::Ux: From<u8>,
-{
-    #[doc = "The inactive state of PCSx is low"]
-    #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pcsis::Low)
-    }
-    #[doc = "The inactive state of PCSx is high"]
-    #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pcsis::High)
-    }
-}
+#[doc = "Field `PCSIS` reader - Peripheral Chip Select x Inactive State (one bit per PCSx; 0 = inactive low, 1 = inactive high)"]
+pub type PcsisR = crate::FieldReader;
+#[doc = "Field `PCSIS` writer - Peripheral Chip Select x Inactive State (one bit per PCSx; 0 = inactive low, 1 = inactive high)"]
+pub type PcsisW<'a, REG> = crate::FieldWriter<'a, REG, 6, u8, crate::Safe>;
 #[doc = "Receive FIFO Overflow Overwrite Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rooe {
@@ -858,7 +802,7 @@ impl R {
     pub fn doze(&self) -> DozeR {
         DozeR::new(((self.bits >> 15) & 1) != 0)
     }
-    #[doc = "Bits 16:21 - Peripheral Chip Select x Inactive State"]
+    #[doc = "Bits 16:21 - Peripheral Chip Select x Inactive State (one bit per PCSx; 0 = inactive low, 1 = inactive high)"]
     #[inline(always)]
     pub fn pcsis(&self) -> PcsisR {
         PcsisR::new(((self.bits >> 16) & 0x3f) as u8)
@@ -940,7 +884,7 @@ impl W {
     pub fn doze(&mut self) -> DozeW<'_, McrSpec> {
         DozeW::new(self, 15)
     }
-    #[doc = "Bits 16:21 - Peripheral Chip Select x Inactive State"]
+    #[doc = "Bits 16:21 - Peripheral Chip Select x Inactive State (one bit per PCSx; 0 = inactive low, 1 = inactive high)"]
     #[inline(always)]
     pub fn pcsis(&mut self) -> PcsisW<'_, McrSpec> {
         PcsisW::new(self, 16)
