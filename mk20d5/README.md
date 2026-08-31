@@ -15,6 +15,9 @@ it corrects, and the regeneration pipeline are documented in the
 
 The other part in this family is [`mk20d7-pac`](https://crates.io/crates/mk20d7-pac).
 
+### Note
+This crate has been well tested with mk20d7, but has not been thoroughly tested on mk20d5. Please do not rely on this crate without thoroughly testing first. Bug reports are welcome.
+
 ## Usage
 
 ```toml
