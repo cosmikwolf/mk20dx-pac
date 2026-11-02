@@ -1,6 +1,6 @@
 [package]
 name = "mk20d5-pac"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "Peripheral Access Crate for MK20DX128 (Teensy 3.0)"
 license = "MIT OR Apache-2.0"

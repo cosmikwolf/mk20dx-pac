@@ -1,6 +1,6 @@
 # mk20dx-pac: Project Status
 
-**Last updated:** 2026-03-01 (all phases complete)
+**Last updated:** 2026-11-02 (`mk20d5-pac` 0.1.2: README warns that mk20d5 is not hardware tested)
 
 ---
 
@@ -549,6 +549,14 @@ to 0.1.1.
 - [x] Remove unused reference files (`core_pins.h`, `mk20dx128.c`)
 - [x] Slim down CLAUDE.md, add `.gitattributes`
 - [x] Fix Makefile CRLF line endings
+
+### Releases on crates.io
+
+| Date | Crate | Version | Change |
+|------|-------|---------|--------|
+| 2026-08-14 | `mk20d7-pac` | 0.1.0 | First release |
+| 2026-08-18 | `mk20d5-pac`, `mk20d7-pac` | 0.1.1 | SPI `MCR PCSIS` and `PUSHR PCS` are bitmasks (breaking, see 5.6) |
+| 2026-11-02 | `mk20d5-pac` | 0.1.2 | README warns that mk20d5 is not hardware tested (the test suite runs on a Teensy 3.2). No code change. `mk20d7-pac` stays at 0.1.1 |
 
 ---
 
